@@ -25,6 +25,8 @@
     petals: [],
     raf: 0,
     motionReady: false,
+    debugUnlocked: false,
+    secretDebugShakes: 0,
   };
 
   const I18N = {
@@ -227,6 +229,10 @@
       pAspects: $("#p-aspects"),
       share: $("#btn-share"),
       again: $("#btn-again"),
+      debugLot: $("#debug-lot"),
+      debugToggle: $("#debug-toggle"),
+      debugForm: $("#debug-form"),
+      debugNumber: $("#debug-number"),
       sakura: $("#sakura"),
     });
 
@@ -251,6 +257,8 @@
     els.boxWrap.addEventListener("pointerdown", () => unlockAudio(), { passive: true });
     els.goDraw.addEventListener("click", drawFortune);
     els.goPaper.addEventListener("click", openPaper);
+    if (els.debugToggle) els.debugToggle.addEventListener("click", toggleDebugPanel);
+    if (els.debugForm) els.debugForm.addEventListener("submit", showDebugFortune);
     els.share.addEventListener("click", shareFortune);
     els.again.addEventListener("click", () => {
       state.selected = null;
@@ -275,6 +283,8 @@
     });
     if (els.pShrineTitle) els.pShrineTitle.textContent = t("shrineTitle");
     if (els.pShrineSub) els.pShrineSub.textContent = t("shrineSub");
+    updateDebugLabels();
+    if (state.lang !== "ja") lockDebugPanel();
     updateShakeCount();
     setPaperLayout(state.paperLayout, false);
     if (state.selected) renderFortune(state.selected);
@@ -296,6 +306,7 @@
       stage.classList.toggle("active", active);
       stage.classList.remove("leaving");
     });
+    if (name !== "shake") hideDebugPanel();
   }
 
   async function enableMotion() {
@@ -343,6 +354,7 @@
     animateBox();
     soundShake();
     els.goDraw.classList.remove("hidden");
+    maybeUnlockDebug();
     if (state.shakeCount === 1 || state.shakeCount % 8 === 0) soundBell(0.32);
   }
 
@@ -351,6 +363,7 @@
     state.lastMagnitude = 0;
     state.sessionSalt = `${Date.now()}-${Math.random().toString(36).slice(2)}`;
     state.drawSeed = "";
+    lockDebugPanel();
     updateShakeCount();
     els.goDraw.classList.remove("hidden");
   }
@@ -393,10 +406,42 @@
   }
 
   function toggleDebugPanel() {
+    if (!state.debugUnlocked || !els.debugLot) return;
     els.debugLot.classList.toggle("open");
-    if (els.debugLot.classList.contains("open")) {
+    if (els.debugLot.classList.contains("open") && els.debugNumber) {
       setTimeout(() => els.debugNumber.focus(), 0);
     }
+  }
+
+  function maybeUnlockDebug() {
+    if (state.debugUnlocked || state.stage !== "shake" || !els.debugLot) return;
+    state.secretDebugShakes = state.lang === "ja" ? state.secretDebugShakes + 1 : 0;
+    if (state.secretDebugShakes < 9) return;
+    state.debugUnlocked = true;
+    els.debugLot.classList.add("unlocked", "open");
+    els.debugLot.setAttribute("aria-hidden", "false");
+    soundBell(0.58);
+    setTimeout(() => els.debugNumber && els.debugNumber.focus(), 0);
+  }
+
+  function lockDebugPanel() {
+    state.debugUnlocked = false;
+    state.secretDebugShakes = 0;
+    hideDebugPanel();
+  }
+
+  function hideDebugPanel() {
+    if (!els.debugLot) return;
+    els.debugLot.classList.remove("unlocked", "open");
+    els.debugLot.setAttribute("aria-hidden", "true");
+  }
+
+  function updateDebugLabels() {
+    if (els.debugToggle) els.debugToggle.textContent = t("debugToggle");
+    const label = els.debugForm && els.debugForm.querySelector("label");
+    const button = els.debugForm && els.debugForm.querySelector("button");
+    if (label) label.textContent = t("debugLabel");
+    if (button) button.textContent = t("debugShow");
   }
 
   function showDebugFortune(event) {
