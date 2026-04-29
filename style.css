@@ -187,37 +187,36 @@ html[data-lang="en"] .poem-zh{font-family:var(--latin-serif);font-size:18px;line
 .layout-btn.active{background:var(--torii);color:#fff;border-color:var(--torii);box-shadow:0 8px 20px rgba(184,36,29,.2)}
 .paper-crest{display:none}
 
-#paper[data-layout="reference"]{width:min(100%,360px)}
+#paper[data-layout="reference"]{width:min(100%,420px)}
 #paper[data-layout="reference"] .paper-inner{background:#fbf7ea;box-shadow:0 24px 74px rgba(42,24,10,.22),0 2px 0 rgba(255,255,255,.6) inset}
-#paper[data-layout="reference"] .paper-inner::after{inset:10px;border:1px solid rgba(18,17,15,.78)}
-#paper[data-layout="reference"] .omikuji-frame{margin:12px 18px 16px;padding:18px 13px 14px;border:0;background:rgba(251,247,234,.78);filter:none;font-family:var(--jp-serif);box-shadow:none}
-#paper[data-layout="reference"] .paper-crest{display:grid;width:72px;height:72px;margin:0 auto 7px;place-items:center;border:2px solid #171411;border-radius:50%;font-family:var(--jp-serif);font-weight:900;font-size:30px;color:#171411;position:relative}
-#paper[data-layout="reference"] .paper-crest::before,#paper[data-layout="reference"] .paper-crest::after{content:"";position:absolute;width:32px;height:48px;border:2px solid #171411;border-left:0;border-bottom:0;border-radius:50%;top:11px}
-#paper[data-layout="reference"] .paper-crest::before{left:10px;transform:rotate(-34deg)}
-#paper[data-layout="reference"] .paper-crest::after{right:10px;transform:rotate(34deg)}
-#paper[data-layout="reference"] .omikuji-header{height:auto;display:block;border:0;background:transparent;text-align:center;writing-mode:vertical-rl;text-orientation:upright;margin:0 auto 16px;max-height:236px;min-height:220px;overflow:visible}
-#paper[data-layout="reference"] .header-cell{display:flex;align-items:center;justify-content:flex-start;padding:0 2px;border:0!important;text-align:center;min-width:36px}
+#paper[data-layout="reference"] .paper-inner::after{inset:10px;border:1px solid rgba(18,17,15,.72)}
+#paper[data-layout="reference"] .omikuji-frame{margin:12px 18px 16px;padding:16px 14px 14px;border:1.5px solid rgba(17,17,15,.86);background:rgba(251,247,234,.86);filter:none;font-family:var(--jp-serif);box-shadow:inset 0 0 0 4px rgba(255,255,255,.18)}
+#paper[data-layout="reference"] .paper-crest{display:grid;width:66px;height:66px;margin:0 auto 8px;place-items:center;border:2px solid #171411;border-radius:50%;font-family:var(--jp-serif);font-weight:900;font-size:28px;color:#171411;position:relative;background:rgba(255,250,232,.28)}
+#paper[data-layout="reference"] .paper-crest::before,#paper[data-layout="reference"] .paper-crest::after{content:"";position:absolute;width:28px;height:42px;border:2px solid #171411;border-left:0;border-bottom:0;border-radius:50%;top:11px}
+#paper[data-layout="reference"] .paper-crest::before{left:9px;transform:rotate(-34deg)}
+#paper[data-layout="reference"] .paper-crest::after{right:9px;transform:rotate(34deg)}
+#paper[data-layout="reference"] .omikuji-header{height:210px;display:grid;grid-template-columns:1fr 1fr 1fr;border:1px solid rgba(17,17,15,.8);background:rgba(255,255,255,.16);text-align:center;writing-mode:vertical-rl;text-orientation:upright;margin:0 0 10px;overflow:hidden}
+#paper[data-layout="reference"] .header-cell{display:grid;place-items:center;padding:10px 4px;border:0!important;text-align:center;min-width:0;overflow:hidden}
+#paper[data-layout="reference"] .header-cell+ .header-cell{border-left:1px solid rgba(17,17,15,.65)!important}
 #paper[data-layout="reference"] .header-cell small{display:none}
-#paper[data-layout="reference"] .paper-num{font-family:var(--jp-serif);font-weight:900;font-size:22px;line-height:1.22;letter-spacing:.08em;color:#111}
-#paper[data-layout="reference"] .paper-shrine{display:block;font-family:var(--jp-serif);font-weight:900;font-size:18px;line-height:1.18;letter-spacing:.08em;color:#111;white-space:pre-line}
-#paper[data-layout="reference"] .paper-fortune{font-family:var(--jp-serif);font-weight:900;font-size:42px;line-height:1;letter-spacing:.12em;color:#111}
-#paper[data-layout="reference"] .omikuji-body{min-height:720px;display:grid;grid-template-columns:.68fr .72fr .86fr .86fr;border:0;overflow:visible;gap:0}
-#paper[data-layout="reference"] .omikuji-body>div{border:0!important;min-width:0}
-#paper[data-layout="reference"] .vertical-main{grid-column:1 / -1;min-height:310px;display:flex;flex-direction:row-reverse;justify-content:center;align-items:flex-start;gap:20px;padding:0 3px 14px;writing-mode:vertical-rl;text-orientation:upright;border-bottom:1px solid rgba(17,17,17,.55)!important}
+#paper[data-layout="reference"] .paper-num{font-family:var(--jp-serif);font-weight:900;font-size:20px;line-height:1.15;letter-spacing:.08em;color:#111;white-space:pre-line}
+#paper[data-layout="reference"] .paper-shrine{display:block;font-family:var(--jp-serif);font-weight:900;font-size:16px;line-height:1.15;letter-spacing:.08em;color:#111;white-space:pre-line}
+#paper[data-layout="reference"] .paper-fortune{font-family:var(--jp-serif);font-weight:900;font-size:38px;line-height:1.05;letter-spacing:.08em;color:#111}
+#paper[data-layout="reference"] .omikuji-body{min-height:0;display:block;border:0;overflow:visible}
+#paper[data-layout="reference"] .omikuji-body>div{border:1px solid rgba(17,17,15,.62)!important;min-width:0;background:rgba(255,255,255,.08)}
+#paper[data-layout="reference"] .vertical-main{min-height:238px;display:flex;flex-direction:row-reverse;justify-content:center;align-items:center;gap:18px;margin:0 0 10px;padding:14px 10px;writing-mode:vertical-rl;text-orientation:upright;overflow:hidden}
 #paper[data-layout="reference"] .paper-title-vertical{display:none}
-#paper[data-layout="reference"] .poem-zh{font-family:var(--jp-serif)!important;font-weight:700!important;font-size:22px!important;line-height:1.74!important;letter-spacing:.08em;max-height:300px;color:#111;white-space:pre-line}
-#paper[data-layout="reference"] .poem-alt-wrap,#paper[data-layout="reference"] .summary-wrap,#paper[data-layout="reference"] .aspects{writing-mode:vertical-rl;text-orientation:mixed;padding:18px 2px 0;overflow:visible;font-family:var(--jp-serif);font-weight:500;line-height:1.55;min-height:380px}
-#paper[data-layout="reference"] .poem-alt-wrap{grid-column:1 / 2;border-left:1px solid rgba(17,17,17,.34)!important}
-#paper[data-layout="reference"] .summary-wrap{grid-column:2 / 3;border-left:1px solid rgba(17,17,17,.34)!important}
-#paper[data-layout="reference"] .poem-alt-label,#paper[data-layout="reference"] .summary-label{font-family:var(--jp-serif);font-size:12px;font-weight:900;line-height:1.2;border-left:1px solid #222;margin-left:6px;padding-left:4px;letter-spacing:.12em}
-#paper[data-layout="reference"] .poem-alt-text{font-family:var(--jp-serif);font-weight:500;font-size:10.5px;line-height:1.42;letter-spacing:.01em;max-height:358px;color:#111}
-#paper[data-layout="reference"] .summary{font-family:var(--jp-serif);font-weight:500;font-size:11.5px;line-height:1.5;letter-spacing:.01em;max-height:358px;color:#111}
-#paper[data-layout="reference"] .aspects{grid-column:3 / 5;display:grid;grid-template-columns:1fr 1fr;grid-auto-flow:column;grid-template-rows:repeat(4,auto);gap:13px 5px;padding-right:4px}
-#paper[data-layout="reference"] .aspect{font-family:var(--jp-serif);padding:0;min-height:78px;border:0;background:transparent}
-#paper[data-layout="reference"] .aspect b{font-family:var(--jp-serif);font-size:11px;font-weight:900;letter-spacing:.02em;margin:0 0 0 2px;color:#111}
+#paper[data-layout="reference"] .poem-zh{font-family:var(--jp-serif)!important;font-weight:700!important;font-size:21px!important;line-height:1.72!important;letter-spacing:.08em;max-height:210px;color:#111;white-space:pre-line;overflow:hidden}
+#paper[data-layout="reference"] .poem-alt-wrap,#paper[data-layout="reference"] .summary-wrap{display:block;writing-mode:horizontal-tb;text-orientation:mixed;margin:0 0 10px;padding:10px 12px;overflow:hidden;font-family:var(--jp-serif);font-weight:500;line-height:1.55;min-height:0}
+#paper[data-layout="reference"] .poem-alt-label,#paper[data-layout="reference"] .summary-label{display:block;font-family:var(--jp-serif);font-size:12px;font-weight:900;line-height:1.2;border:0;border-bottom:1px solid rgba(17,17,15,.32);margin:0 0 7px;padding:0 0 5px;letter-spacing:.12em;color:#111;text-align:left}
+#paper[data-layout="reference"] .poem-alt-text{display:block;font-family:var(--jp-serif);font-weight:500;font-size:11.5px;line-height:1.55;letter-spacing:.01em;color:#111;white-space:normal;text-align:left;max-height:none}
+#paper[data-layout="reference"] .summary{display:block;font-family:var(--jp-serif);font-weight:500;font-size:12px;line-height:1.58;letter-spacing:.01em;color:#111;text-align:left;max-height:none}
+#paper[data-layout="reference"] .aspects{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin:0;padding:0;writing-mode:horizontal-tb;text-orientation:mixed;overflow:visible;border:0!important;background:transparent!important}
+#paper[data-layout="reference"] .aspect{display:block;font-family:var(--jp-serif);padding:7px 7px 8px;min-height:92px;border:1px solid rgba(17,17,15,.48)!important;background:rgba(255,255,255,.10);overflow:hidden}
+#paper[data-layout="reference"] .aspect b{display:block;font-family:var(--jp-serif);font-size:10.5px;font-weight:900;line-height:1.15;letter-spacing:.04em;margin:0 0 4px;color:#111;text-align:left;border-bottom:1px solid rgba(17,17,15,.22);padding-bottom:3px}
 #paper[data-layout="reference"] .aspect b::before{content:""}
-#paper[data-layout="reference"] .aspect span{font-family:var(--jp-serif);font-size:10.5px;font-weight:500;line-height:1.4;color:#111}
-#paper[data-layout="reference"] .omikuji-footer-mark{height:36px;display:block;text-align:center;border-top:1px solid rgba(17,17,17,.55);padding-top:10px;font-family:var(--jp-serif);font-size:10px;font-weight:700;letter-spacing:.04em;color:#111}
+#paper[data-layout="reference"] .aspect span{display:block;font-family:var(--jp-serif);font-size:9.8px;font-weight:500;line-height:1.35;color:#111;text-align:left}
+#paper[data-layout="reference"] .omikuji-footer-mark{height:auto;display:block;text-align:center;border-top:1px solid rgba(17,17,17,.55);margin-top:12px;padding-top:10px;font-family:var(--jp-serif);font-size:10px;font-weight:700;letter-spacing:.04em;color:#111}
 #paper[data-layout="reference"] .omikuji-footer-mark span{display:inline;height:auto}#paper[data-layout="reference"] .omikuji-footer-mark span+span{border-left:0}#paper[data-layout="reference"] .omikuji-footer-mark span+span::before{content:" · "}
 
 #paper[data-layout="card"]{width:min(100%,520px)}
@@ -250,17 +249,18 @@ html[data-lang="en"] .poem-zh{font-family:var(--latin-serif);font-size:18px;line
 #paper[data-layout="card"] .omikuji-footer-mark span{display:inline;height:auto}#paper[data-layout="card"] .omikuji-footer-mark span+span{border-left:0}#paper[data-layout="card"] .omikuji-footer-mark span+span::before{content:" · "}
 
 @media (max-width:640px){
-  #paper[data-layout="reference"]{width:min(100%,330px)}
-  #paper[data-layout="reference"] .omikuji-frame{margin:10px 14px 14px;padding:14px 10px 12px}
-  #paper[data-layout="reference"] .paper-crest{width:62px;height:62px;font-size:25px}
-  #paper[data-layout="reference"] .omikuji-header{min-height:200px;max-height:216px;margin-bottom:12px}
-  #paper[data-layout="reference"] .paper-num{font-size:19px}#paper[data-layout="reference"] .paper-shrine{font-size:16px}#paper[data-layout="reference"] .paper-fortune{font-size:36px}
-  #paper[data-layout="reference"] .omikuji-body{min-height:650px;grid-template-columns:.66fr .7fr .88fr .88fr}
-  #paper[data-layout="reference"] .vertical-main{min-height:268px;gap:14px;padding-bottom:12px}
-  #paper[data-layout="reference"] .poem-zh{font-size:19px!important;line-height:1.66!important;max-height:260px}
-  #paper[data-layout="reference"] .poem-alt-wrap,#paper[data-layout="reference"] .summary-wrap,#paper[data-layout="reference"] .aspects{min-height:360px;padding-top:14px}
-  #paper[data-layout="reference"] .poem-alt-label,#paper[data-layout="reference"] .summary-label{font-size:10.5px;margin-left:4px;padding-left:3px}
-  #paper[data-layout="reference"] .poem-alt-text{font-size:9.2px;line-height:1.34;max-height:344px}
-  #paper[data-layout="reference"] .summary{font-size:10px;line-height:1.38;max-height:344px}
-  #paper[data-layout="reference"] .aspect{min-height:72px}#paper[data-layout="reference"] .aspect b{font-size:9.6px}#paper[data-layout="reference"] .aspect span{font-size:9px;line-height:1.34}
+  #paper[data-layout="reference"]{width:min(100%,360px)}
+  #paper[data-layout="reference"] .omikuji-frame{margin:10px 12px 14px;padding:13px 10px 12px}
+  #paper[data-layout="reference"] .paper-crest{width:58px;height:58px;font-size:24px}
+  #paper[data-layout="reference"] .paper-crest::before,#paper[data-layout="reference"] .paper-crest::after{width:24px;height:38px;top:9px}
+  #paper[data-layout="reference"] .omikuji-header{height:188px}
+  #paper[data-layout="reference"] .paper-num{font-size:18px}#paper[data-layout="reference"] .paper-shrine{font-size:14px}#paper[data-layout="reference"] .paper-fortune{font-size:33px}
+  #paper[data-layout="reference"] .vertical-main{min-height:216px;gap:12px;padding:12px 8px}
+  #paper[data-layout="reference"] .poem-zh{font-size:18px!important;line-height:1.62!important;max-height:192px}
+  #paper[data-layout="reference"] .poem-alt-wrap,#paper[data-layout="reference"] .summary-wrap{padding:9px 10px}
+  #paper[data-layout="reference"] .poem-alt-label,#paper[data-layout="reference"] .summary-label{font-size:11px}
+  #paper[data-layout="reference"] .poem-alt-text{font-size:10.6px;line-height:1.5}
+  #paper[data-layout="reference"] .summary{font-size:11px;line-height:1.5}
+  #paper[data-layout="reference"] .aspects{grid-template-columns:1fr 1fr;gap:6px}
+  #paper[data-layout="reference"] .aspect{min-height:84px;padding:7px 7px}#paper[data-layout="reference"] .aspect b{font-size:10px}#paper[data-layout="reference"] .aspect span{font-size:9.4px;line-height:1.3}
 }

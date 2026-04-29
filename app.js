@@ -62,6 +62,8 @@
         旅行: "旅行",
         失物: "失物",
         待人: "待人",
+        方角: "方位",
+        勝負: "胜负",
       },
       fortunes: {
         大吉: "大吉",
@@ -111,6 +113,8 @@
         旅行: "旅行",
         失物: "失物",
         待人: "待人",
+        方角: "方角",
+        勝負: "勝負",
       },
       fortunes: {
         大吉: "大吉",
@@ -160,6 +164,8 @@
         旅行: "Travel",
         失物: "Lost Item",
         待人: "Expected Person",
+        方角: "Direction",
+        勝負: "Contest",
       },
       fortunes: {
         大吉: "Great Blessing",
@@ -397,7 +403,7 @@
     }
 
     els.pAspects.innerHTML = "";
-    Object.entries(item.details || {}).forEach(([key, value]) => {
+    getAspectEntries(item).forEach(([key, value]) => {
       const card = document.createElement("div");
       card.className = "aspect";
       const label = document.createElement("b");
@@ -495,7 +501,7 @@
     const scale = 2;
     const reference = state.paperLayout !== "card";
     const w = reference ? 720 : 900;
-    const h = reference ? 1740 : 1500;
+    const h = reference ? 1740 : 1720;
     const canvas = document.createElement("canvas");
     canvas.width = w * scale;
     canvas.height = h * scale;
@@ -514,81 +520,98 @@
 
   function drawReferenceFortuneImage(ctx, item, w, h) {
     const lang = state.lang;
+    const detailLang = lang === "zh" ? "zh" : lang === "ja" ? "ja" : "en";
     const paper = "#fbf7ea";
     const ink = "#11110f";
-    const line = "rgba(17,17,15,.64)";
+    const line = "rgba(17,17,15,.62)";
     ctx.fillStyle = paper;
     ctx.fillRect(0, 0, w, h);
-    drawOwnershipWatermark(ctx, w, h);
     drawPaperGrain(ctx, item, w, h, 0.12);
 
-    const padX = 54;
-    const top = 48;
-    const bottom = h - 92;
-    ctx.strokeStyle = "rgba(17,17,15,.58)";
+    const outer = { x: 54, y: 48, w: w - 108, h: h - 142 };
+    ctx.strokeStyle = "rgba(17,17,15,.72)";
     ctx.lineWidth = 2;
-    ctx.strokeRect(padX, top, w - padX * 2, bottom - top);
+    ctx.strokeRect(outer.x, outer.y, outer.w, outer.h);
+    ctx.strokeStyle = "rgba(17,17,15,.36)";
     ctx.lineWidth = 1;
-    ctx.strokeRect(padX + 14, top + 14, w - (padX + 14) * 2, bottom - top - 28);
+    ctx.strokeRect(outer.x + 14, outer.y + 14, outer.w - 28, outer.h - 28);
 
-    drawCrest(ctx, w / 2, top + 82, 52, ink);
-    const headerTop = top + 160;
-    drawVerticalText(ctx, formatNumber(item.number), w / 2 + 70, headerTop, 27, 34, ink, true, 170);
-    drawVerticalText(ctx, t("shrineTitle"), w / 2 + 16, headerTop - 6, 22, 28, ink, true, 220);
-    const fortuneText = (I18N[lang].fortunes && I18N[lang].fortunes[item.fortune]) || item.fortune;
-    drawVerticalText(ctx, fortuneText, w / 2 - 54, headerTop + 12, lang === "en" ? 24 : 48, lang === "en" ? 30 : 58, ink, true, 180);
+    const left = outer.x + 34;
+    const right = outer.x + outer.w - 34;
+    let y = outer.y + 34;
+    drawCrest(ctx, w / 2, y + 50, 42, ink);
+    y += 112;
 
-    const poemTop = headerTop + 248;
-    const poemBottom = poemTop + 470;
+    const headerH = 210;
     ctx.strokeStyle = line;
-    ctx.lineWidth = 1;
+    ctx.lineWidth = 1.5;
+    ctx.strokeRect(left, y, right - left, headerH);
+    const colW = (right - left) / 3;
     ctx.beginPath();
-    ctx.moveTo(padX + 28, poemBottom);
-    ctx.lineTo(w - padX - 28, poemBottom);
+    ctx.moveTo(left + colW, y); ctx.lineTo(left + colW, y + headerH);
+    ctx.moveTo(left + colW * 2, y); ctx.lineTo(left + colW * 2, y + headerH);
     ctx.stroke();
+    drawVerticalText(ctx, formatNumber(item.number), left + colW * 2.5, y + 22, 22, 27, ink, true, headerH - 44);
+    drawVerticalText(ctx, t("shrineTitle"), left + colW * 1.5, y + 22, 18, 23, ink, true, headerH - 44);
+    const fortuneText = (I18N[lang].fortunes && I18N[lang].fortunes[item.fortune]) || item.fortune;
+    drawVerticalText(ctx, fortuneText, left + colW * 0.5, y + 28, lang === "en" ? 24 : 43, lang === "en" ? 28 : 52, ink, true, headerH - 56);
+    y += headerH + 18;
 
+    const poemH = 272;
+    ctx.strokeStyle = line;
+    ctx.strokeRect(left, y, right - left, poemH);
     const poem = lang === "en" ? (item.meaning_en || "") : (item.poem_ja || "");
-    if (lang === "en") drawWrappedText(ctx, poem, padX + 56, poemTop + 20, w - padX * 2 - 112, 34, 25, ink, "Georgia");
-    else drawVerticalText(ctx, poem, w - padX - 86, poemTop + 18, 30, 44, ink, false, 410);
+    if (lang === "en") drawWrappedText(ctx, poem, left + 26, y + 28, right - left - 52, 32, 24, ink, "Georgia");
+    else drawVerticalText(ctx, poem, right - 112, y + 28, 28, 39, ink, false, poemH - 56);
+    y += poemH + 18;
 
-    const lowerTop = poemBottom + 34;
-    const lowerBottom = bottom - 74;
-    const availableH = lowerBottom - lowerTop;
-    const readingX = w - padX - 66;
-    const summaryX = w - padX - 182;
-    const detailsRightX = w - padX - 318;
-    const detailsLeftX = w - padX - 452;
-    ctx.strokeStyle = "rgba(17,17,15,.42)";
-    ctx.beginPath();
-    [w - padX - 122, w - padX - 256, w - padX - 388].forEach((x) => {
-      ctx.moveTo(x, lowerTop - 16);
-      ctx.lineTo(x, lowerBottom);
-    });
-    ctx.stroke();
+    y = drawPlainPanel(ctx, left, y, right - left, t("altLabel"), item.poem_reading || item.poem_ja || "", ink, lang, 110);
+    y += 14;
+    y = drawPlainPanel(ctx, left, y, right - left, t("summaryTitle"), summaryForShare(item), ink, lang, 124);
+    y += 18;
 
-    drawVerticalText(ctx, t("altLabel"), readingX + 28, lowerTop, 15, 20, ink, true, availableH);
-    drawVerticalText(ctx, item.poem_reading || item.poem_ja || "", readingX, lowerTop, 11, 15, ink, false, availableH);
-    drawVerticalText(ctx, t("summaryTitle"), summaryX + 28, lowerTop, 15, 20, ink, true, availableH);
-    drawVerticalText(ctx, summaryForShare(item), summaryX, lowerTop, 12, 17, ink, false, availableH);
-
-    const detailLang = lang === "zh" ? "zh" : lang === "ja" ? "ja" : "en";
-    const entries = Object.entries(item.details || {}).slice(0, 8);
+    const entries = getAspectEntries(item).slice(0, 9);
+    const gridGap = 8;
+    const boxW = (right - left - gridGap * 2) / 3;
+    const boxH = 96;
     entries.forEach(([key, value], idx) => {
+      const x = left + (idx % 3) * (boxW + gridGap);
+      const cy = y + Math.floor(idx / 3) * (boxH + gridGap);
+      ctx.strokeStyle = "rgba(17,17,15,.52)";
+      ctx.lineWidth = 1;
+      ctx.strokeRect(x, cy, boxW, boxH);
       const label = (I18N[lang].aspects && I18N[lang].aspects[key]) || key;
       const text = (value && (value[detailLang] || value.zh || value.ja || value.en)) || "";
-      const colX = idx < 4 ? detailsRightX : detailsLeftX;
-      const y = lowerTop + (idx % 4) * 132;
-      drawVerticalText(ctx, `${label}：${text}`, colX, y, 12, 16, ink, false, 120);
+      drawLeftText(ctx, label, x + 9, cy + 8, 14, "900", ink, "Noto Serif JP");
+      drawMultilineText(ctx, text, x + 9, cy + 31, boxW - 18, 15, 12, ink, lang === "en" ? "Georgia" : "Noto Serif JP", 4);
     });
+    y += 3 * (boxH + gridGap) + 4;
 
     ctx.strokeStyle = line;
     ctx.beginPath();
-    ctx.moveTo(padX + 28, lowerBottom + 20);
-    ctx.lineTo(w - padX - 28, lowerBottom + 20);
+    ctx.moveTo(left, y);
+    ctx.lineTo(right, y);
     ctx.stroke();
-    drawCenteredText(ctx, "元三大師 · 観音百籤", w / 2, lowerBottom + 48, 18, "700", ink, "Noto Serif JP");
+    drawCenteredText(ctx, "元三大師 · 観音百籤", w / 2, y + 30, 17, "700", ink, "Noto Serif JP");
     drawCenteredText(ctx, `© ${OWNER_NAME}`, w / 2, h - 48, 18, "700", "#24211d", "Georgia");
     drawCenteredText(ctx, `${GITHUB_URL} · ${SITE_URL}`, w / 2, h - 24, 15, "400", "#333", "Georgia");
+  }
+
+  function drawPlainPanel(ctx, x, y, w, label, text, ink, lang, minH) {
+    ctx.font = `500 15px ${lang === "en" ? "Georgia" : "Noto Serif JP"}, Noto Serif SC, Yu Mincho, serif`;
+    const lines = wrapTextLines(ctx, text, w - 28, lang === "en" ? 5 : 6);
+    const h = Math.max(minH, 45 + lines.length * 20);
+    ctx.strokeStyle = "rgba(17,17,15,.58)";
+    ctx.lineWidth = 1;
+    ctx.strokeRect(x, y, w, h);
+    drawLeftText(ctx, label, x + 12, y + 10, 14, "900", ink, "Noto Serif JP");
+    ctx.strokeStyle = "rgba(17,17,15,.28)";
+    ctx.beginPath();
+    ctx.moveTo(x + 10, y + 34);
+    ctx.lineTo(x + w - 10, y + 34);
+    ctx.stroke();
+    drawMultilineText(ctx, text, x + 12, y + 44, w - 24, 20, 15, ink, lang === "en" ? "Georgia" : "Noto Serif JP", lang === "en" ? 5 : 6);
+    return y + h;
   }
 
   function drawPaperGrain(ctx, item, w, h, alpha = 0.18) {
@@ -620,103 +643,232 @@
 
   function drawCardFortuneImage(ctx, item, w, h) {
     const lang = state.lang;
-    const paper = "#f8f5ec";
-    const ink = "#101010";
-    ctx.fillStyle = paper;
-    ctx.fillRect(0, 0, w, h);
-    drawOwnershipWatermark(ctx, w, h);
-    ctx.save();
-    ctx.globalAlpha = 0.18;
-    ctx.fillStyle = "#6c5638";
-    for (let i = 0; i < 1200; i += 1) {
-      const x = pseudoRandom(i * 17 + item.number) * w;
-      const y = pseudoRandom(i * 29 + item.number * 3) * h;
-      ctx.fillRect(x, y, 1, 1);
-    }
-    ctx.restore();
-
-    ctx.strokeStyle = ink;
-    ctx.lineWidth = 3;
-    ctx.strokeRect(34, 34, w - 68, h - 68);
-    ctx.lineWidth = 2;
-    ctx.strokeRect(52, 52, w - 104, h - 104);
-
-    const left = 70;
-    const top = 70;
-    const right = w - 70;
-    const headerH = 160;
-    const footerH = 96;
-    const bodyTop = top + headerH;
-    const bodyBottom = h - top - footerH;
-    const mid = (left + right) / 2;
-
-    ctx.lineWidth = 3;
-    ctx.strokeRect(left, top, right - left, h - top * 2);
-    ctx.beginPath();
-    ctx.moveTo(left, bodyTop);
-    ctx.lineTo(right, bodyTop);
-    ctx.moveTo(left, bodyBottom);
-    ctx.lineTo(right, bodyBottom);
-    ctx.moveTo(mid, top);
-    ctx.lineTo(mid, bodyTop);
-    ctx.moveTo(mid, bodyBottom);
-    ctx.lineTo(mid, h - top);
-    ctx.stroke();
-
-    drawCenteredText(ctx, formatNumber(item.number), left + (mid - left) / 2, top + 62, 48, "900", ink);
-    drawCenteredText(ctx, `No. ${item.number}`, left + (mid - left) / 2, top + 112, 20, "400", ink, "Georgia");
-    const fortuneText = (I18N[lang].fortunes && I18N[lang].fortunes[item.fortune]) || item.fortune;
-    drawCenteredText(ctx, fortuneText, mid + (right - mid) / 2, top + 68, lang === "en" ? 38 : 82, "900", ink);
-    drawCenteredText(ctx, I18N.en.fortunes[item.fortune] || item.fortune, mid + (right - mid) / 2, top + 123, 18, "400", ink, "Georgia");
-
-    const cols = [left, left + 230, left + 380, left + 610, right];
-    ctx.lineWidth = 1.5;
-    ctx.beginPath();
-    cols.slice(1, -1).forEach((x) => {
-      ctx.moveTo(x, bodyTop);
-      ctx.lineTo(x, bodyBottom);
-    });
-    ctx.stroke();
-
-    const poem = lang === "en" ? item.meaning_en || "" : item.poem_ja || "";
-    if (lang === "en") {
-      drawWrappedText(ctx, poem, left + 24, bodyTop + 42, 182, 30, 29, ink, "Georgia");
-    } else {
-      drawVerticalText(ctx, "御神籤", cols[1] - 42, bodyTop + 44, 34, 48, ink, true);
-      drawVerticalText(ctx, poem, cols[1] - 100, bodyTop + 42, lang === "zh" ? 52 : 46, lang === "zh" ? 62 : 56, ink, true, bodyBottom - bodyTop - 86);
-    }
-
-    drawVerticalBlock(ctx, t("altLabel"), item.poem_reading || item.poem_ja || "", cols[2] - 36, bodyTop + 34, 24, 30, ink, bodyBottom - bodyTop - 68);
-    drawVerticalBlock(ctx, t("summaryTitle"), summaryForShare(item), cols[3] - 36, bodyTop + 34, 24, 31, ink, bodyBottom - bodyTop - 68);
-
     const detailLang = lang === "zh" ? "zh" : lang === "ja" ? "ja" : "en";
-    let y = bodyTop + 34;
-    Object.entries(item.details || {}).slice(0, 7).forEach(([key, value]) => {
+    const bg = "#f8f0dd";
+    const panel = "#fffaf0";
+    const red = "#b8241d";
+    const darkRed = "#7d1714";
+    const ink = "#17120f";
+    const softLine = "rgba(125,23,20,.24)";
+    ctx.fillStyle = bg;
+    ctx.fillRect(0, 0, w, h);
+    drawPaperGrain(ctx, item, w, h, 0.10);
+
+    const outer = { x: 44, y: 46, w: w - 88, h: h - 132 };
+    fillRoundRect(ctx, outer.x, outer.y, outer.w, outer.h, 34, panel);
+    strokeRoundRect(ctx, outer.x, outer.y, outer.w, outer.h, 34, "rgba(116,35,23,.22)", 2);
+
+    const pad = 46;
+    const left = outer.x + pad;
+    const right = outer.x + outer.w - pad;
+    let y = outer.y + 44;
+    const fortuneText = (I18N[lang].fortunes && I18N[lang].fortunes[item.fortune]) || item.fortune;
+
+    ctx.strokeStyle = softLine;
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(left, y + 104);
+    ctx.lineTo(right, y + 104);
+    ctx.stroke();
+    drawLeftText(ctx, formatNumber(item.number), left, y + 20, 26, "700", "#2a2118");
+    drawLeftText(ctx, `No. ${item.number}`, left, y + 58, 16, "400", "#8b6554", "Georgia");
+    drawRightText(ctx, fortuneText, right, y + 8, lang === "en" ? 46 : 76, "900", red);
+    drawRightText(ctx, I18N.en.fortunes[item.fortune] || item.fortune, right, y + 82, 16, "400", "#8b6554", "Georgia");
+    y += 134;
+
+    const poem = lang === "en" ? (item.meaning_en || "") : (item.poem_ja || "");
+    ctx.fillStyle = ink;
+    ctx.textAlign = "center";
+    ctx.textBaseline = "top";
+    ctx.font = `900 ${lang === "en" ? 25 : 38}px Noto Serif SC, Noto Serif JP, Yu Mincho, serif`;
+    const poemLines = lang === "en" ? wrapTextLines(ctx, poem, right - left, 4) : String(poem).split(/\n+/).filter(Boolean);
+    poemLines.slice(0, 4).forEach((line, i) => ctx.fillText(line, w / 2, y + i * (lang === "en" ? 38 : 62)));
+    y += lang === "en" ? 180 : 270;
+    drawDivider(ctx, left, right, y, softLine);
+    y += 26;
+
+    y = drawInfoBox(ctx, left, y, right - left, t("altLabel"), item.poem_reading || item.poem_ja || "", darkRed, ink, lang, 112);
+    y += 18;
+    y = drawInfoBox(ctx, left, y, right - left, t("summaryTitle"), summaryForShare(item), darkRed, ink, lang, 132);
+    y += 24;
+
+    const entries = getAspectEntries(item).slice(0, 9);
+    const gap = 14;
+    const colW = (right - left - gap) / 2;
+    const cardH = 102;
+    entries.forEach(([key, value], idx) => {
+      const x = left + (idx % 2) * (colW + gap);
+      const cy = y + Math.floor(idx / 2) * (cardH + gap);
+      fillRoundRect(ctx, x, cy, colW, cardH, 14, "rgba(255,251,240,.82)");
+      strokeRoundRect(ctx, x, cy, colW, cardH, 14, "rgba(184,36,29,.18)", 1.5);
       const label = (I18N[lang].aspects && I18N[lang].aspects[key]) || key;
       const text = (value && (value[detailLang] || value.zh || value.ja || value.en)) || "";
-      drawVerticalText(ctx, `○${label} ${text}`, right - 34, y, 21, 27, ink, false, 205);
-      y += 92;
+      drawLeftText(ctx, label, x + 16, cy + 14, 18, "900", darkRed);
+      drawMultilineText(ctx, text, x + 16, cy + 42, colW - 32, 18, 15, ink, lang === "en" ? "Georgia" : "Noto Serif SC", 3);
     });
+    y += Math.ceil(entries.length / 2) * (cardH + gap) + 10;
 
-    drawCenteredText(ctx, "元三大師", left + (mid - left) / 2, bodyBottom + 62, 42, "900", ink);
-    drawCenteredText(ctx, "観音百籤", mid + (right - mid) / 2, bodyBottom + 62, 42, "900", ink);
-    drawCenteredText(ctx, `© ${OWNER_NAME}`, w / 2, h - 48, 20, "700", "#24211d", "Georgia");
-    drawCenteredText(ctx, `${GITHUB_URL} · ${SITE_URL}`, w / 2, h - 24, 17, "400", "#333", "Georgia");
+    drawDivider(ctx, left, right, y, "rgba(125,23,20,.22)", true);
+    drawCenteredText(ctx, "元三大師 · 観音百籤", w / 2, y + 38, 20, "700", "#7c6254", "Noto Serif JP");
+    drawCenteredText(ctx, `© ${OWNER_NAME}`, w / 2, h - 55, 20, "700", "#24211d", "Georgia");
+    drawCenteredText(ctx, `${GITHUB_URL} · ${SITE_URL}`, w / 2, h - 28, 16, "400", "#333", "Georgia");
+  }
+
+  function getAspectEntries(item) {
+    const entries = Object.entries(item.details || {});
+    const keys = new Set(entries.map(([key]) => key));
+    if (!keys.has("方角")) entries.push(["方角", buildDirectionAspect(item)]);
+    if (!keys.has("勝負")) entries.push(["勝負", buildContestAspect(item)]);
+    return entries.slice(0, 9);
+  }
+
+  function buildDirectionAspect(item) {
+    const dirs = [
+      { zh: "东方", ja: "東", en: "east" },
+      { zh: "东南", ja: "東南", en: "southeast" },
+      { zh: "南方", ja: "南", en: "south" },
+      { zh: "西南", ja: "西南", en: "southwest" },
+      { zh: "西方", ja: "西", en: "west" },
+      { zh: "西北", ja: "西北", en: "northwest" },
+      { zh: "北方", ja: "北", en: "north" },
+      { zh: "东北", ja: "北東", en: "northeast" },
+    ];
+    const dir = dirs[item.number % dirs.length];
+    return {
+      zh: `${dir.zh}较顺，出门、会面、择位宜取明亮安静处。`,
+      ja: `${dir.ja}がよし。外出・面会・席取りは明るく静かな所を選ぶ。`,
+      en: `${dir.en} is favorable. Choose a bright, quiet place for travel, meetings, or seating.`,
+    };
+  }
+
+  function buildContestAspect(item) {
+    const score = fortuneScore(item.fortune);
+    if (score >= 7) return {
+      zh: "胜机在先，宜主动出手，但不可轻敌。",
+      ja: "勝機あり。先んじて動けばよし、油断は禁物。",
+      en: "The advantage is yours. Act first, but do not underestimate others.",
+    };
+    if (score >= 4) return {
+      zh: "胜负相半，守正比冒进更有利。",
+      ja: "勝負は半ば。無理に攻めず正道を守ればよし。",
+      en: "The contest is balanced. Steady play beats rushing ahead.",
+    };
+    return {
+      zh: "不宜强争，先退一步，等待时机再定胜负。",
+      ja: "強く争わず、一歩退いて時を待つべし。",
+      en: "Avoid forcing the contest. Step back and wait for the better moment.",
+    };
+  }
+
+  function fortuneScore(fortune) {
+    return ({ 大吉: 9, 吉: 8, 中吉: 7, 小吉: 6, 末吉: 5, 半吉: 4, 凶: 3, 小凶: 2, 末凶: 1, 大凶: 0 })[fortune] ?? 5;
+  }
+
+  function fillRoundRect(ctx, x, y, w, h, r, color) {
+    roundRectPath(ctx, x, y, w, h, r);
+    ctx.fillStyle = color;
+    ctx.fill();
+  }
+
+  function strokeRoundRect(ctx, x, y, w, h, r, color, lineWidth = 1) {
+    roundRectPath(ctx, x, y, w, h, r);
+    ctx.strokeStyle = color;
+    ctx.lineWidth = lineWidth;
+    ctx.stroke();
+  }
+
+  function roundRectPath(ctx, x, y, w, h, r) {
+    const radius = Math.min(r, w / 2, h / 2);
+    ctx.beginPath();
+    ctx.moveTo(x + radius, y);
+    ctx.lineTo(x + w - radius, y);
+    ctx.quadraticCurveTo(x + w, y, x + w, y + radius);
+    ctx.lineTo(x + w, y + h - radius);
+    ctx.quadraticCurveTo(x + w, y + h, x + w - radius, y + h);
+    ctx.lineTo(x + radius, y + h);
+    ctx.quadraticCurveTo(x, y + h, x, y + h - radius);
+    ctx.lineTo(x, y + radius);
+    ctx.quadraticCurveTo(x, y, x + radius, y);
+  }
+
+  function drawDivider(ctx, left, right, y, color, dashed = false) {
+    ctx.save();
+    ctx.strokeStyle = color;
+    ctx.lineWidth = 2;
+    if (dashed) ctx.setLineDash([8, 8]);
+    ctx.beginPath();
+    ctx.moveTo(left, y);
+    ctx.lineTo(right, y);
+    ctx.stroke();
+    ctx.restore();
+  }
+
+  function drawInfoBox(ctx, x, y, w, label, text, labelColor, ink, lang, minH) {
+    const lineHeight = 23;
+    ctx.font = `500 17px ${lang === "en" ? "Georgia" : "Noto Serif SC"}, Noto Serif JP, Yu Mincho, serif`;
+    const lines = wrapTextLines(ctx, text, w - 32, lang === "en" ? 4 : 5);
+    const h = Math.max(minH, 50 + lines.length * lineHeight);
+    fillRoundRect(ctx, x, y, w, h, 16, "rgba(184,36,29,.045)");
+    ctx.fillStyle = labelColor;
+    ctx.fillRect(x, y, 6, h);
+    drawLeftText(ctx, label, x + 18, y + 15, 17, "900", labelColor);
+    drawMultilineText(ctx, text, x + 18, y + 45, w - 36, lineHeight, 17, ink, lang === "en" ? "Georgia" : "Noto Serif SC", lang === "en" ? 4 : 5);
+    return y + h;
+  }
+
+  function drawLeftText(ctx, text, x, y, size, weight = "400", color = "#111", family = "Noto Serif SC") {
+    ctx.fillStyle = color;
+    ctx.font = `${weight} ${size}px ${family}, Noto Serif JP, Yu Mincho, serif`;
+    ctx.textAlign = "left";
+    ctx.textBaseline = "top";
+    ctx.fillText(String(text), x, y);
+  }
+
+  function drawRightText(ctx, text, x, y, size, weight = "400", color = "#111", family = "Noto Serif SC") {
+    ctx.fillStyle = color;
+    ctx.font = `${weight} ${size}px ${family}, Noto Serif JP, Yu Mincho, serif`;
+    ctx.textAlign = "right";
+    ctx.textBaseline = "top";
+    ctx.fillText(String(text), x, y);
+  }
+
+  function drawMultilineText(ctx, text, x, y, maxWidth, lineHeight, size, color, family = "Noto Serif SC", maxLines = 4) {
+    ctx.fillStyle = color;
+    ctx.font = `500 ${size}px ${family}, Noto Serif JP, Yu Mincho, serif`;
+    ctx.textAlign = "left";
+    ctx.textBaseline = "top";
+    wrapTextLines(ctx, text, maxWidth, maxLines).forEach((line, idx) => ctx.fillText(line, x, y + idx * lineHeight));
+  }
+
+  function wrapTextLines(ctx, text, maxWidth, maxLines = 4) {
+    const raw = String(text || "").replace(/\s+/g, " ").trim();
+    if (!raw) return [];
+    const hasSpaces = /\s/.test(raw);
+    const tokens = hasSpaces ? raw.split(/\s+/) : Array.from(raw);
+    const lines = [];
+    let line = "";
+    tokens.forEach((token) => {
+      const next = hasSpaces ? (line ? `${line} ${token}` : token) : `${line}${token}`;
+      if (ctx.measureText(next).width > maxWidth && line) {
+        lines.push(line);
+        line = token;
+      } else {
+        line = next;
+      }
+    });
+    if (line) lines.push(line);
+    if (lines.length > maxLines) {
+      const kept = lines.slice(0, maxLines);
+      kept[maxLines - 1] = `${kept[maxLines - 1].replace(/[。,.，、；;：:]*$/, "")}…`;
+      return kept;
+    }
+    return lines;
   }
 
   function drawOwnershipWatermark(ctx, w, h) {
-    ctx.save();
-    ctx.translate(w / 2, h / 2);
-    ctx.rotate(-Math.PI / 7);
-    ctx.globalAlpha = 0.055;
-    ctx.fillStyle = "#7d1714";
-    ctx.font = "700 54px Georgia, Times New Roman, serif";
-    ctx.textAlign = "center";
-    ctx.textBaseline = "middle";
-    ctx.fillText(`© ${OWNER_NAME}`, 0, -26);
-    ctx.font = "400 25px Georgia, Times New Roman, serif";
-    ctx.fillText("haohlin.github.io/omikuji", 0, 32);
-    ctx.restore();
+    void ctx;
+    void w;
+    void h;
   }
 
   function drawCenteredText(ctx, text, x, y, size, weight = "400", color = "#111", family = "Noto Serif SC, Noto Serif JP") {
