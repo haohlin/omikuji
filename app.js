@@ -9,6 +9,7 @@
   const OWNER_NAME = "Haohan Lin";
   const SITE_URL = "https://haohlin.github.io/omikuji/";
   const GITHUB_URL = "https://github.com/haohlin/omikuji";
+  const CJK_CANVAS_FONT = "Noto Serif SC, Noto Serif JP, Songti SC, STSong, Yu Mincho, serif";
 
   const state = {
     lang: localStorage.getItem("omikuji.lang") || "zh",
@@ -597,9 +598,9 @@
       drawMultilineText(ctx, t("shrineTitle"), left + 16, y + 54, headerW - 32, 19, 15, ink, "Georgia", 2);
       drawMultilineText(ctx, fortuneText, left + 16, y + 118, headerW - 32, 32, 28, ink, "Georgia", 2);
     } else {
-      drawVerticalText(ctx, formatNumber(item.number), left + colW * 2.5, y + 22, 19, 24, ink, true, topH - 44);
-      drawVerticalText(ctx, t("shrineTitle"), left + colW * 1.5, y + 22, 18, 23, ink, true, topH - 44);
-      drawVerticalText(ctx, fortuneText, left + colW * 0.5, y + 30, 40, 49, ink, true, topH - 60);
+      drawVerticalText(ctx, formatNumber(item.number), left + colW * 2.5, y + 22, 19, 24, ink, true, topH - 44, CJK_CANVAS_FONT);
+      drawVerticalText(ctx, t("shrineTitle"), left + colW * 1.5, y + 22, 18, 23, ink, true, topH - 44, CJK_CANVAS_FONT);
+      drawVerticalText(ctx, fortuneText, left + colW * 0.5, y + 30, 40, 49, ink, true, topH - 60, CJK_CANVAS_FONT);
     }
 
     const poemX = left + headerW + topGap;
@@ -607,7 +608,7 @@
     ctx.strokeRect(poemX, y, poemW, topH);
     const poem = lang === "en" ? (item.meaning_en || "") : (item.poem_ja || "");
     if (lang === "en") drawWrappedText(ctx, poem, poemX + 16, y + 18, poemW - 32, 19, 13.5, ink, "Georgia");
-    else drawVerticalText(ctx, poem, poemX + poemW - 45, y + 24, 25, 34, ink, false, topH - 48);
+    else drawVerticalText(ctx, poem, poemX + poemW - 45, y + 24, 25, 34, ink, true, topH - 48, CJK_CANVAS_FONT);
     y += topH + 18;
 
     y = drawPlainPanel(ctx, left, y, right - left, t("altLabel"), item.poem_reading || item.poem_ja || "", ink, lang, 110);
@@ -625,14 +626,14 @@
       const cy = y + Math.floor(idx / 3) * (boxH + gridGapY);
       const label = (I18N[lang].aspects && I18N[lang].aspects[key]) || key;
       const text = (value && (value[detailLang] || value.zh || value.ja || value.en)) || "";
-      drawLeftText(ctx, label, x + 2, cy + 7, 14, "900", ink, "Noto Serif JP");
+      drawLeftText(ctx, label, x + 2, cy + 7, 14, "900", ink, lang === "en" ? "Georgia" : CJK_CANVAS_FONT);
       ctx.strokeStyle = "rgba(17,17,15,.22)";
       ctx.lineWidth = 1;
       ctx.beginPath();
       ctx.moveTo(x + 2, cy + 25);
       ctx.lineTo(x + boxW - 2, cy + 25);
       ctx.stroke();
-      drawMultilineText(ctx, text, x + 2, cy + 34, boxW - 4, 15, 12, ink, lang === "en" ? "Georgia" : "Noto Serif JP", 4);
+      drawMultilineText(ctx, text, x + 2, cy + 34, boxW - 4, 15, 12, ink, lang === "en" ? "Georgia" : CJK_CANVAS_FONT, 4, lang === "en" ? "500" : "600");
     });
     y += 3 * boxH + 2 * gridGapY + 4;
 
@@ -642,25 +643,25 @@
     ctx.moveTo(left, sourceY);
     ctx.lineTo(right, sourceY);
     ctx.stroke();
-    drawCenteredText(ctx, "元三大師 · 観音百籤", w / 2, sourceY + 24, 17, "700", ink, "Noto Serif JP");
+    drawCenteredText(ctx, "元三大師 · 観音百籤", w / 2, sourceY + 24, 17, "700", ink, CJK_CANVAS_FONT);
     drawCenteredText(ctx, `© ${OWNER_NAME}`, w / 2, h - 48, 18, "700", "#24211d", "Georgia");
     drawCenteredText(ctx, `${GITHUB_URL} · ${SITE_URL}`, w / 2, h - 24, 15, "400", "#333", "Georgia");
   }
 
   function drawPlainPanel(ctx, x, y, w, label, text, ink, lang, minH) {
-    ctx.font = `500 15px ${lang === "en" ? "Georgia" : "Noto Serif JP"}, Noto Serif SC, Yu Mincho, serif`;
+    ctx.font = `${lang === "en" ? "500" : "600"} 15px ${lang === "en" ? "Georgia" : CJK_CANVAS_FONT}`;
     const lines = wrapTextLines(ctx, text, w - 28, lang === "en" ? 5 : 6);
     const h = Math.max(minH, 45 + lines.length * 20);
     ctx.strokeStyle = "rgba(17,17,15,.58)";
     ctx.lineWidth = 1;
     ctx.strokeRect(x, y, w, h);
-    drawLeftText(ctx, label, x + 12, y + 10, 14, "900", ink, "Noto Serif JP");
+    drawLeftText(ctx, label, x + 12, y + 10, 14, "900", ink, lang === "en" ? "Georgia" : CJK_CANVAS_FONT);
     ctx.strokeStyle = "rgba(17,17,15,.28)";
     ctx.beginPath();
     ctx.moveTo(x + 10, y + 34);
     ctx.lineTo(x + w - 10, y + 34);
     ctx.stroke();
-    drawMultilineText(ctx, text, x + 12, y + 44, w - 24, 20, 15, ink, lang === "en" ? "Georgia" : "Noto Serif JP", lang === "en" ? 5 : 6);
+    drawMultilineText(ctx, text, x + 12, y + 44, w - 24, 20, 15, ink, lang === "en" ? "Georgia" : CJK_CANVAS_FONT, lang === "en" ? 5 : 6, lang === "en" ? "500" : "600");
     return y + h;
   }
 
@@ -722,10 +723,10 @@
     ctx.stroke();
     drawLeftText(ctx, formatNumber(item.number), left, y + 18, 26, "700", "#2a2118");
     drawLeftText(ctx, `No. ${item.number}`, left, y + 54, 16, "400", "#8b6554", "Georgia");
-    drawRightText(ctx, t("shrineTitle").replace(/\n/g, " "), right, y + 18, lang === "en" ? 22 : 24, "900", darkRed, lang === "en" ? "Georgia" : "Noto Serif SC");
+    drawRightText(ctx, t("shrineTitle").replace(/\n/g, " "), right, y + 18, lang === "en" ? 22 : 24, "900", darkRed, lang === "en" ? "Georgia" : CJK_CANVAS_FONT);
     drawRightText(ctx, t("shrineSub").toUpperCase(), right, y + 54, 14, "400", "#8b6554", "Georgia");
     if (lang === "en") drawCenteredText(ctx, fortuneText, w / 2, y + 88, 34, "900", red, "Georgia");
-    else drawCenteredText(ctx, fortuneText, w / 2, y + 78, 76, "900", red, "Noto Serif SC");
+    else drawCenteredText(ctx, fortuneText, w / 2, y + 78, 76, "900", red, CJK_CANVAS_FONT);
     drawCenteredText(ctx, I18N.en.fortunes[item.fortune] || item.fortune, w / 2, y + (lang === "en" ? 126 : 150), 16, "400", "#8b6554", "Georgia");
     y += lang === "en" ? 174 : 188;
 
@@ -733,7 +734,7 @@
     ctx.fillStyle = ink;
     ctx.textAlign = "center";
     ctx.textBaseline = "top";
-    ctx.font = `900 ${lang === "en" ? 19 : 38}px ${lang === "en" ? "Georgia" : "Noto Serif SC"}, Noto Serif JP, Yu Mincho, serif`;
+    ctx.font = `900 ${lang === "en" ? 19 : 38}px ${lang === "en" ? "Georgia" : CJK_CANVAS_FONT}`;
     const poemLines = lang === "en" ? wrapTextLines(ctx, poem, right - left, 5) : String(poem).split(/\n+/).filter(Boolean);
     if (lang === "en") ctx.textAlign = "left";
     poemLines.slice(0, lang === "en" ? 5 : 4).forEach((line, i) => ctx.fillText(line, lang === "en" ? left : w / 2, y + i * (lang === "en" ? 29 : 62)));
@@ -758,8 +759,8 @@
       strokeRoundRect(ctx, x, cy, colW, cardH, 14, "rgba(184,36,29,.18)", 1.5);
       const label = (I18N[lang].aspects && I18N[lang].aspects[key]) || key;
       const text = (value && (value[detailLang] || value.zh || value.ja || value.en)) || "";
-      drawLeftText(ctx, label, x + 16, cy + 14, 18, "900", darkRed);
-      drawMultilineText(ctx, text, x + 16, cy + 42, colW - 32, 18, 15, ink, lang === "en" ? "Georgia" : "Noto Serif SC", 3);
+      drawLeftText(ctx, label, x + 16, cy + 14, 18, "900", darkRed, lang === "en" ? "Georgia" : CJK_CANVAS_FONT);
+      drawMultilineText(ctx, text, x + 16, cy + 42, colW - 32, 18, 15, ink, lang === "en" ? "Georgia" : CJK_CANVAS_FONT, 3, lang === "en" ? "500" : "600");
     });
     y += Math.ceil(entries.length / 2) * (cardH + gap) + 10;
 
@@ -860,14 +861,14 @@
 
   function drawInfoBox(ctx, x, y, w, label, text, labelColor, ink, lang, minH) {
     const lineHeight = 23;
-    ctx.font = `500 17px ${lang === "en" ? "Georgia" : "Noto Serif SC"}, Noto Serif JP, Yu Mincho, serif`;
+    ctx.font = `${lang === "en" ? "500" : "600"} 17px ${lang === "en" ? "Georgia" : CJK_CANVAS_FONT}`;
     const lines = wrapTextLines(ctx, text, w - 32, lang === "en" ? 4 : 5);
     const h = Math.max(minH, 50 + lines.length * lineHeight);
     fillRoundRect(ctx, x, y, w, h, 16, "rgba(184,36,29,.045)");
     ctx.fillStyle = labelColor;
     ctx.fillRect(x, y, 6, h);
     drawLeftText(ctx, label, x + 18, y + 15, 17, "900", labelColor);
-    drawMultilineText(ctx, text, x + 18, y + 45, w - 36, lineHeight, 17, ink, lang === "en" ? "Georgia" : "Noto Serif SC", lang === "en" ? 4 : 5);
+    drawMultilineText(ctx, text, x + 18, y + 45, w - 36, lineHeight, 17, ink, lang === "en" ? "Georgia" : CJK_CANVAS_FONT, lang === "en" ? 4 : 5, lang === "en" ? "500" : "600");
     return y + h;
   }
 
@@ -895,9 +896,9 @@
     wrapTextLines(ctx, text, maxWidth, maxLines).forEach((line, idx) => ctx.fillText(line, right, y + idx * lineHeight));
   }
 
-  function drawMultilineText(ctx, text, x, y, maxWidth, lineHeight, size, color, family = "Noto Serif SC", maxLines = 4) {
+  function drawMultilineText(ctx, text, x, y, maxWidth, lineHeight, size, color, family = "Noto Serif SC", maxLines = 4, weight = "500") {
     ctx.fillStyle = color;
-    ctx.font = `500 ${size}px ${family}, Noto Serif JP, Yu Mincho, serif`;
+    ctx.font = `${weight} ${size}px ${family}, Noto Serif JP, Yu Mincho, serif`;
     ctx.textAlign = "left";
     ctx.textBaseline = "top";
     wrapTextLines(ctx, text, maxWidth, maxLines).forEach((line, idx) => ctx.fillText(line, x, y + idx * lineHeight));
@@ -967,9 +968,9 @@
     drawVerticalText(ctx, text, x - 42, y, size, step, color, false, maxHeight);
   }
 
-  function drawVerticalText(ctx, text, x, y, size, step, color, bold = false, maxHeight = 1000) {
+  function drawVerticalText(ctx, text, x, y, size, step, color, bold = false, maxHeight = 1000, family = CJK_CANVAS_FONT) {
     ctx.fillStyle = color;
-    ctx.font = `${bold ? "900" : "500"} ${size}px Noto Serif SC, Noto Serif JP, Yu Mincho, serif`;
+    ctx.font = `${bold ? "900" : "600"} ${size}px ${family}`;
     ctx.textAlign = "center";
     ctx.textBaseline = "top";
     const clean = String(text || "").replace(/\s+/g, "");

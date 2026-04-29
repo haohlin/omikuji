@@ -100,7 +100,7 @@ a{color:var(--torii-dark);text-decoration:none;border-bottom:1px solid rgba(184,
 .torii-pillar.left{left:24%}.torii-pillar.right{right:24%}
 .torii-pillar::after{content:"";position:absolute;left:-16px;right:-16px;bottom:-12px;height:18px;border-radius:8px;background:var(--torii-dark)}
 .shrine-title{margin:4px 0 8px;font-size:clamp(58px,14vw,116px);line-height:.95;font-family:var(--jp-serif);font-weight:900;color:var(--ink);letter-spacing:.12em;text-shadow:0 4px 0 rgba(255,255,255,.35),0 11px 25px rgba(73,34,10,.12);writing-mode:horizontal-tb;font-variant-east-asian:traditional;white-space:nowrap}
-html[data-lang="zh"] .shrine-title{font-family:var(--jp-serif);font-weight:900;letter-spacing:.12em}
+html[data-lang="zh"] .shrine-title{font-family:var(--serif);font-weight:900;letter-spacing:.12em;font-variant-east-asian:normal}
 html[data-lang="ja"] .shrine-title{font-family:var(--jp-serif);font-weight:900;letter-spacing:.18em}
 html[data-lang="en"] .shrine-title{font-family:var(--latin-serif);font-size:clamp(48px,11vw,86px);letter-spacing:.05em}
 .shrine-sub,.shrine-inst,.shake-prompt{margin:8px 0;color:var(--muted);font-weight:700;letter-spacing:.08em}
@@ -240,6 +240,65 @@ html[data-lang="en"] .poem-zh{font-family:var(--latin-serif);font-size:18px;line
 #paper[data-layout="reference"] .aspect span{display:block;font-family:var(--jp-serif);font-size:9.8px;font-weight:500;line-height:1.35;color:#111;text-align:left}
 #paper[data-layout="reference"] .omikuji-footer-mark{grid-column:1 / -1;grid-row:6;align-self:end;height:auto;display:block;text-align:center;border-top:1px solid rgba(17,17,17,.55);margin-top:8px;padding-top:7px;padding-bottom:0;font-family:var(--jp-serif);font-size:10px;font-weight:700;letter-spacing:.04em;color:#111}
 #paper[data-layout="reference"] .omikuji-footer-mark span{display:inline;height:auto}#paper[data-layout="reference"] .omikuji-footer-mark span+span{border-left:0}#paper[data-layout="reference"] .omikuji-footer-mark span+span::before{content:" · "}
+
+html[data-lang="zh"] .stage,
+html[data-lang="zh"] #paper,
+html[data-lang="zh"] .paper-inner,
+html[data-lang="zh"] .omikuji-frame,
+html[data-lang="zh"] .omikuji-header,
+html[data-lang="zh"] .omikuji-body,
+html[data-lang="zh"] .paper-num,
+html[data-lang="zh"] .paper-shrine,
+html[data-lang="zh"] .paper-fortune,
+html[data-lang="zh"] .paper-title-vertical,
+html[data-lang="zh"] .poem-zh,
+html[data-lang="zh"] .poem-alt-wrap,
+html[data-lang="zh"] .poem-alt-label,
+html[data-lang="zh"] .poem-alt-text,
+html[data-lang="zh"] .summary-wrap,
+html[data-lang="zh"] .summary-label,
+html[data-lang="zh"] .summary,
+html[data-lang="zh"] .aspects,
+html[data-lang="zh"] .aspect,
+html[data-lang="zh"] .aspect b,
+html[data-lang="zh"] .aspect span{
+  font-family:var(--serif)!important;
+  font-synthesis:none;
+  font-variant-east-asian:normal;
+  text-rendering:geometricPrecision;
+}
+html[data-lang="zh"] .poem-alt-text,
+html[data-lang="zh"] .summary,
+html[data-lang="zh"] .aspect span{font-weight:600!important;color:#111!important}
+html[data-lang="zh"] .paper-num,
+html[data-lang="zh"] .paper-shrine,
+html[data-lang="zh"] .paper-fortune,
+html[data-lang="zh"] .paper-title-vertical,
+html[data-lang="zh"] .poem-zh,
+html[data-lang="zh"] .poem-alt-label,
+html[data-lang="zh"] .summary-label,
+html[data-lang="zh"] .aspect b{font-weight:900!important;color:#0d0d0c!important}
+html[data-lang="zh"] #paper[data-layout="reference"] .paper-num,
+html[data-lang="zh"] #paper[data-layout="reference"] .paper-shrine,
+html[data-lang="zh"] #paper[data-layout="reference"] .paper-fortune,
+html[data-lang="zh"] #paper[data-layout="reference"] .paper-title-vertical,
+html[data-lang="zh"] #paper[data-layout="reference"] .poem-zh,
+html[data-lang="zh"] #paper[data-layout="reference"] .poem-alt-label,
+html[data-lang="zh"] #paper[data-layout="reference"] .summary-label,
+html[data-lang="zh"] #paper[data-layout="reference"] .aspect b,
+html[data-lang="zh"] #paper[data-layout="card"] .paper-num,
+html[data-lang="zh"] #paper[data-layout="card"] .paper-shrine,
+html[data-lang="zh"] #paper[data-layout="card"] .paper-fortune,
+html[data-lang="zh"] #paper[data-layout="card"] .poem-zh,
+html[data-lang="zh"] #paper[data-layout="card"] .poem-alt-label,
+html[data-lang="zh"] #paper[data-layout="card"] .summary-label,
+html[data-lang="zh"] #paper[data-layout="card"] .aspect b{font-family:var(--serif)!important;font-weight:900!important;color:#0d0d0c!important;font-variant-east-asian:normal}
+html[data-lang="zh"] #paper[data-layout="reference"] .poem-alt-text,
+html[data-lang="zh"] #paper[data-layout="reference"] .summary,
+html[data-lang="zh"] #paper[data-layout="reference"] .aspect span,
+html[data-lang="zh"] #paper[data-layout="card"] .poem-alt-text,
+html[data-lang="zh"] #paper[data-layout="card"] .summary,
+html[data-lang="zh"] #paper[data-layout="card"] .aspect span{font-family:var(--serif)!important;font-weight:600!important;color:#111!important;font-variant-east-asian:normal}
 
 #paper[data-layout="card"]{width:min(100%,520px)}
 #paper[data-layout="card"] .paper-crest{display:none}
