@@ -5,8 +5,10 @@
   const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 
   const DATA = Array.isArray(window.OMIKUJI) ? window.OMIKUJI : [];
-  const SHAKE_TARGET = 8;
   const SHAKE_COOLDOWN = 260;
+  const OWNER_NAME = "Haohan Lin";
+  const SITE_URL = "https://haohlin.github.io/omikuji/";
+  const GITHUB_URL = "https://github.com/haohlin/omikuji";
 
   const state = {
     lang: localStorage.getItem("omikuji.lang") || "zh",
@@ -15,6 +17,9 @@
     lastMotionAt: 0,
     lastMagnitude: 0,
     selected: null,
+    sessionSalt: String(Date.now()),
+    drawSeed: "",
+    paperLayout: localStorage.getItem("omikuji.layout") || "reference",
     audio: null,
     petals: [],
     raf: 0,
@@ -27,7 +32,7 @@
       sub: "观音百签 · 元三大师",
       inst: "静心祈愿，然后摇动签筒",
       start: "开始参拜",
-      shakePrompt: "摇一摇手机，或连续点击签筒",
+      shakePrompt: "摇几次都可以抽；次数会改变签运",
       shakeUnit: " 次",
       draw: "抽签",
       back: "返回",
@@ -45,6 +50,10 @@
       numberPrefix: "第",
       numberSuffix: "番",
       summaryTitle: "解签",
+      shrineTitle: "総本宮\n御神籤",
+      shrineSub: "Kannon Hundred Lots",
+      layoutReference: "稻荷纸签",
+      layoutCard: "卡片版",
       aspects: {
         願事: "愿望",
         恋愛: "恋爱",
@@ -72,7 +81,7 @@
       sub: "観音百籤 · 元三大師",
       inst: "心を静め、願いを念じて筒を振る",
       start: "参拝へ",
-      shakePrompt: "筒を振るか、画面を連打する",
+      shakePrompt: "何度振っても引けます。回数で籤が変わります",
       shakeUnit: " 回",
       draw: "籤を引く",
       back: "戻る",
@@ -90,6 +99,10 @@
       numberPrefix: "第",
       numberSuffix: "番",
       summaryTitle: "御告げ",
+      shrineTitle: "総本宮\n御神籤",
+      shrineSub: "Kannon Hundred Lots",
+      layoutReference: "稲荷紙籤",
+      layoutCard: "カード版",
       aspects: {
         願事: "願事",
         恋愛: "恋愛",
@@ -117,7 +130,7 @@
       sub: "Kannon Hundred Lots · Ganzan Daishi",
       inst: "Quiet your heart, make a wish, then shake the box",
       start: "Enter the Shrine",
-      shakePrompt: "Shake your phone, or tap the fortune box",
+      shakePrompt: "Shake any number of times; each count changes the lot",
       shakeUnit: " shakes",
       draw: "Draw a Lot",
       back: "Back",
@@ -135,6 +148,10 @@
       numberPrefix: "No. ",
       numberSuffix: "",
       summaryTitle: "Reading",
+      shrineTitle: "Head Shrine\nOmikuji",
+      shrineSub: "Kannon Hundred Lots",
+      layoutReference: "Shrine Slip",
+      layoutCard: "Card View",
       aspects: {
         願事: "Wish",
         恋愛: "Love",
@@ -179,6 +196,9 @@
       pNumEn: $("#p-num-en"),
       pFortune: $("#p-fortune"),
       pFortuneEn: $("#p-fortune-en"),
+      pShrineTitle: $("#p-shrine-title"),
+      pShrineSub: $("#p-shrine-sub"),
+      layoutButtons: $$(".layout-btn"),
       pPoemZh: $("#p-poem-zh"),
       pPoemAlt: $("#p-poem-alt"),
       pSummary: $("#p-summary"),
@@ -189,7 +209,7 @@
       ghLink: $("#gh-link"),
     });
 
-    if (els.ghLink) els.ghLink.href = "https://github.com/haohlin/omikuji";
+    if (els.ghLink) els.ghLink.href = GITHUB_URL;
     bindEvents();
     setLang(I18N[state.lang] ? state.lang : "zh");
     showStage("intro");
@@ -199,6 +219,7 @@
 
   function bindEvents() {
     els.langButtons.forEach((btn) => btn.addEventListener("click", () => setLang(btn.dataset.lang)));
+    els.layoutButtons.forEach((btn) => btn.addEventListener("click", () => setPaperLayout(btn.dataset.layout)));
     els.goShake.addEventListener("click", () => {
       resetShake();
       showStage("shake");
@@ -232,8 +253,20 @@
       const key = node.dataset.i18n;
       if (I18N[state.lang][key]) node.textContent = I18N[state.lang][key];
     });
+    if (els.pShrineTitle) els.pShrineTitle.textContent = t("shrineTitle");
+    if (els.pShrineSub) els.pShrineSub.textContent = t("shrineSub");
     updateShakeCount();
+    setPaperLayout(state.paperLayout, false);
     if (state.selected) renderFortune(state.selected);
+  }
+
+  function setPaperLayout(layout, persist = true) {
+    state.paperLayout = layout === "card" ? "card" : "reference";
+    if (persist) localStorage.setItem("omikuji.layout", state.paperLayout);
+    if (els.paper) els.paper.dataset.layout = state.paperLayout;
+    if (els.layoutButtons) {
+      els.layoutButtons.forEach((btn) => btn.classList.toggle("active", btn.dataset.layout === state.paperLayout));
+    }
   }
 
   function showStage(name) {
@@ -285,21 +318,21 @@
   }
 
   function registerShake() {
-    state.shakeCount = Math.min(SHAKE_TARGET, state.shakeCount + 1);
+    state.shakeCount += 1;
     updateShakeCount();
     animateBox();
     soundShake();
-    if (state.shakeCount >= SHAKE_TARGET) {
-      els.goDraw.classList.remove("hidden");
-      soundBell(0.42);
-    }
+    els.goDraw.classList.remove("hidden");
+    if (state.shakeCount === 1 || state.shakeCount % 8 === 0) soundBell(0.32);
   }
 
   function resetShake() {
     state.shakeCount = 0;
     state.lastMagnitude = 0;
+    state.sessionSalt = `${Date.now()}-${Math.random().toString(36).slice(2)}`;
+    state.drawSeed = "";
     updateShakeCount();
-    els.goDraw.classList.add("hidden");
+    els.goDraw.classList.remove("hidden");
   }
 
   function updateShakeCount() {
@@ -321,7 +354,9 @@
     }
     unlockAudio();
     soundStick();
-    state.selected = DATA[Math.floor(Math.random() * DATA.length)];
+    const seed = buildDrawSeed();
+    state.drawSeed = seed;
+    state.selected = DATA[pickIndexBySeed(seed, DATA.length)];
     els.stickNumber.textContent = formatNumber(state.selected.number);
     els.stickFloating.style.animation = "none";
     void els.stickFloating.offsetWidth;
@@ -344,6 +379,8 @@
     els.pNumEn.textContent = `No. ${item.number}`;
     els.pFortune.textContent = (I18N[lang].fortunes && I18N[lang].fortunes[item.fortune]) || item.fortune;
     els.pFortuneEn.textContent = I18N.en.fortunes[item.fortune] || item.fortune;
+    if (els.pShrineTitle) els.pShrineTitle.textContent = t("shrineTitle");
+    if (els.pShrineSub) els.pShrineSub.textContent = t("shrineSub");
 
     if (lang === "en") {
       els.pPoemZh.textContent = item.meaning_en || item.poem_ja || "";
@@ -379,64 +416,86 @@
     const text = item
       ? `${t("shared")}\n${formatNumber(item.number)} · ${fortune}\n${summaryForShare(item)}`
       : t("shared");
+    let file = null;
     try {
-      const file = item ? await createFortuneImageFile(item) : null;
-      const payload = {
-        title: document.title,
-        text,
-        url: location.href,
-      };
-      if (file && navigator.canShare && navigator.canShare({ files: [file] })) {
+      file = item ? await createFortuneImageFile(item) : null;
+    } catch (err) {
+      console.warn("omikuji image render failed", err);
+    }
+    const payload = { title: document.title, text, url: SITE_URL };
+    try {
+      if (file && typeof File !== "undefined" && file instanceof File && navigator.canShare && navigator.canShare({ files: [file] })) {
         await navigator.share({ ...payload, files: [file] });
         toast(t("imageReady"));
         return;
       }
-      if (file && navigator.share) {
+      if (navigator.share) {
         await navigator.share(payload);
-        downloadFile(file);
-        toast(t("imageSaved"));
+        if (file) downloadFile(file);
+        toast(file ? t("imageSaved") : t("copied"));
         return;
       }
-      if (file) {
-        downloadFile(file);
-        toast(t("imageSaved"));
-        return;
-      }
-      await navigator.clipboard.writeText(`${text}\n${location.href}`);
-      toast(t("copied"));
     } catch (err) {
       if (err && err.name === "AbortError") return;
-      try {
-        await navigator.clipboard.writeText(`${text}\n${location.href}`);
-        toast(t("imageError"));
-      } catch (_) {
-        toast(location.href);
-      }
+      console.warn("omikuji native share failed", err);
+    }
+    if (file) {
+      downloadFile(file);
+      toast(t("imageSaved"));
+      return;
+    }
+    try {
+      await navigator.clipboard.writeText(`${text}\n${SITE_URL}`);
+      toast(t("imageError"));
+    } catch (_) {
+      toast(SITE_URL);
     }
   }
 
   async function createFortuneImageFile(item) {
+    if (document.fonts && document.fonts.ready) {
+      try { await Promise.race([document.fonts.ready, new Promise((resolve) => setTimeout(resolve, 900))]); } catch (_) {}
+    }
     const canvas = renderFortuneCanvas(item);
-    const blob = await new Promise((resolve) => canvas.toBlob(resolve, "image/png", 0.96));
+    const blob = await new Promise((resolve) => {
+      if (canvas.toBlob) canvas.toBlob(resolve, "image/png", 0.96);
+      else resolve(dataUrlToBlob(canvas.toDataURL("image/png")));
+    });
     if (!blob) throw new Error("Could not render fortune image");
-    return new File([blob], `omikuji-${item.number}.png`, { type: "image/png" });
+    const name = `omikuji-${item.number}.png`;
+    try {
+      return new File([blob], name, { type: "image/png" });
+    } catch (_) {
+      blob.name = name;
+      return blob;
+    }
   }
 
   function downloadFile(file) {
     const url = URL.createObjectURL(file);
     const a = document.createElement("a");
     a.href = url;
-    a.download = file.name;
+    a.download = file.name || `omikuji-${Date.now()}.png`;
     document.body.appendChild(a);
     a.click();
     a.remove();
     setTimeout(() => URL.revokeObjectURL(url), 1500);
   }
 
+  function dataUrlToBlob(dataUrl) {
+    const [head, body] = dataUrl.split(",");
+    const mime = (head.match(/data:([^;]+)/) || [])[1] || "image/png";
+    const bin = atob(body);
+    const bytes = new Uint8Array(bin.length);
+    for (let i = 0; i < bin.length; i += 1) bytes[i] = bin.charCodeAt(i);
+    return new Blob([bytes], { type: mime });
+  }
+
   function renderFortuneCanvas(item) {
     const scale = 2;
-    const w = 900;
-    const h = 1500;
+    const reference = state.paperLayout !== "card";
+    const w = reference ? 720 : 900;
+    const h = reference ? 1740 : 1500;
     const canvas = document.createElement("canvas");
     canvas.width = w * scale;
     canvas.height = h * scale;
@@ -449,11 +508,123 @@
   }
 
   function drawFortuneImage(ctx, item, w, h) {
+    if (state.paperLayout === "card") drawCardFortuneImage(ctx, item, w, h);
+    else drawReferenceFortuneImage(ctx, item, w, h);
+  }
+
+  function drawReferenceFortuneImage(ctx, item, w, h) {
+    const lang = state.lang;
+    const paper = "#fbf7ea";
+    const ink = "#11110f";
+    const line = "rgba(17,17,15,.64)";
+    ctx.fillStyle = paper;
+    ctx.fillRect(0, 0, w, h);
+    drawOwnershipWatermark(ctx, w, h);
+    drawPaperGrain(ctx, item, w, h, 0.12);
+
+    const padX = 54;
+    const top = 48;
+    const bottom = h - 92;
+    ctx.strokeStyle = "rgba(17,17,15,.58)";
+    ctx.lineWidth = 2;
+    ctx.strokeRect(padX, top, w - padX * 2, bottom - top);
+    ctx.lineWidth = 1;
+    ctx.strokeRect(padX + 14, top + 14, w - (padX + 14) * 2, bottom - top - 28);
+
+    drawCrest(ctx, w / 2, top + 82, 52, ink);
+    const headerTop = top + 160;
+    drawVerticalText(ctx, formatNumber(item.number), w / 2 + 70, headerTop, 27, 34, ink, true, 170);
+    drawVerticalText(ctx, t("shrineTitle"), w / 2 + 16, headerTop - 6, 22, 28, ink, true, 220);
+    const fortuneText = (I18N[lang].fortunes && I18N[lang].fortunes[item.fortune]) || item.fortune;
+    drawVerticalText(ctx, fortuneText, w / 2 - 54, headerTop + 12, lang === "en" ? 24 : 48, lang === "en" ? 30 : 58, ink, true, 180);
+
+    const poemTop = headerTop + 248;
+    const poemBottom = poemTop + 470;
+    ctx.strokeStyle = line;
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(padX + 28, poemBottom);
+    ctx.lineTo(w - padX - 28, poemBottom);
+    ctx.stroke();
+
+    const poem = lang === "en" ? (item.meaning_en || "") : (item.poem_ja || "");
+    if (lang === "en") drawWrappedText(ctx, poem, padX + 56, poemTop + 20, w - padX * 2 - 112, 34, 25, ink, "Georgia");
+    else drawVerticalText(ctx, poem, w - padX - 86, poemTop + 18, 30, 44, ink, false, 410);
+
+    const lowerTop = poemBottom + 34;
+    const lowerBottom = bottom - 74;
+    const availableH = lowerBottom - lowerTop;
+    const readingX = w - padX - 66;
+    const summaryX = w - padX - 182;
+    const detailsRightX = w - padX - 318;
+    const detailsLeftX = w - padX - 452;
+    ctx.strokeStyle = "rgba(17,17,15,.42)";
+    ctx.beginPath();
+    [w - padX - 122, w - padX - 256, w - padX - 388].forEach((x) => {
+      ctx.moveTo(x, lowerTop - 16);
+      ctx.lineTo(x, lowerBottom);
+    });
+    ctx.stroke();
+
+    drawVerticalText(ctx, t("altLabel"), readingX + 28, lowerTop, 15, 20, ink, true, availableH);
+    drawVerticalText(ctx, item.poem_reading || item.poem_ja || "", readingX, lowerTop, 11, 15, ink, false, availableH);
+    drawVerticalText(ctx, t("summaryTitle"), summaryX + 28, lowerTop, 15, 20, ink, true, availableH);
+    drawVerticalText(ctx, summaryForShare(item), summaryX, lowerTop, 12, 17, ink, false, availableH);
+
+    const detailLang = lang === "zh" ? "zh" : lang === "ja" ? "ja" : "en";
+    const entries = Object.entries(item.details || {}).slice(0, 8);
+    entries.forEach(([key, value], idx) => {
+      const label = (I18N[lang].aspects && I18N[lang].aspects[key]) || key;
+      const text = (value && (value[detailLang] || value.zh || value.ja || value.en)) || "";
+      const colX = idx < 4 ? detailsRightX : detailsLeftX;
+      const y = lowerTop + (idx % 4) * 132;
+      drawVerticalText(ctx, `${label}：${text}`, colX, y, 12, 16, ink, false, 120);
+    });
+
+    ctx.strokeStyle = line;
+    ctx.beginPath();
+    ctx.moveTo(padX + 28, lowerBottom + 20);
+    ctx.lineTo(w - padX - 28, lowerBottom + 20);
+    ctx.stroke();
+    drawCenteredText(ctx, "元三大師 · 観音百籤", w / 2, lowerBottom + 48, 18, "700", ink, "Noto Serif JP");
+    drawCenteredText(ctx, `© ${OWNER_NAME}`, w / 2, h - 48, 18, "700", "#24211d", "Georgia");
+    drawCenteredText(ctx, `${GITHUB_URL} · ${SITE_URL}`, w / 2, h - 24, 15, "400", "#333", "Georgia");
+  }
+
+  function drawPaperGrain(ctx, item, w, h, alpha = 0.18) {
+    ctx.save();
+    ctx.globalAlpha = alpha;
+    ctx.fillStyle = "#6c5638";
+    for (let i = 0; i < 1200; i += 1) {
+      const x = pseudoRandom(i * 17 + item.number) * w;
+      const y = pseudoRandom(i * 29 + item.number * 3) * h;
+      ctx.fillRect(x, y, 1, 1);
+    }
+    ctx.restore();
+  }
+
+  function drawCrest(ctx, x, y, r, color) {
+    ctx.save();
+    ctx.strokeStyle = color;
+    ctx.fillStyle = color;
+    ctx.lineWidth = 3;
+    ctx.beginPath();
+    ctx.arc(x, y, r, 0, Math.PI * 2);
+    ctx.stroke();
+    ctx.font = `900 ${Math.floor(r * 0.86)}px Noto Serif JP, Yu Mincho, serif`;
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.fillText("稲", x, y + 2);
+    ctx.restore();
+  }
+
+  function drawCardFortuneImage(ctx, item, w, h) {
     const lang = state.lang;
     const paper = "#f8f5ec";
     const ink = "#101010";
     ctx.fillStyle = paper;
     ctx.fillRect(0, 0, w, h);
+    drawOwnershipWatermark(ctx, w, h);
     ctx.save();
     ctx.globalAlpha = 0.18;
     ctx.fillStyle = "#6c5638";
@@ -529,10 +700,26 @@
 
     drawCenteredText(ctx, "元三大師", left + (mid - left) / 2, bodyBottom + 62, 42, "900", ink);
     drawCenteredText(ctx, "観音百籤", mid + (right - mid) / 2, bodyBottom + 62, 42, "900", ink);
-    drawCenteredText(ctx, location.origin + location.pathname, w / 2, h - 28, 18, "400", "#333", "Georgia");
+    drawCenteredText(ctx, `© ${OWNER_NAME}`, w / 2, h - 48, 20, "700", "#24211d", "Georgia");
+    drawCenteredText(ctx, `${GITHUB_URL} · ${SITE_URL}`, w / 2, h - 24, 17, "400", "#333", "Georgia");
   }
 
-  function drawCenteredText(ctx, text, x, y, size, weight = "400", color = "#111", family = "Noto Serif JP") {
+  function drawOwnershipWatermark(ctx, w, h) {
+    ctx.save();
+    ctx.translate(w / 2, h / 2);
+    ctx.rotate(-Math.PI / 7);
+    ctx.globalAlpha = 0.055;
+    ctx.fillStyle = "#7d1714";
+    ctx.font = "700 54px Georgia, Times New Roman, serif";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.fillText(`© ${OWNER_NAME}`, 0, -26);
+    ctx.font = "400 25px Georgia, Times New Roman, serif";
+    ctx.fillText("haohlin.github.io/omikuji", 0, 32);
+    ctx.restore();
+  }
+
+  function drawCenteredText(ctx, text, x, y, size, weight = "400", color = "#111", family = "Noto Serif SC, Noto Serif JP") {
     ctx.fillStyle = color;
     ctx.font = `${weight} ${size}px ${family}, Yu Mincho, serif`;
     ctx.textAlign = "center";
@@ -542,7 +729,7 @@
 
   function drawWrappedText(ctx, text, x, y, maxWidth, lineHeight, size, color, family = "Noto Serif JP") {
     ctx.fillStyle = color;
-    ctx.font = `400 ${size}px ${family}, Yu Mincho, serif`;
+    ctx.font = `500 ${size}px ${family}, Noto Serif SC, Noto Serif JP, Yu Mincho, serif`;
     ctx.textAlign = "left";
     ctx.textBaseline = "top";
     const words = String(text).split(/\s+/);
@@ -567,7 +754,7 @@
 
   function drawVerticalText(ctx, text, x, y, size, step, color, bold = false, maxHeight = 1000) {
     ctx.fillStyle = color;
-    ctx.font = `${bold ? "900" : "400"} ${size}px Noto Serif JP, Yu Mincho, serif`;
+    ctx.font = `${bold ? "900" : "500"} ${size}px Noto Serif SC, Noto Serif JP, Yu Mincho, serif`;
     ctx.textAlign = "center";
     ctx.textBaseline = "top";
     const clean = String(text || "").replace(/\s+/g, "");
@@ -586,6 +773,29 @@
   function pseudoRandom(seed) {
     const x = Math.sin(seed) * 10000;
     return x - Math.floor(x);
+  }
+
+  function buildDrawSeed() {
+    const count = Math.max(0, state.shakeCount);
+    return `${state.sessionSalt}|shakes:${count}|items:${DATA.length}`;
+  }
+
+  function pickIndexBySeed(seed, length) {
+    if (!length) return 0;
+    return Math.floor(seededRandom(seed) * length) % length;
+  }
+
+  function seededRandom(seed) {
+    let h = 2166136261;
+    const text = String(seed);
+    for (let i = 0; i < text.length; i += 1) {
+      h ^= text.charCodeAt(i);
+      h = Math.imul(h, 16777619);
+    }
+    h += h << 13; h ^= h >>> 7;
+    h += h << 3; h ^= h >>> 17;
+    h += h << 5;
+    return (h >>> 0) / 4294967296;
   }
 
   function summaryForShare(item) {

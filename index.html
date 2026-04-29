@@ -8,10 +8,10 @@
 <meta property="og:title" content="御神籤 · Omikuji">
 <meta property="og:description" content="振一振签筒，抽一支心签。观音百签 · 中日英三语。">
 <meta property="og:type" content="website">
-<link rel="stylesheet" href="style.css?v=20260429-omikuji-paper-share">
+<link rel="stylesheet" href="style.css?v=20260429-reference-toggle-fix-share">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Ma+Shan+Zheng&family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700;900&family=Noto+Serif+JP:wght@400;500;700;900&family=Ma+Shan+Zheng&family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛩️</text></svg>">
 </head>
 <body>
@@ -63,13 +63,22 @@
 
 <!-- STAGE 4: Paper -->
 <section id="stage-paper" class="stage">
-  <div id="paper">
+  <div id="paper" data-layout="reference">
     <div class="paper-inner">
+      <div class="paper-layout-switch" role="group" aria-label="Paper layout">
+        <button id="layout-reference" class="layout-btn active" data-layout="reference" data-i18n="layoutReference">稲荷纸签</button>
+        <button id="layout-card" class="layout-btn" data-layout="card" data-i18n="layoutCard">卡片版</button>
+      </div>
       <div class="omikuji-frame">
+        <div class="paper-crest" aria-hidden="true"><span>稲</span></div>
         <div class="omikuji-header">
           <div class="header-cell number-cell">
             <span class="paper-num" id="p-num">第一番</span>
             <small id="p-num-en">No. 1</small>
+          </div>
+          <div class="header-cell shrine-cell">
+            <span class="paper-shrine" id="p-shrine-title">総本宮 御神籤</span>
+            <small id="p-shrine-sub">Kannon Hundred Lots</small>
           </div>
           <div class="header-cell fortune-cell">
             <span class="paper-fortune" id="p-fortune">大吉</span>
@@ -105,6 +114,6 @@
 </section>
 
 <script src="data/omikuji.js"></script>
-<script src="app.js?v=20260429-omikuji-paper-share"></script>
+<script src="app.js?v=20260429-reference-toggle-fix-share"></script>
 </body>
 </html>
