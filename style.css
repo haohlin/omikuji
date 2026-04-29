@@ -12,6 +12,7 @@
   --wood-dark:#523018;
   --shadow:0 26px 80px rgba(45,18,10,.23);
   --serif:"Noto Serif SC","Noto Serif JP","Songti SC","Yu Mincho","Hiragino Mincho ProN",serif;
+  --zh-serif:"Noto Serif SC","Songti SC","Noto Serif JP","Yu Mincho","Hiragino Mincho ProN",serif;
   --jp-serif:"Noto Serif JP","Yu Mincho","Hiragino Mincho ProN",serif;
   --latin-serif:Georgia,"Times New Roman",serif;
   --brush:"Ma Shan Zheng","ZCOOL KuaiLe",cursive;
@@ -264,7 +265,7 @@ html[data-lang="zh"] .aspects,
 html[data-lang="zh"] .aspect,
 html[data-lang="zh"] .aspect b,
 html[data-lang="zh"] .aspect span{
-  font-family:var(--serif)!important;
+  font-family:var(--zh-serif)!important;
   font-synthesis:none;
   font-variant-east-asian:normal;
   text-rendering:geometricPrecision;
@@ -286,26 +287,30 @@ html[data-lang="zh"] #paper[data-layout="reference"] .paper-title-vertical,
 html[data-lang="zh"] #paper[data-layout="reference"] .poem-zh,
 html[data-lang="zh"] #paper[data-layout="reference"] .poem-alt-label,
 html[data-lang="zh"] #paper[data-layout="reference"] .summary-label,
-html[data-lang="zh"] #paper[data-layout="reference"] .aspect b,
+html[data-lang="zh"] #paper[data-layout="reference"] .aspect b{font-family:var(--serif)!important;font-weight:900!important;color:#111!important;font-variant-east-asian:normal}
 html[data-lang="zh"] #paper[data-layout="card"] .paper-num,
 html[data-lang="zh"] #paper[data-layout="card"] .paper-shrine,
-html[data-lang="zh"] #paper[data-layout="card"] .poem-zh,
+html[data-lang="zh"] #paper[data-layout="card"] .poem-zh{font-family:var(--zh-serif)!important;font-weight:900!important;color:#111!important;font-variant-east-asian:normal}
 html[data-lang="zh"] #paper[data-layout="card"] .poem-alt-label,
 html[data-lang="zh"] #paper[data-layout="card"] .summary-label,
-html[data-lang="zh"] #paper[data-layout="card"] .aspect b{font-family:var(--serif)!important;font-weight:900!important;color:#111!important;font-variant-east-asian:normal}
+html[data-lang="zh"] #paper[data-layout="card"] .aspect b{font-family:var(--zh-serif)!important;font-weight:700!important;color:var(--torii-dark)!important;font-variant-east-asian:normal}
 html[data-lang="zh"] #paper[data-layout="reference"] .paper-fortune,
 html[data-lang="zh"] #paper[data-layout="card"] .paper-fortune{font-family:var(--serif)!important;font-weight:900!important;color:#111!important;font-variant-east-asian:normal}
+html[data-lang="zh"] #paper[data-layout="card"] .paper-fortune{font-family:var(--zh-serif)!important}
 html[data-lang="zh"] #paper[data-layout="reference"] .poem-alt-text,
 html[data-lang="zh"] #paper[data-layout="reference"] .summary,
-html[data-lang="zh"] #paper[data-layout="reference"] .aspect span,
+html[data-lang="zh"] #paper[data-layout="reference"] .aspect span{font-family:var(--serif)!important;font-weight:600!important;color:#111!important;font-variant-east-asian:normal}
 html[data-lang="zh"] #paper[data-layout="card"] .poem-alt-text,
 html[data-lang="zh"] #paper[data-layout="card"] .summary,
-html[data-lang="zh"] #paper[data-layout="card"] .aspect span{font-family:var(--serif)!important;font-weight:600!important;color:#111!important;font-variant-east-asian:normal}
+html[data-lang="zh"] #paper[data-layout="card"] .aspect span{font-family:var(--zh-serif)!important;font-weight:400!important;color:#111!important;font-variant-east-asian:normal}
 
 html[data-lang="zh"] #paper[data-fortune-tone="good"] .paper-fortune,
 html[data-lang="ja"] #paper[data-fortune-tone="good"] .paper-fortune{color:var(--torii)!important}
 html[data-lang="zh"] #paper[data-fortune-tone="bad"] .paper-fortune,
 html[data-lang="ja"] #paper[data-fortune-tone="bad"] .paper-fortune{color:#111!important}
+html[data-lang="zh"] #paper[data-layout="card"] .poem-alt-label,
+html[data-lang="zh"] #paper[data-layout="card"] .summary-label,
+html[data-lang="zh"] #paper[data-layout="card"] .aspect b{color:var(--torii-dark)!important}
 
 #paper[data-layout="card"]{width:min(100%,520px)}
 #paper[data-layout="card"] .paper-crest{display:none}

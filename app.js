@@ -823,8 +823,8 @@
       strokeRoundRect(ctx, x, cy, colW, cardH, 14, "rgba(184,36,29,.18)", 1.5);
       const label = (I18N[lang].aspects && I18N[lang].aspects[key]) || key;
       const text = (value && (value[detailLang] || value.zh || value.ja || value.en)) || "";
-      drawLeftText(ctx, label, x + 16, cy + 14, 18, "900", darkRed, lang === "en" ? "Georgia" : CJK_CANVAS_FONT);
-      drawMultilineText(ctx, text, x + 16, cy + 42, colW - 32, 18, 15, ink, lang === "en" ? "Georgia" : CJK_CANVAS_FONT, 3, lang === "en" ? "500" : "600");
+      drawLeftText(ctx, label, x + 16, cy + 14, 18, lang === "zh" ? "700" : "900", darkRed, lang === "en" ? "Georgia" : CJK_CANVAS_FONT);
+      drawMultilineText(ctx, text, x + 16, cy + 42, colW - 32, 18, 15, ink, lang === "en" ? "Georgia" : CJK_CANVAS_FONT, 3, lang === "en" ? "500" : lang === "zh" ? "400" : "500");
     });
     y += Math.ceil(entries.length / 2) * (cardH + gap) + 10;
 
@@ -929,14 +929,14 @@
 
   function drawInfoBox(ctx, x, y, w, label, text, labelColor, ink, lang, minH) {
     const lineHeight = 23;
-    ctx.font = `${lang === "en" ? "500" : "600"} 17px ${lang === "en" ? "Georgia" : CJK_CANVAS_FONT}`;
+    ctx.font = `${lang === "en" ? "500" : lang === "zh" ? "400" : "500"} 17px ${lang === "en" ? "Georgia" : CJK_CANVAS_FONT}`;
     const lines = wrapTextLines(ctx, text, w - 32, lang === "en" ? 4 : 5);
     const h = Math.max(minH, 50 + lines.length * lineHeight);
     fillRoundRect(ctx, x, y, w, h, 16, "rgba(184,36,29,.045)");
     ctx.fillStyle = labelColor;
     ctx.fillRect(x, y, 6, h);
-    drawLeftText(ctx, label, x + 18, y + 15, 17, "900", labelColor);
-    drawMultilineText(ctx, text, x + 18, y + 45, w - 36, lineHeight, 17, ink, lang === "en" ? "Georgia" : CJK_CANVAS_FONT, lang === "en" ? 4 : 5, lang === "en" ? "500" : "600");
+    drawLeftText(ctx, label, x + 18, y + 15, 17, "700", labelColor);
+    drawMultilineText(ctx, text, x + 18, y + 45, w - 36, lineHeight, 17, ink, lang === "en" ? "Georgia" : CJK_CANVAS_FONT, lang === "en" ? 4 : 5, lang === "en" ? "500" : lang === "zh" ? "400" : "500");
     return y + h;
   }
 
