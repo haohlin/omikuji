@@ -110,7 +110,7 @@ html[data-lang="en"] .shrine-title{font-family:var(--latin-serif);font-size:clam
 .shrine-sub{font-size:clamp(16px,3vw,22px)}.shrine-inst{font-size:clamp(14px,2.5vw,18px)}
 .stage-footnote{position:absolute;bottom:18px;left:24px;right:24px;margin:0;color:rgba(80,55,35,.70);font-size:11px;line-height:1.45;letter-spacing:.04em;text-align:center;z-index:3}
 .stage-footnote a{color:var(--torii-dark);border-bottom:1px solid rgba(184,36,29,.24)}
-.paper-note{position:relative;bottom:auto;left:auto;right:auto;margin:10px 0 0;padding:0 8px}
+.paper-note{position:relative;bottom:auto;left:auto;right:auto;margin:30px 0 0;padding:0 8px 18px}
 .go-btn,.mini-btn{
   appearance:none;border:0;cursor:pointer;font-family:var(--serif);font-weight:900;letter-spacing:.11em;
   transition:transform .16s ease,box-shadow .16s ease,opacity .16s ease,filter .16s ease;
@@ -179,7 +179,7 @@ html[data-lang="en"] .poem-zh{font-family:var(--latin-serif);font-size:18px;line
 @media (max-width:640px){
   .stage{padding-bottom:56px}
   .stage-footnote{font-size:10px;left:14px;right:14px;bottom:12px}
-  .paper-note{position:relative;bottom:auto;left:auto;right:auto;margin-top:8px}
+  .paper-note{position:relative;bottom:auto;left:auto;right:auto;margin:24px 0 0;padding:0 8px 16px}
 
   body{padding:12px 10px}.stage{width:100%;min-height:calc(100dvh - 24px);border-radius:28px;padding:58px 16px 34px}.stage::before{inset:10px;border-radius:22px}
   .lang-switch{top:10px;right:10px}.lang-switch button{padding:7px 9px;min-width:36px;font-size:12px}
@@ -359,7 +359,7 @@ html[data-lang="en"] #paper[data-layout="card"] .poem-zh{font-family:var(--latin
 @media (max-width:640px){
   .stage{padding-bottom:56px}
   .stage-footnote{font-size:10px;left:14px;right:14px;bottom:12px}
-  .paper-note{position:relative;bottom:auto;left:auto;right:auto;margin-top:8px}
+  .paper-note{position:relative;bottom:auto;left:auto;right:auto;margin:24px 0 0;padding:0 8px 16px}
 
   #paper[data-layout="reference"]{width:min(100%,360px)}
   #paper[data-layout="reference"] .omikuji-frame{margin:10px 12px 14px;padding:13px 10px 4px;grid-template-columns:1.08fr .92fr;grid-template-rows:auto auto auto auto auto minmax(48px,1fr);gap:8px;min-height:760px}
