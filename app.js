@@ -19,7 +19,7 @@
     selected: null,
     sessionSalt: String(Date.now()),
     drawSeed: "",
-    paperLayout: localStorage.getItem("omikuji.layout") || "reference",
+    paperLayout: localStorage.getItem("omikuji.layout") || "card",
     audio: null,
     petals: [],
     raf: 0,
