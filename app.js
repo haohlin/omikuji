@@ -588,7 +588,7 @@
     const scale = 2;
     const reference = state.paperLayout !== "card";
     const w = reference ? 720 : 900;
-    const h = reference ? 1740 : 1720;
+    const h = reference ? (state.lang === "en" ? 1120 : 860) : 1720;
     const canvas = document.createElement("canvas");
     canvas.width = w * scale;
     canvas.height = h * scale;
@@ -611,11 +611,12 @@
     const paper = "#fbf7ea";
     const ink = "#11110f";
     const line = "rgba(17,17,15,.62)";
+    const font = lang === "en" ? "Georgia" : CJK_CANVAS_FONT;
     ctx.fillStyle = paper;
     ctx.fillRect(0, 0, w, h);
     drawPaperGrain(ctx, item, w, h, 0.12);
 
-    const outer = { x: 54, y: 48, w: w - 108, h: h - 142 };
+    const outer = { x: 54, y: 42, w: w - 108, h: h - 104 };
     ctx.strokeStyle = "rgba(17,17,15,.72)";
     ctx.lineWidth = 2;
     ctx.strokeRect(outer.x, outer.y, outer.w, outer.h);
@@ -625,88 +626,97 @@
 
     const left = outer.x + 34;
     const right = outer.x + outer.w - 34;
-    let y = outer.y + 34;
-    drawCrest(ctx, w / 2, y + 50, 42, ink);
-    y += 112;
+    let y = outer.y + 32;
+    drawCrest(ctx, w / 2, y + 44, 38, ink);
+    y += 96;
 
-    const topH = 250;
+    const topH = lang === "en" ? 222 : 206;
     const topGap = 14;
-    const headerW = Math.floor((right - left - topGap) * (lang === "en" ? 0.42 : 0.52));
+    const headerW = Math.floor((right - left - topGap) * (lang === "en" ? 0.40 : 0.52));
     const poemW = right - left - topGap - headerW;
+    const fortuneText = (I18N[lang].fortunes && I18N[lang].fortunes[item.fortune]) || item.fortune;
+
     ctx.strokeStyle = line;
     ctx.lineWidth = 1.5;
     ctx.strokeRect(left, y, headerW, topH);
     const colW = headerW / 3;
-    const fortuneText = (I18N[lang].fortunes && I18N[lang].fortunes[item.fortune]) || item.fortune;
     if (lang === "en") {
-      drawLeftText(ctx, formatNumber(item.number), left + 16, y + 20, 17, "900", ink, "Georgia");
-      drawMultilineText(ctx, t("shrineTitle"), left + 16, y + 54, headerW - 32, 19, 15, ink, "Georgia", 2);
-      drawMultilineText(ctx, fortuneText, left + 16, y + 118, headerW - 32, 32, 28, ink, "Georgia", 2);
+      drawLeftText(ctx, formatNumber(item.number), left + 15, y + 18, 16, "900", ink, font);
+      drawMultilineText(ctx, t("shrineTitle"), left + 15, y + 50, headerW - 30, 18, 14, ink, font, 3, "900");
+      drawMultilineText(ctx, fortuneText, left + 15, y + 118, headerW - 30, 28, 25, ink, font, 2, "900");
     } else {
-      drawVerticalText(ctx, formatNumber(item.number), left + colW * 2.5, y + 22, 19, 24, ink, true, topH - 44, CJK_CANVAS_FONT);
-      drawVerticalText(ctx, t("shrineTitle"), left + colW * 1.5, y + 22, 18, 23, ink, true, topH - 44, CJK_CANVAS_FONT);
-      drawVerticalText(ctx, fortuneText, left + colW * 0.5, y + 30, 40, 49, ink, true, topH - 60, CJK_CANVAS_FONT);
+      drawVerticalText(ctx, formatNumber(item.number), left + colW * 2.5, y + 18, 17, 22, ink, true, topH - 36, CJK_CANVAS_FONT);
+      drawVerticalText(ctx, t("shrineTitle"), left + colW * 1.5, y + 18, 15, 20, ink, true, topH - 36, CJK_CANVAS_FONT);
+      drawVerticalText(ctx, fortuneText, left + colW * 0.5, y + 26, 38, 47, ink, true, topH - 52, CJK_CANVAS_FONT);
     }
 
     const poemX = left + headerW + topGap;
     ctx.strokeStyle = line;
     ctx.strokeRect(poemX, y, poemW, topH);
     const poem = lang === "en" ? (item.meaning_en || "") : (item.poem_ja || "");
-    if (lang === "en") drawWrappedText(ctx, poem, poemX + 16, y + 18, poemW - 32, 19, 13.5, ink, "Georgia");
-    else drawVerticalText(ctx, poem, poemX + poemW - 45, y + 24, 25, 34, ink, true, topH - 48, CJK_CANVAS_FONT);
-    y += topH + 18;
+    if (lang === "en") drawMultilineText(ctx, poem, poemX + 14, y + 16, poemW - 28, 17, 12.5, ink, font, 12, "600");
+    else drawVerticalText(ctx, poem, poemX + poemW - 42, y + 22, 21, 30, ink, true, topH - 44, CJK_CANVAS_FONT);
+    y += topH + 12;
 
-    y = drawPlainPanel(ctx, left, y, right - left, t("altLabel"), item.poem_reading || item.poem_ja || "", ink, lang, 110);
-    y += 14;
-    y = drawPlainPanel(ctx, left, y, right - left, t("summaryTitle"), summaryForShare(item), ink, lang, 124);
-    y += 18;
+    y = drawPlainPanel(ctx, left, y, right - left, t("altLabel"), item.poem_reading || item.poem_ja || "", ink, lang, lang === "en" ? 70 : 64);
+    y += 8;
+    y = drawPlainPanel(ctx, left, y, right - left, t("summaryTitle"), summaryForShare(item), ink, lang, lang === "en" ? 82 : 76);
+    y += 10;
 
     const entries = getAspectEntries(item).slice(0, 9);
     const gridGapX = 14;
-    const gridGapY = 6;
-    const boxW = (right - left - gridGapX * 2) / 3;
-    const boxH = 90;
+    const gridGapY = 4;
+    const cols = lang === "en" ? 2 : 3;
+    const rows = Math.ceil(entries.length / cols);
+    const boxW = (right - left - gridGapX * (cols - 1)) / cols;
+    const availableBottom = outer.y + outer.h - 42;
+    const sourceH = 38;
+    const yBeforeGrid = y;
+    const boxH = lang === "en" ? 82 : 74;
     entries.forEach(([key, value], idx) => {
-      const x = left + (idx % 3) * (boxW + gridGapX);
-      const cy = y + Math.floor(idx / 3) * (boxH + gridGapY);
+      const x = left + (idx % cols) * (boxW + gridGapX);
+      const cy = y + Math.floor(idx / cols) * (boxH + gridGapY);
       const label = (I18N[lang].aspects && I18N[lang].aspects[key]) || key;
       const text = (value && (value[detailLang] || value.zh || value.ja || value.en)) || "";
-      drawLeftText(ctx, label, x + 2, cy + 7, 14, "900", ink, lang === "en" ? "Georgia" : CJK_CANVAS_FONT);
+      drawLeftText(ctx, label, x + 2, cy + 6, lang === "en" ? 13 : 13, "900", ink, font);
       ctx.strokeStyle = "rgba(17,17,15,.22)";
       ctx.lineWidth = 1;
       ctx.beginPath();
-      ctx.moveTo(x + 2, cy + 25);
-      ctx.lineTo(x + boxW - 2, cy + 25);
+      ctx.moveTo(x + 2, cy + 24);
+      ctx.lineTo(x + boxW - 2, cy + 24);
       ctx.stroke();
-      drawMultilineText(ctx, text, x + 2, cy + 34, boxW - 4, 15, 12, ink, lang === "en" ? "Georgia" : CJK_CANVAS_FONT, 4, lang === "en" ? "500" : "600");
+      drawMultilineText(ctx, text, x + 2, cy + 32, boxW - 4, lang === "en" ? 14 : 15, lang === "en" ? 11.2 : 11.5, ink, font, lang === "en" ? 4 : 4, lang === "en" ? "500" : "600");
     });
-    y += 3 * boxH + 2 * gridGapY + 4;
+    y += rows * boxH + (rows - 1) * gridGapY + 4;
 
-    const sourceY = Math.max(y + 12, outer.y + outer.h - 50);
+    const sourceY = y + 10;
     ctx.strokeStyle = line;
     ctx.beginPath();
     ctx.moveTo(left, sourceY);
     ctx.lineTo(right, sourceY);
     ctx.stroke();
-    drawCenteredText(ctx, "元三大師 · 観音百籤", w / 2, sourceY + 24, 17, "700", ink, CJK_CANVAS_FONT);
-    drawCenteredText(ctx, `© ${OWNER_NAME}`, w / 2, h - 48, 18, "700", "#24211d", "Georgia");
-    drawCenteredText(ctx, `${GITHUB_URL} · ${SITE_URL}`, w / 2, h - 24, 15, "400", "#333", "Georgia");
+    drawCenteredText(ctx, "元三大師 · 観音百籤", w / 2, sourceY + 16, 14, "700", ink, CJK_CANVAS_FONT);
+    drawCenteredText(ctx, `© ${OWNER_NAME}`, w / 2, h - 44, 17, "700", "#24211d", "Georgia");
+    drawCenteredText(ctx, `${GITHUB_URL} · ${SITE_URL}`, w / 2, h - 22, 14, "400", "#333", "Georgia");
   }
 
   function drawPlainPanel(ctx, x, y, w, label, text, ink, lang, minH) {
-    ctx.font = `${lang === "en" ? "500" : "600"} 15px ${lang === "en" ? "Georgia" : CJK_CANVAS_FONT}`;
-    const lines = wrapTextLines(ctx, text, w - 28, lang === "en" ? 5 : 6);
-    const h = Math.max(minH, 45 + lines.length * 20);
+    const font = lang === "en" ? "Georgia" : CJK_CANVAS_FONT;
+    const lineHeight = lang === "en" ? 17 : 18;
+    const fontSize = lang === "en" ? 12.2 : 13;
+    ctx.font = `${lang === "en" ? "500" : "600"} ${fontSize}px ${font}`;
+    const lines = wrapTextLines(ctx, text, w - 24, lang === "en" ? 5 : 4);
+    const h = Math.max(minH, 36 + lines.length * lineHeight);
     ctx.strokeStyle = "rgba(17,17,15,.58)";
     ctx.lineWidth = 1;
     ctx.strokeRect(x, y, w, h);
-    drawLeftText(ctx, label, x + 12, y + 10, 14, "900", ink, lang === "en" ? "Georgia" : CJK_CANVAS_FONT);
+    drawLeftText(ctx, label, x + 12, y + 9, 13, "900", ink, lang === "en" ? "Georgia" : CJK_CANVAS_FONT);
     ctx.strokeStyle = "rgba(17,17,15,.28)";
     ctx.beginPath();
-    ctx.moveTo(x + 10, y + 34);
-    ctx.lineTo(x + w - 10, y + 34);
+    ctx.moveTo(x + 10, y + 30);
+    ctx.lineTo(x + w - 10, y + 30);
     ctx.stroke();
-    drawMultilineText(ctx, text, x + 12, y + 44, w - 24, 20, 15, ink, lang === "en" ? "Georgia" : CJK_CANVAS_FONT, lang === "en" ? 5 : 6, lang === "en" ? "500" : "600");
+    drawMultilineText(ctx, text, x + 12, y + 38, w - 24, lineHeight, fontSize, ink, lang === "en" ? "Georgia" : CJK_CANVAS_FONT, lang === "en" ? 5 : 4, lang === "en" ? "500" : "600");
     return y + h;
   }
 
