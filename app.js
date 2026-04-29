@@ -587,8 +587,8 @@
   function renderFortuneCanvas(item) {
     const scale = 2;
     const reference = state.paperLayout !== "card";
-    const w = reference ? 720 : 900;
-    const h = reference ? (state.lang === "en" ? 1120 : 860) : 1720;
+    const w = reference ? 520 : 900;
+    const h = reference ? (state.lang === "en" ? 1260 : 1160) : 1720;
     const canvas = document.createElement("canvas");
     canvas.width = w * scale;
     canvas.height = h * scale;
@@ -616,7 +616,7 @@
     ctx.fillRect(0, 0, w, h);
     drawPaperGrain(ctx, item, w, h, 0.12);
 
-    const outer = { x: 54, y: 42, w: w - 108, h: h - 104 };
+    const outer = { x: 38, y: 42, w: w - 76, h: h - 104 };
     ctx.strokeStyle = "rgba(17,17,15,.72)";
     ctx.lineWidth = 2;
     ctx.strokeRect(outer.x, outer.y, outer.w, outer.h);
@@ -624,15 +624,15 @@
     ctx.lineWidth = 1;
     ctx.strokeRect(outer.x + 14, outer.y + 14, outer.w - 28, outer.h - 28);
 
-    const left = outer.x + 34;
-    const right = outer.x + outer.w - 34;
+    const left = outer.x + 24;
+    const right = outer.x + outer.w - 24;
     let y = outer.y + 32;
     drawCrest(ctx, w / 2, y + 44, 38, ink);
     y += 96;
 
-    const topH = lang === "en" ? 222 : 206;
-    const topGap = 14;
-    const headerW = Math.floor((right - left - topGap) * (lang === "en" ? 0.40 : 0.52));
+    const topH = lang === "en" ? 250 : 226;
+    const topGap = 10;
+    const headerW = Math.floor((right - left - topGap) * (lang === "en" ? 0.43 : 0.48));
     const poemW = right - left - topGap - headerW;
     const fortuneText = (I18N[lang].fortunes && I18N[lang].fortunes[item.fortune]) || item.fortune;
 
@@ -643,7 +643,7 @@
     if (lang === "en") {
       drawLeftText(ctx, formatNumber(item.number), left + 15, y + 18, 16, "900", ink, font);
       drawMultilineText(ctx, t("shrineTitle"), left + 15, y + 50, headerW - 30, 18, 14, ink, font, 3, "900");
-      drawMultilineText(ctx, fortuneText, left + 15, y + 118, headerW - 30, 28, 25, ink, font, 2, "900");
+      drawMultilineText(ctx, fortuneText, left + 15, y + 118, headerW - 30, 25, 22, ink, font, 2, "900");
     } else {
       drawVerticalText(ctx, formatNumber(item.number), left + colW * 2.5, y + 18, 17, 22, ink, true, topH - 36, CJK_CANVAS_FONT);
       drawVerticalText(ctx, t("shrineTitle"), left + colW * 1.5, y + 18, 15, 20, ink, true, topH - 36, CJK_CANVAS_FONT);
@@ -664,17 +664,19 @@
     y += 10;
 
     const entries = getAspectEntries(item).slice(0, 9);
-    const gridGapX = 14;
-    const gridGapY = 4;
-    const cols = lang === "en" ? 2 : 3;
+    const gridGapX = 12;
+    const gridGapY = 6;
+    const cols = 2;
     const rows = Math.ceil(entries.length / cols);
     const boxW = (right - left - gridGapX * (cols - 1)) / cols;
     const availableBottom = outer.y + outer.h - 42;
     const sourceH = 38;
     const yBeforeGrid = y;
-    const boxH = lang === "en" ? 82 : 74;
+    const boxH = lang === "en" ? 92 : 82;
     entries.forEach(([key, value], idx) => {
-      const x = left + (idx % cols) * (boxW + gridGapX);
+      const isLastOdd = entries.length % cols === 1 && idx === entries.length - 1;
+      const x = isLastOdd ? left : left + (idx % cols) * (boxW + gridGapX);
+      const cellW = isLastOdd ? right - left : boxW;
       const cy = y + Math.floor(idx / cols) * (boxH + gridGapY);
       const label = (I18N[lang].aspects && I18N[lang].aspects[key]) || key;
       const text = (value && (value[detailLang] || value.zh || value.ja || value.en)) || "";
@@ -683,9 +685,9 @@
       ctx.lineWidth = 1;
       ctx.beginPath();
       ctx.moveTo(x + 2, cy + 24);
-      ctx.lineTo(x + boxW - 2, cy + 24);
+      ctx.lineTo(x + cellW - 2, cy + 24);
       ctx.stroke();
-      drawMultilineText(ctx, text, x + 2, cy + 32, boxW - 4, lang === "en" ? 14 : 15, lang === "en" ? 11.2 : 11.5, ink, font, lang === "en" ? 4 : 4, lang === "en" ? "500" : "600");
+      drawMultilineText(ctx, text, x + 2, cy + 32, cellW - 4, lang === "en" ? 14 : 15, lang === "en" ? 11.2 : 11.5, ink, font, lang === "en" ? 4 : 4, lang === "en" ? "500" : "600");
     });
     y += rows * boxH + (rows - 1) * gridGapY + 4;
 
@@ -696,8 +698,9 @@
     ctx.lineTo(right, sourceY);
     ctx.stroke();
     drawCenteredText(ctx, "元三大師 · 観音百籤", w / 2, sourceY + 16, 14, "700", ink, CJK_CANVAS_FONT);
-    drawCenteredText(ctx, `© ${OWNER_NAME}`, w / 2, h - 44, 17, "700", "#24211d", "Georgia");
-    drawCenteredText(ctx, `${GITHUB_URL} · ${SITE_URL}`, w / 2, h - 22, 14, "400", "#333", "Georgia");
+    drawCenteredText(ctx, `© ${OWNER_NAME}`, w / 2, h - 54, 15, "700", "#24211d", "Georgia");
+    drawCenteredText(ctx, GITHUB_URL, w / 2, h - 32, 11.5, "400", "#333", "Georgia");
+    drawCenteredText(ctx, SITE_URL, w / 2, h - 16, 11.5, "400", "#333", "Georgia");
   }
 
   function drawPlainPanel(ctx, x, y, w, label, text, ink, lang, minH) {
