@@ -61,6 +61,20 @@ a{color:var(--torii-dark);text-decoration:none;border-bottom:1px solid rgba(184,
 }
 .lang-switch button:hover{transform:translateY(-1px)}
 .lang-switch button.active{background:var(--torii);color:#fff;box-shadow:inset 0 -2px 0 rgba(0,0,0,.16)}
+.debug-lot{
+  position:fixed;top:18px;left:18px;z-index:20;
+  display:flex;align-items:center;gap:8px;padding:6px;border:1px solid rgba(88,54,24,.18);border-radius:999px;
+  background:rgba(248,239,213,.72);backdrop-filter:blur(14px);box-shadow:0 8px 28px rgba(64,34,15,.12);
+}
+.debug-toggle,.debug-form button{
+  appearance:none;border:0;border-radius:999px;cursor:pointer;font-family:var(--serif);font-weight:900;letter-spacing:.06em;
+  color:#fff;background:linear-gradient(180deg,#d83a31,var(--torii));box-shadow:inset 0 -2px 0 rgba(0,0,0,.16);
+}
+.debug-toggle{padding:8px 13px}.debug-form button{padding:7px 11px;font-size:12px}
+.debug-form{display:none;align-items:center;gap:6px;margin:0}.debug-lot.open .debug-form{display:flex}
+.debug-form label{font-size:12px;font-weight:900;color:var(--torii-dark);letter-spacing:.06em;white-space:nowrap}
+.debug-form input{width:76px;border:1px solid rgba(184,36,29,.22);border-radius:999px;padding:7px 10px;background:rgba(255,250,232,.9);color:var(--ink);font-family:var(--serif);font-weight:900;text-align:center;outline:none}
+.debug-form input:focus{border-color:var(--torii);box-shadow:0 0 0 3px rgba(184,36,29,.12)}
 .stage{
   position:relative;z-index:2;width:min(92vw,720px);min-height:min(760px,calc(100vh - 56px));
   display:none;place-items:center;text-align:center;padding:64px 24px 38px;
@@ -159,6 +173,7 @@ html[data-lang="en"] .poem-zh{font-family:var(--latin-serif);font-size:18px;line
 @media (max-width:640px){
   body{padding:12px 10px}.stage{width:100%;min-height:calc(100dvh - 24px);border-radius:28px;padding:58px 16px 34px}.stage::before{inset:10px;border-radius:22px}
   .lang-switch{top:10px;right:10px}.lang-switch button{padding:7px 9px;min-width:36px;font-size:12px}
+  .debug-lot{top:56px;left:10px;right:10px;width:max-content;max-width:calc(100vw - 20px)}.debug-toggle{padding:7px 10px;font-size:12px}.debug-form{gap:5px}.debug-form input{width:68px;padding:6px 8px}.debug-form label,.debug-form button{font-size:11px}
   .torii{height:230px;width:310px;max-width:84vw}.torii-pillar{height:126px}.torii-pillar.left{left:22%}.torii-pillar.right{right:22%}
   #box-wrap{width:260px;height:302px}#box{transform:scale(.92)}
   #stage-paper{padding:10px 6px}

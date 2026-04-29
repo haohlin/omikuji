@@ -54,6 +54,11 @@
       shrineSub: "Kannon Hundred Lots",
       layoutReference: "稻荷纸签",
       layoutCard: "卡片版",
+      debugToggle: "调试",
+      debugLabel: "签号",
+      debugShow: "显示",
+      debugInvalid: "请输入 1-100 的签号",
+      debugMissing: "没有找到这支签",
       aspects: {
         願事: "愿望",
         恋愛: "恋爱",
@@ -105,6 +110,11 @@
       shrineSub: "Kannon Hundred Lots",
       layoutReference: "稲荷紙籤",
       layoutCard: "カード版",
+      debugToggle: "検証",
+      debugLabel: "番号",
+      debugShow: "表示",
+      debugInvalid: "1〜100 の番号を入力してください",
+      debugMissing: "この番号の籤が見つかりません",
       aspects: {
         願事: "願事",
         恋愛: "恋愛",
@@ -156,6 +166,11 @@
       shrineSub: "Kannon Hundred Lots",
       layoutReference: "Shrine Slip",
       layoutCard: "Card View",
+      debugToggle: "Debug",
+      debugLabel: "No.",
+      debugShow: "Show",
+      debugInvalid: "Enter a lot number from 1 to 100",
+      debugMissing: "No lot found for that number",
       aspects: {
         願事: "Wish",
         恋愛: "Love",
@@ -192,6 +207,10 @@
       goDraw: $("#go-draw"),
       goBack: $("#go-back1"),
       goPaper: $("#go-paper"),
+      debugLot: $("#debug-lot"),
+      debugToggle: $("#debug-toggle"),
+      debugForm: $("#debug-form"),
+      debugNumber: $("#debug-number"),
       boxWrap: $("#box-wrap"),
       box: $("#box"),
       shakeCount: $("#shake-count"),
@@ -233,6 +252,8 @@
       enableMotion();
     });
     els.goBack.addEventListener("click", () => showStage("intro"));
+    els.debugToggle.addEventListener("click", toggleDebugPanel);
+    els.debugForm.addEventListener("submit", showDebugFortune);
     els.boxWrap.addEventListener("click", manualShake);
     els.boxWrap.addEventListener("pointerdown", () => unlockAudio(), { passive: true });
     els.goDraw.addEventListener("click", drawFortune);
@@ -376,6 +397,34 @@
     setTimeout(() => soundBell(0.55), 180);
     renderFortune(state.selected);
     showStage("paper");
+  }
+
+  function toggleDebugPanel() {
+    els.debugLot.classList.toggle("open");
+    if (els.debugLot.classList.contains("open")) {
+      setTimeout(() => els.debugNumber.focus(), 0);
+    }
+  }
+
+  function showDebugFortune(event) {
+    event.preventDefault();
+    const num = Number.parseInt(els.debugNumber.value, 10);
+    if (!Number.isInteger(num) || num < 1 || num > 100) {
+      toast(t("debugInvalid"));
+      return;
+    }
+    const item = DATA.find((entry) => Number(entry.number) === num);
+    if (!item) {
+      toast(t("debugMissing"));
+      return;
+    }
+    state.selected = item;
+    state.shakeCount = 0;
+    state.drawSeed = `debug:${num}`;
+    if (els.stickNumber) els.stickNumber.textContent = formatNumber(item.number);
+    renderFortune(item);
+    showStage("paper");
+    requestAnimationFrame(() => window.scrollTo({ top: 0, behavior: "smooth" }));
   }
 
   function renderFortune(item) {
