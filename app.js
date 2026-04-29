@@ -472,6 +472,10 @@
     els.pNumEn.textContent = `No. ${item.number}`;
     els.pFortune.textContent = (I18N[lang].fortunes && I18N[lang].fortunes[item.fortune]) || item.fortune;
     els.pFortuneEn.textContent = I18N.en.fortunes[item.fortune] || item.fortune;
+    if (els.paper) {
+      els.paper.dataset.fortune = item.fortune;
+      els.paper.dataset.fortuneTone = isAuspiciousFortune(item.fortune) ? "good" : "bad";
+    }
     if (els.pShrineTitle) els.pShrineTitle.textContent = t("shrineTitle");
     if (els.pShrineSub) els.pShrineSub.textContent = t("shrineSub");
 
@@ -635,6 +639,7 @@
     const headerW = Math.floor((right - left - topGap) * (lang === "en" ? 0.43 : 0.48));
     const poemW = right - left - topGap - headerW;
     const fortuneText = (I18N[lang].fortunes && I18N[lang].fortunes[item.fortune]) || item.fortune;
+    const fortuneInk = isAuspiciousFortune(item.fortune) ? "#b8241d" : ink;
 
     ctx.strokeStyle = line;
     ctx.lineWidth = 1.5;
@@ -643,11 +648,11 @@
     if (lang === "en") {
       drawLeftText(ctx, formatNumber(item.number), left + 15, y + 18, 16, "900", ink, font);
       drawMultilineText(ctx, t("shrineTitle"), left + 15, y + 50, headerW - 30, 18, 14, ink, font, 3, "900");
-      drawMultilineText(ctx, fortuneText, left + 15, y + 118, headerW - 30, 25, 22, ink, font, 2, "900");
+      drawMultilineText(ctx, fortuneText, left + 15, y + 118, headerW - 30, 25, 22, fortuneInk, font, 2, "900");
     } else {
       drawVerticalText(ctx, formatNumber(item.number), left + colW * 2.5, y + 18, 17, 22, ink, true, topH - 36, CJK_CANVAS_FONT);
       drawVerticalText(ctx, t("shrineTitle"), left + colW * 1.5, y + 18, 15, 20, ink, true, topH - 36, CJK_CANVAS_FONT);
-      drawVerticalText(ctx, fortuneText, left + colW * 0.5, y + 26, 38, 47, ink, true, topH - 52, CJK_CANVAS_FONT);
+      drawVerticalText(ctx, fortuneText, left + colW * 0.5, y + 26, 38, 47, fortuneInk, true, topH - 52, CJK_CANVAS_FONT);
     }
 
     const poemX = left + headerW + topGap;
@@ -772,6 +777,7 @@
     const right = outer.x + outer.w - pad;
     let y = outer.y + 44;
     const fortuneText = (I18N[lang].fortunes && I18N[lang].fortunes[item.fortune]) || item.fortune;
+    const fortuneInk = isAuspiciousFortune(item.fortune) ? red : ink;
 
     ctx.strokeStyle = softLine;
     ctx.lineWidth = 2;
@@ -783,8 +789,8 @@
     drawLeftText(ctx, `No. ${item.number}`, left, y + 54, 16, "400", "#8b6554", "Georgia");
     drawRightText(ctx, t("shrineTitle").replace(/\n/g, " "), right, y + 18, lang === "en" ? 22 : 24, "900", darkRed, lang === "en" ? "Georgia" : CJK_CANVAS_FONT);
     drawRightText(ctx, t("shrineSub").toUpperCase(), right, y + 54, 14, "400", "#8b6554", "Georgia");
-    if (lang === "en") drawCenteredText(ctx, fortuneText, w / 2, y + 88, 34, "900", red, "Georgia");
-    else drawCenteredText(ctx, fortuneText, w / 2, y + 78, 76, "900", red, CJK_CANVAS_FONT);
+    if (lang === "en") drawCenteredText(ctx, fortuneText, w / 2, y + 88, 34, "900", fortuneInk, "Georgia");
+    else drawCenteredText(ctx, fortuneText, w / 2, y + 78, 76, "900", fortuneInk, CJK_CANVAS_FONT);
     drawCenteredText(ctx, I18N.en.fortunes[item.fortune] || item.fortune, w / 2, y + (lang === "en" ? 126 : 150), 16, "400", "#8b6554", "Georgia");
     y += lang === "en" ? 174 : 188;
 
@@ -872,6 +878,10 @@
       ja: "強く争わず、一歩退いて時を待つべし。",
       en: "Avoid forcing the contest. Step back and wait for the better moment.",
     };
+  }
+
+  function isAuspiciousFortune(fortune) {
+    return !String(fortune || "").includes("凶");
   }
 
   function fortuneScore(fortune) {

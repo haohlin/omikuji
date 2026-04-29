@@ -271,18 +271,17 @@ html[data-lang="zh"] .aspect span{
 }
 html[data-lang="zh"] .poem-alt-text,
 html[data-lang="zh"] .summary,
-html[data-lang="zh"] .aspect span{font-weight:600!important;color:#111!important}
+html[data-lang="zh"] .aspect span{font-weight:500!important;color:#111!important}
 html[data-lang="zh"] .paper-num,
 html[data-lang="zh"] .paper-shrine,
-html[data-lang="zh"] .paper-fortune,
 html[data-lang="zh"] .paper-title-vertical,
 html[data-lang="zh"] .poem-zh,
 html[data-lang="zh"] .poem-alt-label,
 html[data-lang="zh"] .summary-label,
-html[data-lang="zh"] .aspect b{font-weight:900!important;color:#0d0d0c!important}
+html[data-lang="zh"] .aspect b{font-weight:900!important;color:#111!important}
+html[data-lang="zh"] .paper-fortune{font-weight:900!important;color:#111!important}
 html[data-lang="zh"] #paper[data-layout="reference"] .paper-num,
 html[data-lang="zh"] #paper[data-layout="reference"] .paper-shrine,
-html[data-lang="zh"] #paper[data-layout="reference"] .paper-fortune,
 html[data-lang="zh"] #paper[data-layout="reference"] .paper-title-vertical,
 html[data-lang="zh"] #paper[data-layout="reference"] .poem-zh,
 html[data-lang="zh"] #paper[data-layout="reference"] .poem-alt-label,
@@ -290,17 +289,23 @@ html[data-lang="zh"] #paper[data-layout="reference"] .summary-label,
 html[data-lang="zh"] #paper[data-layout="reference"] .aspect b,
 html[data-lang="zh"] #paper[data-layout="card"] .paper-num,
 html[data-lang="zh"] #paper[data-layout="card"] .paper-shrine,
-html[data-lang="zh"] #paper[data-layout="card"] .paper-fortune,
 html[data-lang="zh"] #paper[data-layout="card"] .poem-zh,
 html[data-lang="zh"] #paper[data-layout="card"] .poem-alt-label,
 html[data-lang="zh"] #paper[data-layout="card"] .summary-label,
-html[data-lang="zh"] #paper[data-layout="card"] .aspect b{font-family:var(--serif)!important;font-weight:900!important;color:#0d0d0c!important;font-variant-east-asian:normal}
+html[data-lang="zh"] #paper[data-layout="card"] .aspect b{font-family:var(--serif)!important;font-weight:900!important;color:#111!important;font-variant-east-asian:normal}
+html[data-lang="zh"] #paper[data-layout="reference"] .paper-fortune,
+html[data-lang="zh"] #paper[data-layout="card"] .paper-fortune{font-family:var(--serif)!important;font-weight:900!important;color:#111!important;font-variant-east-asian:normal}
 html[data-lang="zh"] #paper[data-layout="reference"] .poem-alt-text,
 html[data-lang="zh"] #paper[data-layout="reference"] .summary,
 html[data-lang="zh"] #paper[data-layout="reference"] .aspect span,
 html[data-lang="zh"] #paper[data-layout="card"] .poem-alt-text,
 html[data-lang="zh"] #paper[data-layout="card"] .summary,
 html[data-lang="zh"] #paper[data-layout="card"] .aspect span{font-family:var(--serif)!important;font-weight:600!important;color:#111!important;font-variant-east-asian:normal}
+
+html[data-lang="zh"] #paper[data-fortune-tone="good"] .paper-fortune,
+html[data-lang="ja"] #paper[data-fortune-tone="good"] .paper-fortune{color:var(--torii)!important}
+html[data-lang="zh"] #paper[data-fortune-tone="bad"] .paper-fortune,
+html[data-lang="ja"] #paper[data-fortune-tone="bad"] .paper-fortune{color:#111!important}
 
 #paper[data-layout="card"]{width:min(100%,520px)}
 #paper[data-layout="card"] .paper-crest{display:none}
