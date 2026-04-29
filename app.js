@@ -231,10 +231,8 @@
       share: $("#btn-share"),
       again: $("#btn-again"),
       sakura: $("#sakura"),
-      ghLink: $("#gh-link"),
     });
 
-    if (els.ghLink) els.ghLink.href = GITHUB_URL;
     bindEvents();
     setLang(I18N[state.lang] ? state.lang : "zh");
     showStage("intro");

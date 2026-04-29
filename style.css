@@ -99,12 +99,15 @@ a{color:var(--torii-dark);text-decoration:none;border-bottom:1px solid rgba(184,
 .torii-pillar{top:108px;width:34px;height:145px;border-radius:6px 6px 12px 12px;box-shadow:inset 8px 0 rgba(255,255,255,.13),inset -6px 0 rgba(60,0,0,.16)}
 .torii-pillar.left{left:24%}.torii-pillar.right{right:24%}
 .torii-pillar::after{content:"";position:absolute;left:-16px;right:-16px;bottom:-12px;height:18px;border-radius:8px;background:var(--torii-dark)}
-.shrine-title{margin:4px 0 8px;font-size:clamp(58px,14vw,116px);line-height:.95;font-family:var(--brush);font-weight:400;color:var(--ink);letter-spacing:.08em;text-shadow:0 4px 0 rgba(255,255,255,.35),0 11px 25px rgba(73,34,10,.12);writing-mode:horizontal-tb}
+.shrine-title{margin:4px 0 8px;font-size:clamp(58px,14vw,116px);line-height:.95;font-family:var(--jp-serif);font-weight:900;color:var(--ink);letter-spacing:.12em;text-shadow:0 4px 0 rgba(255,255,255,.35),0 11px 25px rgba(73,34,10,.12);writing-mode:horizontal-tb;font-variant-east-asian:traditional;white-space:nowrap}
+html[data-lang="zh"] .shrine-title{font-family:var(--jp-serif);font-weight:900;letter-spacing:.12em}
 html[data-lang="ja"] .shrine-title{font-family:var(--jp-serif);font-weight:900;letter-spacing:.18em}
 html[data-lang="en"] .shrine-title{font-family:var(--latin-serif);font-size:clamp(48px,11vw,86px);letter-spacing:.05em}
 .shrine-sub,.shrine-inst,.shake-prompt{margin:8px 0;color:var(--muted);font-weight:700;letter-spacing:.08em}
 .shrine-sub{font-size:clamp(16px,3vw,22px)}.shrine-inst{font-size:clamp(14px,2.5vw,18px)}
-.credit{position:absolute;bottom:22px;left:0;right:0;margin:0;color:rgba(80,55,35,.64);font-size:12px;letter-spacing:.05em}
+.stage-footnote{position:absolute;bottom:18px;left:24px;right:24px;margin:0;color:rgba(80,55,35,.70);font-size:11px;line-height:1.45;letter-spacing:.04em;text-align:center;z-index:3}
+.stage-footnote a{color:var(--torii-dark);border-bottom:1px solid rgba(184,36,29,.24)}
+.paper-note{position:relative;bottom:auto;left:auto;right:auto;margin:10px 0 0;padding:0 8px}
 .go-btn,.mini-btn{
   appearance:none;border:0;cursor:pointer;font-family:var(--serif);font-weight:900;letter-spacing:.11em;
   transition:transform .16s ease,box-shadow .16s ease,opacity .16s ease,filter .16s ease;
@@ -171,6 +174,10 @@ html[data-lang="en"] .poem-zh{font-family:var(--latin-serif);font-size:18px;line
 .paper-footer{position:relative;z-index:3;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:16px 0 0;padding:0;border:0}.paper-footer .mini-btn{background:rgba(255,250,232,.94)}
 .toast{position:fixed;left:50%;bottom:26px;z-index:40;transform:translateX(-50%) translateY(20px);opacity:0;padding:12px 18px;border-radius:999px;background:rgba(26,23,20,.88);color:#fff;box-shadow:0 12px 36px rgba(0,0,0,.22);transition:.25s ease;font-size:14px}.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 @media (max-width:640px){
+  .stage{padding-bottom:56px}
+  .stage-footnote{font-size:10px;left:14px;right:14px;bottom:12px}
+  .paper-note{position:relative;bottom:auto;left:auto;right:auto;margin-top:8px}
+
   body{padding:12px 10px}.stage{width:100%;min-height:calc(100dvh - 24px);border-radius:28px;padding:58px 16px 34px}.stage::before{inset:10px;border-radius:22px}
   .lang-switch{top:10px;right:10px}.lang-switch button{padding:7px 9px;min-width:36px;font-size:12px}
   .debug-lot{top:56px;left:10px;right:10px;width:max-content;max-width:calc(100vw - 20px)}.debug-toggle{padding:7px 10px;font-size:12px}.debug-form{gap:5px}.debug-form input{width:68px;padding:6px 8px}.debug-form label,.debug-form button{font-size:11px}
@@ -279,6 +286,10 @@ html[data-lang="en"] #paper[data-layout="card"] .paper-fortune{font-size:32px;li
 html[data-lang="en"] #paper[data-layout="card"] .poem-zh{font-family:var(--latin-serif)!important;font-size:16.5px!important;font-weight:700!important;line-height:1.5!important;letter-spacing:.01em;text-align:left}
 
 @media (max-width:640px){
+  .stage{padding-bottom:56px}
+  .stage-footnote{font-size:10px;left:14px;right:14px;bottom:12px}
+  .paper-note{position:relative;bottom:auto;left:auto;right:auto;margin-top:8px}
+
   #paper[data-layout="reference"]{width:min(100%,360px)}
   #paper[data-layout="reference"] .omikuji-frame{margin:10px 12px 14px;padding:13px 10px 12px;grid-template-columns:1.08fr .92fr;gap:8px}
   #paper[data-layout="reference"] .paper-crest{width:58px;height:58px;font-size:24px}
