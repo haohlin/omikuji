@@ -642,12 +642,13 @@
     });
     y += 3 * boxH + 2 * gridGapY + 4;
 
+    const sourceY = Math.max(y + 12, outer.y + outer.h - 50);
     ctx.strokeStyle = line;
     ctx.beginPath();
-    ctx.moveTo(left, y);
-    ctx.lineTo(right, y);
+    ctx.moveTo(left, sourceY);
+    ctx.lineTo(right, sourceY);
     ctx.stroke();
-    drawCenteredText(ctx, "元三大師 · 観音百籤", w / 2, y + 30, 17, "700", ink, "Noto Serif JP");
+    drawCenteredText(ctx, "元三大師 · 観音百籤", w / 2, sourceY + 24, 17, "700", ink, "Noto Serif JP");
     drawCenteredText(ctx, `© ${OWNER_NAME}`, w / 2, h - 48, 18, "700", "#24211d", "Georgia");
     drawCenteredText(ctx, `${GITHUB_URL} · ${SITE_URL}`, w / 2, h - 24, 15, "400", "#333", "Georgia");
   }

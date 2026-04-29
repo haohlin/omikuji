@@ -212,12 +212,12 @@ html[data-lang="en"] .poem-zh{font-family:var(--latin-serif);font-size:18px;line
 #paper[data-layout="reference"]{width:min(100%,420px)}
 #paper[data-layout="reference"] .paper-inner{background:#fbf7ea;box-shadow:0 24px 74px rgba(42,24,10,.22),0 2px 0 rgba(255,255,255,.6) inset}
 #paper[data-layout="reference"] .paper-inner::after{inset:10px;border:1px solid rgba(18,17,15,.72)}
-#paper[data-layout="reference"] .omikuji-frame{margin:12px 18px 16px;padding:16px 14px 14px;border:1.5px solid rgba(17,17,15,.86);background:rgba(251,247,234,.86);filter:none;font-family:var(--jp-serif);box-shadow:inset 0 0 0 4px rgba(255,255,255,.18);display:grid;grid-template-columns:1.08fr .92fr;gap:10px}
+#paper[data-layout="reference"] .omikuji-frame{margin:12px 18px 16px;padding:16px 14px 4px;border:1.5px solid rgba(17,17,15,.86);background:rgba(251,247,234,.86);filter:none;font-family:var(--jp-serif);box-shadow:inset 0 0 0 4px rgba(255,255,255,.18);display:grid;grid-template-columns:1.08fr .92fr;grid-template-rows:auto auto auto auto auto minmax(54px,1fr);gap:10px;min-height:820px}
 #paper[data-layout="reference"] .paper-crest{display:grid;grid-column:1 / -1;width:66px;height:66px;margin:0 auto 2px;place-items:center;border:2px solid #171411;border-radius:50%;font-family:var(--jp-serif);font-weight:900;font-size:28px;color:#171411;position:relative;background:rgba(255,250,232,.28)}
 #paper[data-layout="reference"] .paper-crest::before,#paper[data-layout="reference"] .paper-crest::after{content:"";position:absolute;width:28px;height:42px;border:2px solid #171411;border-left:0;border-bottom:0;border-radius:50%;top:11px}
 #paper[data-layout="reference"] .paper-crest::before{left:9px;transform:rotate(-34deg)}
 #paper[data-layout="reference"] .paper-crest::after{right:9px;transform:rotate(34deg)}
-#paper[data-layout="reference"] .omikuji-header{grid-column:1 / 2;grid-row:2;height:238px;display:grid;grid-template-columns:1.05fr 1fr 1.1fr;border:1px solid rgba(17,17,15,.8);background:rgba(255,255,255,.16);text-align:center;writing-mode:horizontal-tb;text-orientation:mixed;margin:0;overflow:hidden}
+#paper[data-layout="reference"] .omikuji-header{grid-column:1 / 2;grid-row:2;height:auto;min-height:238px;align-self:stretch;display:grid;grid-template-columns:1.05fr 1fr 1.1fr;border:1px solid rgba(17,17,15,.8);background:rgba(255,255,255,.16);text-align:center;writing-mode:horizontal-tb;text-orientation:mixed;margin:0;overflow:hidden}
 #paper[data-layout="reference"] .header-cell{display:flex;align-items:center;justify-content:center;height:100%;padding:16px 3px;border:0!important;text-align:center;min-width:0;overflow:hidden;white-space:nowrap}
 #paper[data-layout="reference"] .header-cell+ .header-cell{border-left:0!important}
 #paper[data-layout="reference"] .header-cell small{display:none}
@@ -226,7 +226,7 @@ html[data-lang="en"] .poem-zh{font-family:var(--latin-serif);font-size:18px;line
 #paper[data-layout="reference"] .paper-fortune{display:block;writing-mode:vertical-rl;text-orientation:upright;font-family:var(--jp-serif);font-weight:900;font-size:38px;line-height:1.05;letter-spacing:.04em;color:#111;white-space:nowrap}
 #paper[data-layout="reference"] .omikuji-body{grid-column:1 / -1;display:contents;min-height:0;border:0;overflow:visible}
 #paper[data-layout="reference"] .omikuji-body>div{border:1px solid rgba(17,17,15,.62)!important;min-width:0;background:rgba(255,255,255,.08)}
-#paper[data-layout="reference"] .vertical-main{grid-column:2 / 3;grid-row:2;min-height:238px;display:flex;flex-direction:row-reverse;justify-content:center;align-items:center;gap:14px;margin:0;padding:14px 8px;writing-mode:vertical-rl;text-orientation:upright;overflow:hidden}
+#paper[data-layout="reference"] .vertical-main{grid-column:2 / 3;grid-row:2;min-height:238px;height:auto;align-self:stretch;display:flex;flex-direction:row-reverse;justify-content:center;align-items:center;gap:14px;margin:0;padding:14px 8px;writing-mode:vertical-rl;text-orientation:upright;overflow:hidden}
 #paper[data-layout="reference"] .paper-title-vertical{display:none}
 #paper[data-layout="reference"] .poem-zh{font-family:var(--jp-serif)!important;font-weight:700!important;font-size:20px!important;line-height:1.58!important;letter-spacing:.07em;max-height:212px;color:#111;white-space:pre-line;overflow:hidden}
 #paper[data-layout="reference"] .poem-alt-wrap,#paper[data-layout="reference"] .summary-wrap{grid-column:1 / -1;display:block;writing-mode:horizontal-tb;text-orientation:mixed;margin:0;padding:10px 12px;overflow:hidden;font-family:var(--jp-serif);font-weight:500;line-height:1.55;min-height:0}
@@ -238,7 +238,7 @@ html[data-lang="en"] .poem-zh{font-family:var(--latin-serif);font-size:18px;line
 #paper[data-layout="reference"] .aspect b{display:block;font-family:var(--jp-serif);font-size:10.5px;font-weight:900;line-height:1.15;letter-spacing:.04em;margin:0 0 4px;color:#111;text-align:left;border-bottom:1px solid rgba(17,17,15,.20);padding-bottom:3px}
 #paper[data-layout="reference"] .aspect b::before{content:""}
 #paper[data-layout="reference"] .aspect span{display:block;font-family:var(--jp-serif);font-size:9.8px;font-weight:500;line-height:1.35;color:#111;text-align:left}
-#paper[data-layout="reference"] .omikuji-footer-mark{grid-column:1 / -1;height:auto;display:block;text-align:center;border-top:1px solid rgba(17,17,17,.55);margin-top:8px;padding-top:10px;font-family:var(--jp-serif);font-size:10px;font-weight:700;letter-spacing:.04em;color:#111}
+#paper[data-layout="reference"] .omikuji-footer-mark{grid-column:1 / -1;grid-row:6;align-self:end;height:auto;display:block;text-align:center;border-top:1px solid rgba(17,17,17,.55);margin-top:8px;padding-top:7px;padding-bottom:0;font-family:var(--jp-serif);font-size:10px;font-weight:700;letter-spacing:.04em;color:#111}
 #paper[data-layout="reference"] .omikuji-footer-mark span{display:inline;height:auto}#paper[data-layout="reference"] .omikuji-footer-mark span+span{border-left:0}#paper[data-layout="reference"] .omikuji-footer-mark span+span::before{content:" · "}
 
 #paper[data-layout="card"]{width:min(100%,520px)}
@@ -271,7 +271,7 @@ html[data-lang="en"] .poem-zh{font-family:var(--latin-serif);font-size:18px;line
 #paper[data-layout="card"] .omikuji-footer-mark span{display:inline;height:auto}#paper[data-layout="card"] .omikuji-footer-mark span+span{border-left:0}#paper[data-layout="card"] .omikuji-footer-mark span+span::before{content:" · "}
 
 html[data-lang="en"] #paper[data-layout="reference"] .omikuji-frame{grid-template-columns:.74fr 1.26fr}
-html[data-lang="en"] #paper[data-layout="reference"] .omikuji-header{grid-template-columns:1fr;grid-template-rows:auto auto 1fr;gap:0;padding:10px 12px;text-align:left}
+html[data-lang="en"] #paper[data-layout="reference"] .omikuji-header{display:flex;flex-direction:column;justify-content:center;gap:0;padding:10px 12px;text-align:left}
 html[data-lang="en"] #paper[data-layout="reference"] .header-cell{display:block;height:auto;padding:0 0 8px;text-align:left;white-space:normal;overflow:visible}
 html[data-lang="en"] #paper[data-layout="reference"] .fortune-cell{padding-top:6px}
 html[data-lang="en"] #paper[data-layout="reference"] .paper-num,html[data-lang="en"] #paper[data-layout="reference"] .paper-shrine,html[data-lang="en"] #paper[data-layout="reference"] .paper-fortune{writing-mode:horizontal-tb;text-orientation:mixed;white-space:normal;word-break:normal;overflow-wrap:break-word;letter-spacing:.01em;line-height:1.15}
@@ -291,10 +291,10 @@ html[data-lang="en"] #paper[data-layout="card"] .poem-zh{font-family:var(--latin
   .paper-note{position:relative;bottom:auto;left:auto;right:auto;margin-top:8px}
 
   #paper[data-layout="reference"]{width:min(100%,360px)}
-  #paper[data-layout="reference"] .omikuji-frame{margin:10px 12px 14px;padding:13px 10px 12px;grid-template-columns:1.08fr .92fr;gap:8px}
+  #paper[data-layout="reference"] .omikuji-frame{margin:10px 12px 14px;padding:13px 10px 4px;grid-template-columns:1.08fr .92fr;grid-template-rows:auto auto auto auto auto minmax(48px,1fr);gap:8px;min-height:760px}
   #paper[data-layout="reference"] .paper-crest{width:58px;height:58px;font-size:24px}
   #paper[data-layout="reference"] .paper-crest::before,#paper[data-layout="reference"] .paper-crest::after{width:24px;height:38px;top:9px}
-  #paper[data-layout="reference"] .omikuji-header{height:216px}
+  #paper[data-layout="reference"] .omikuji-header{height:auto;min-height:216px}
   #paper[data-layout="reference"] .paper-num{font-size:13.5px;letter-spacing:0}#paper[data-layout="reference"] .paper-shrine{font-size:12px;letter-spacing:.02em}#paper[data-layout="reference"] .paper-fortune{font-size:30px}
   #paper[data-layout="reference"] .vertical-main{min-height:216px;gap:10px;padding:12px 6px}
   #paper[data-layout="reference"] .poem-zh{font-size:16.5px!important;line-height:1.5!important;max-height:192px}
