@@ -207,10 +207,6 @@
       goDraw: $("#go-draw"),
       goBack: $("#go-back1"),
       goPaper: $("#go-paper"),
-      debugLot: $("#debug-lot"),
-      debugToggle: $("#debug-toggle"),
-      debugForm: $("#debug-form"),
-      debugNumber: $("#debug-number"),
       boxWrap: $("#box-wrap"),
       box: $("#box"),
       shakeCount: $("#shake-count"),
@@ -250,8 +246,6 @@
       enableMotion();
     });
     els.goBack.addEventListener("click", () => showStage("intro"));
-    els.debugToggle.addEventListener("click", toggleDebugPanel);
-    els.debugForm.addEventListener("submit", showDebugFortune);
     els.boxWrap.addEventListener("click", manualShake);
     els.boxWrap.addEventListener("pointerdown", () => unlockAudio(), { passive: true });
     els.goDraw.addEventListener("click", drawFortune);
