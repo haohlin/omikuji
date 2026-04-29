@@ -1,0 +1,402 @@
+[
+  {
+    "number": 1,
+    "fortune": "大吉"
+  },
+  {
+    "number": 2,
+    "fortune": "吉"
+  },
+  {
+    "number": 3,
+    "fortune": "凶"
+  },
+  {
+    "number": 4,
+    "fortune": "吉"
+  },
+  {
+    "number": 5,
+    "fortune": "末吉"
+  },
+  {
+    "number": 6,
+    "fortune": "吉"
+  },
+  {
+    "number": 7,
+    "fortune": "大吉"
+  },
+  {
+    "number": 8,
+    "fortune": "凶"
+  },
+  {
+    "number": 9,
+    "fortune": "大吉"
+  },
+  {
+    "number": 10,
+    "fortune": "凶"
+  },
+  {
+    "number": 11,
+    "fortune": "凶"
+  },
+  {
+    "number": 12,
+    "fortune": "大吉"
+  },
+  {
+    "number": 13,
+    "fortune": "半吉"
+  },
+  {
+    "number": 14,
+    "fortune": "半吉"
+  },
+  {
+    "number": 15,
+    "fortune": "凶"
+  },
+  {
+    "number": 16,
+    "fortune": "吉"
+  },
+  {
+    "number": 17,
+    "fortune": "吉"
+  },
+  {
+    "number": 18,
+    "fortune": "凶"
+  },
+  {
+    "number": 19,
+    "fortune": "凶"
+  },
+  {
+    "number": 20,
+    "fortune": "吉"
+  },
+  {
+    "number": 21,
+    "fortune": "吉"
+  },
+  {
+    "number": 22,
+    "fortune": "吉"
+  },
+  {
+    "number": 23,
+    "fortune": "吉"
+  },
+  {
+    "number": 24,
+    "fortune": "凶"
+  },
+  {
+    "number": 25,
+    "fortune": "凶"
+  },
+  {
+    "number": 26,
+    "fortune": "吉"
+  },
+  {
+    "number": 27,
+    "fortune": "凶"
+  },
+  {
+    "number": 28,
+    "fortune": "吉"
+  },
+  {
+    "number": 29,
+    "fortune": "凶"
+  },
+  {
+    "number": 30,
+    "fortune": "吉"
+  },
+  {
+    "number": 31,
+    "fortune": "大吉"
+  },
+  {
+    "number": 32,
+    "fortune": "吉"
+  },
+  {
+    "number": 33,
+    "fortune": "小吉"
+  },
+  {
+    "number": 34,
+    "fortune": "末小吉"
+  },
+  {
+    "number": 35,
+    "fortune": "凶"
+  },
+  {
+    "number": 36,
+    "fortune": "吉"
+  },
+  {
+    "number": 37,
+    "fortune": "凶"
+  },
+  {
+    "number": 38,
+    "fortune": "半吉"
+  },
+  {
+    "number": 39,
+    "fortune": "凶"
+  },
+  {
+    "number": 40,
+    "fortune": "大吉"
+  },
+  {
+    "number": 41,
+    "fortune": "吉"
+  },
+  {
+    "number": 42,
+    "fortune": "吉"
+  },
+  {
+    "number": 43,
+    "fortune": "吉"
+  },
+  {
+    "number": 44,
+    "fortune": "吉"
+  },
+  {
+    "number": 45,
+    "fortune": "吉"
+  },
+  {
+    "number": 46,
+    "fortune": "末吉"
+  },
+  {
+    "number": 47,
+    "fortune": "末小吉"
+  },
+  {
+    "number": 48,
+    "fortune": "小吉"
+  },
+  {
+    "number": 49,
+    "fortune": "大吉"
+  },
+  {
+    "number": 50,
+    "fortune": "吉"
+  },
+  {
+    "number": 51,
+    "fortune": "凶"
+  },
+  {
+    "number": 52,
+    "fortune": "吉"
+  },
+  {
+    "number": 53,
+    "fortune": "大吉"
+  },
+  {
+    "number": 54,
+    "fortune": "吉"
+  },
+  {
+    "number": 55,
+    "fortune": "大吉"
+  },
+  {
+    "number": 56,
+    "fortune": "吉"
+  },
+  {
+    "number": 57,
+    "fortune": "小吉"
+  },
+  {
+    "number": 58,
+    "fortune": "末吉"
+  },
+  {
+    "number": 59,
+    "fortune": "吉"
+  },
+  {
+    "number": 60,
+    "fortune": "末小吉"
+  },
+  {
+    "number": 61,
+    "fortune": "吉"
+  },
+  {
+    "number": 62,
+    "fortune": "大吉"
+  },
+  {
+    "number": 63,
+    "fortune": "大吉"
+  },
+  {
+    "number": 64,
+    "fortune": "末吉"
+  },
+  {
+    "number": 65,
+    "fortune": "凶"
+  },
+  {
+    "number": 66,
+    "fortune": "吉"
+  },
+  {
+    "number": 67,
+    "fortune": "凶"
+  },
+  {
+    "number": 68,
+    "fortune": "吉"
+  },
+  {
+    "number": 69,
+    "fortune": "凶"
+  },
+  {
+    "number": 70,
+    "fortune": "吉"
+  },
+  {
+    "number": 71,
+    "fortune": "大吉"
+  },
+  {
+    "number": 72,
+    "fortune": "凶"
+  },
+  {
+    "number": 73,
+    "fortune": "小吉"
+  },
+  {
+    "number": 74,
+    "fortune": "凶"
+  },
+  {
+    "number": 75,
+    "fortune": "半吉"
+  },
+  {
+    "number": 76,
+    "fortune": "凶"
+  },
+  {
+    "number": 77,
+    "fortune": "吉"
+  },
+  {
+    "number": 78,
+    "fortune": "凶"
+  },
+  {
+    "number": 79,
+    "fortune": "凶"
+  },
+  {
+    "number": 80,
+    "fortune": "凶"
+  },
+  {
+    "number": 81,
+    "fortune": "末吉"
+  },
+  {
+    "number": 82,
+    "fortune": "吉"
+  },
+  {
+    "number": 83,
+    "fortune": "吉"
+  },
+  {
+    "number": 84,
+    "fortune": "凶"
+  },
+  {
+    "number": 85,
+    "fortune": "凶"
+  },
+  {
+    "number": 86,
+    "fortune": "大吉"
+  },
+  {
+    "number": 87,
+    "fortune": "半吉"
+  },
+  {
+    "number": 88,
+    "fortune": "凶"
+  },
+  {
+    "number": 89,
+    "fortune": "大吉"
+  },
+  {
+    "number": 90,
+    "fortune": "末吉"
+  },
+  {
+    "number": 91,
+    "fortune": "凶"
+  },
+  {
+    "number": 92,
+    "fortune": "大吉"
+  },
+  {
+    "number": 93,
+    "fortune": "吉"
+  },
+  {
+    "number": 94,
+    "fortune": "吉"
+  },
+  {
+    "number": 95,
+    "fortune": "吉"
+  },
+  {
+    "number": 96,
+    "fortune": "吉"
+  },
+  {
+    "number": 97,
+    "fortune": "凶"
+  },
+  {
+    "number": 98,
+    "fortune": "大吉"
+  },
+  {
+    "number": 99,
+    "fortune": "大吉"
+  },
+  {
+    "number": 100,
+    "fortune": "凶"
+  }
+]

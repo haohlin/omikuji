@@ -1,0 +1,20 @@
+[
+  {
+    "number": 1,
+    "fortune": "大吉",
+    "poem_ja": "七寶浮圖塔\n高峯頂上安\n衆人皆仰望\n莫作等閑看",
+    "poem_reading": "しちほうのふとたふ　たかきみねのいただきにやすらかなり　しゅじんみなあふぎのぞむ　なんぞとうかんにみるべからず",
+    "meaning_ja": "七寶にて飾れる塔、高き峯の頂に安らかに立てり。衆人皆仰ぎ望みて敬ふべし。輕々しく見過すべからず。此の籤に遇ふ者、諸願悉く成就すべし。心正しくして信心深ければ、福祿自ら至らん。",
+    "meaning_zh": "七宝庄严之塔，高峙峰巅，安稳无虞。众人仰望瞻礼，莫作等闲之看。此签者，心愿皆遂，福禄自临。但须心正意诚，敬天礼人，则万事如意，吉庆盈门。",
+    "meaning_en": "A seven-jeweled pagoda stands serene atop a lofty peak. All people look up in reverence; do not pass it by with indifference. This lot bestows fulfillment of all wishes. Keep your heart upright and your faith deep, and fortune shall naturally arrive.",
+    "details": {
+      "願事": {"ja": "叶ふべし。急がず心を正しくせよ。", "zh": "心愿可成，不可急躁，正心以待。", "en": "Wishes will come true. Do not rush; keep your heart sincere."},
+      "恋愛": {"ja": "良縁あり。誠をもって交はれば永く続かん。", "zh": "良缘天赐，以诚相待则长久。", "en": "A good match. Sincerity brings lasting love."},
+      "仕事": {"ja": "昇進あり。努力すれば大いに栄ゆ。", "zh": "事业升进，勤勉则大有成就。", "en": "Promotion ahead. Diligence brings great success."},
+      "健康": {"ja": "病なし。なほ養生すべし。", "zh": "身体康健，仍需调养。", "en": "Good health. Continue to take care of yourself."},
+      "旅行": {"ja": "吉。遠路も障りなし。", "zh": "出行大吉，远行无碍。", "en": "Auspicious. Travel far without hindrance."},
+      "失物": {"ja": "出づべし。高き所を尋ねよ。", "zh": "失物可寻，宜往高处觅之。", "en": "Will be found. Search in high places."},
+      "待人": {"ja": "来るべし。喜び事あり。", "zh": "所待之人必至，且有喜讯。", "en": "They will come, bringing joyful news."}
+    }
+  }
+]

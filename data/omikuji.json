@@ -1,0 +1,2532 @@
+[
+  {
+    "number": 1,
+    "fortune": "大吉",
+    "poem_ja": "七寶浮圖塔\n高峯頂上安\n衆人皆仰望\n莫作等閑看",
+    "poem_reading": "しちほうのふとたふ　たかきみねのいただきにやすらかなり　しゅじんみなあふぎのぞむ　なんぞとうかんにみるべからず",
+    "meaning_ja": "七寶にて飾れる塔、高き峯の頂に安らかに立てり。衆人皆仰ぎ望みて敬ふべし。輕々しく見過すべからず。此の籤に遇ふ者、諸願悉く成就すべし。心正しくして信心深ければ、福祿自ら至らん。",
+    "meaning_zh": "七宝庄严之塔，高峙峰巅，安稳无虞。众人仰望瞻礼，莫作等闲之看。此签者，心愿皆遂，福禄自临。但须心正意诚，敬天礼人，则万事如意，吉庆盈门。",
+    "meaning_en": "A seven-jeweled pagoda stands serene atop a lofty peak. All people look up in reverence; do not pass it by with indifference. This lot bestows fulfillment of all wishes. Keep your heart upright and your faith deep, and fortune shall naturally arrive.",
+    "details": {
+      "願事": {
+        "ja": "叶ふべし。急がず心を正しくせよ。",
+        "zh": "心愿可成，不可急躁，正心以待。",
+        "en": "Wishes will come true. Do not rush; keep your heart sincere."
+      },
+      "恋愛": {
+        "ja": "良縁あり。誠をもって交はれば永く続かん。",
+        "zh": "良缘天赐，以诚相待则长久。",
+        "en": "A good match. Sincerity brings lasting love."
+      },
+      "仕事": {
+        "ja": "昇進あり。努力すれば大いに栄ゆ。",
+        "zh": "事业升进，勤勉则大有成就。",
+        "en": "Promotion ahead. Diligence brings great success."
+      },
+      "健康": {
+        "ja": "病なし。なほ養生すべし。",
+        "zh": "身体康健，仍需调养。",
+        "en": "Good health. Continue to take care of yourself."
+      },
+      "旅行": {
+        "ja": "吉。遠路も障りなし。",
+        "zh": "出行大吉，远行无碍。",
+        "en": "Auspicious. Travel far without hindrance."
+      },
+      "失物": {
+        "ja": "出づべし。高き所を尋ねよ。",
+        "zh": "失物可寻，宜往高处觅之。",
+        "en": "Will be found. Search in high places."
+      },
+      "待人": {
+        "ja": "来るべし。喜び事あり。",
+        "zh": "所待之人必至，且有喜讯。",
+        "en": "They will come, bringing joyful news."
+      }
+    }
+  },
+  {
+    "number": 2,
+    "fortune": "吉",
+    "poem_ja": "春風吹柳岸\n孤舟渡遠津\n前程多錦繡\n勿憚涉波塵",
+    "poem_reading": "しゅんぷうりゅうがんをふく　こしゅうえんしんをわたる　ぜんていきんしゅうおほし　はじんをわたるをはばかるなかれ",
+    "meaning_ja": "春風柳岸を吹き、孤舟遠き津を渡るなり。前程には錦繡の如き榮華多し。波塵を涉るを憚る勿れ。勇みて進めば必ず彼岸に達すべし。何となれば天時既に和らぎ、人事またよろしきを得ればなり。",
+    "meaning_zh": "春风拂柳，孤舟远渡津口。前程似锦，繁华可期。莫惧波涛风尘，奋然前行，则彼岸可达。时运已顺，人事亦宜，行之无悔。",
+    "meaning_en": "Spring winds caress the willow shore as a lone boat crosses to a distant ferry. The road ahead is rich with brocade splendor. Fear not the waves and dust; press on with courage, and you shall reach the far bank.",
+    "details": {
+      "願事": {
+        "ja": "叶ふべし。勇みて事を始むべし。",
+        "zh": "心愿可成，宜奋起行事。",
+        "en": "Wishes will be granted. Act with courage."
+      },
+      "恋愛": {
+        "ja": "縁結ばる。怯まず想ひを伝へよ。",
+        "zh": "良缘可结，勇表心意则谐。",
+        "en": "Love blooms. Speak your heart without fear."
+      },
+      "仕事": {
+        "ja": "進むべし。新たなる道に光明あり。",
+        "zh": "事业可进，新途必有光明。",
+        "en": "Advance boldly. New paths bring bright prospects."
+      },
+      "健康": {
+        "ja": "障りなし。時に體を動かすべし。",
+        "zh": "身体无恙，宜适度活动。",
+        "en": "No ailments. Keep the body active."
+      },
+      "旅行": {
+        "ja": "吉なり。水路殊に宜しかるべし。",
+        "zh": "出行吉利，水路尤佳。",
+        "en": "Auspicious. Travel by water is especially favorable."
+      },
+      "失物": {
+        "ja": "出づべし。水邊を尋ぬべし。",
+        "zh": "失物可得，宜往水边寻之。",
+        "en": "Will be found. Seek near water."
+      },
+      "待人": {
+        "ja": "遲れて來たる。便りも近し。",
+        "zh": "所待之人稍迟即至，音信亦近。",
+        "en": "They arrive with slight delay; news draws near."
+      }
+    }
+  },
+  {
+    "number": 3,
+    "fortune": "凶",
+    "poem_ja": "枯木逢霜雪\n孤舟入亂灘\n前程多險阻\n莫恨路行難",
+    "poem_reading": "こぼくそうせつにあふ　こしゅうらんたんにいる　ぜんていけんそおほし　うらむことなかれろのゆきがたきを",
+    "meaning_ja": "枯れたる木、霜雪に逢ひ、孤なる舟、亂灘に入る。前途險阻多く、憂ひ重なるべし。然れども路の難きを恨むこと勿れ。何となれば、心を靜めて時を待てば、必ず春の來る日あらん。今は身を愼み、妄動すべからず。",
+    "meaning_zh": "枯木遭逢霜雪，孤舟误入乱滩，前路艰险重重，忧患接踵而至。然不必怨叹路途之难，静心守时，春自有归。今宜谨慎自守，勿妄动躁进。",
+    "meaning_en": "A withered tree meets frost and snow; a lone boat drifts into turbulent shoals. The road ahead is full of peril. Yet do not lament the hardship—still your heart and await your time, for spring shall return.",
+    "details": {
+      "願事": {
+        "ja": "叶ひ難し。時を待ちて再び圖るべし。",
+        "zh": "心愿难遂，宜待时再谋。",
+        "en": "Wishes hard to fulfill. Wait for a better time."
+      },
+      "恋愛": {
+        "ja": "障り多し。強ひて進めば破るべし。",
+        "zh": "阻碍重重，强求则缘散。",
+        "en": "Many obstacles. Forcing it will break the bond."
+      },
+      "仕事": {
+        "ja": "停滯あり。守りて動くこと勿れ。",
+        "zh": "事业停滞，宜守不宜动。",
+        "en": "Stagnation. Hold your ground, do not act rashly."
+      },
+      "健康": {
+        "ja": "病あり。早く醫を尋ねよ。",
+        "zh": "身有疾患，宜速求医。",
+        "en": "Illness looms. Seek a physician promptly."
+      },
+      "旅行": {
+        "ja": "凶。行かば災ひあらん。",
+        "zh": "出行不利，行则有灾。",
+        "en": "Inauspicious. Travel invites misfortune."
+      },
+      "失物": {
+        "ja": "出でず。深き水邊に沒すべし。",
+        "zh": "失物难寻，恐沉于水畔。",
+        "en": "Lost for good, likely sunk near water."
+      },
+      "待人": {
+        "ja": "來らず。消息も絶えん。",
+        "zh": "所待之人不至，音信亦绝。",
+        "en": "They will not come; even word is lost."
+      }
+    }
+  },
+  {
+    "number": 4,
+    "fortune": "吉",
+    "poem_ja": "春風吹柳岸\n一葉渡江舟\n遠浦帆初展\n前程錦繡秋",
+    "poem_reading": "しゅんぷうりゅうがんをふく　いちようこうをわたるのふね　えんぽはんはじめてひらく　ぜんていきんしゅうのあき",
+    "meaning_ja": "春風柳岸を吹き、一葉の舟江を渡る。遠き浦に帆を張りて出で行けば、前途は錦繡の秋の如し。此の籤に遇ふ者、事を起こすに好機なり。但し風を見て帆を上ぐべし。時を得れば大いに成るべし。",
+    "meaning_zh": "春风拂柳，扁舟渡江。远浦扬帆初发，前程似锦绣金秋。此签遇事正当时，宜乘势而起。然须察风向而张帆，得时则事必成，福禄可期。",
+    "meaning_en": "Spring breeze stirs the willowed shore; a single boat crosses the river. Sails unfurl toward distant coves, and the road ahead shimmers like brocade autumn. Seize the favorable wind; act in its time, and success shall follow.",
+    "details": {
+      "願事": {
+        "ja": "叶ふべし。時を待ちて動くべし。",
+        "zh": "所愿可成，宜候时而动。",
+        "en": "Wishes will be granted. Wait for the right moment to act."
+      },
+      "恋愛": {
+        "ja": "縁あり。誠意を尽くせば結ばれん。",
+        "zh": "有缘可结，尽诚则成就良缘。",
+        "en": "Love is near. Sincerity will bind two hearts together."
+      },
+      "仕事": {
+        "ja": "進展あり。新たな道を開くべし。",
+        "zh": "事业有进，宜开拓新途。",
+        "en": "Work progresses. Open new paths boldly."
+      },
+      "健康": {
+        "ja": "穏やかなり。過労を避くべし。",
+        "zh": "身体平稳，切忌过劳。",
+        "en": "Stable health. Avoid overexertion."
+      },
+      "旅行": {
+        "ja": "吉なり。水路殊に安し。",
+        "zh": "出行吉利，水路尤为平安。",
+        "en": "Favorable. Travel by water is especially safe."
+      },
+      "失物": {
+        "ja": "出づべし。水邊を尋ねよ。",
+        "zh": "失物可得，宜寻水边。",
+        "en": "Will be found. Search near water."
+      },
+      "待人": {
+        "ja": "遅れて来るべし。障りなし。",
+        "zh": "所待之人稍迟必至，无碍。",
+        "en": "They will arrive, though a little delayed."
+      }
+    }
+  },
+  {
+    "number": 5,
+    "fortune": "末吉",
+    "poem_ja": "枯木逢春雨\n遲遲始發花\n莫嫌時節晚\n終得結英華",
+    "poem_reading": "こぼくしゅんうにあふ　ちちとしてはじめてはなひらく　ときのおそきをきらふことなかれ　つひにえいかをむすぶをえん",
+    "meaning_ja": "枯れたる木、春の雨に潤ひて、遲々として花を開く。時節の遲きを嫌ふ勿れ、終には英華を結ぶべし。今は時未だ至らずと雖も、堅く守りて待つべし。何となれば天道循環して、遲く來る春も必ず至ればなり。",
+    "meaning_zh": "枯木逢春雨，迟迟始著花。莫嫌时节晚来，终究可结英华。眼下时机未至，宜坚守以待。天道循环，迟春亦必来临，勿生怨尤。",
+    "meaning_en": "A withered tree meets the spring rain and slowly bursts into bloom. Do not lament the lateness of the season; in the end, splendid blossoms will come. Hold fast and wait; late springs, too, always arrive.",
+    "details": {
+      "願事": {
+        "ja": "遲くして叶ふべし。焦る勿れ。",
+        "zh": "心愿迟成，不可焦急，静候时至。",
+        "en": "Wishes will come true late. Do not be impatient."
+      },
+      "恋愛": {
+        "ja": "縁は後に熟す。誠心を失ふ勿れ。",
+        "zh": "情缘后熟，勿失诚心，自有佳期。",
+        "en": "Love ripens later. Keep your sincerity intact."
+      },
+      "仕事": {
+        "ja": "初めは難し、後に通ず。忍ぶべし。",
+        "zh": "事业初难后顺，须耐心坚忍。",
+        "en": "Hard at first, smooth later. Endure with patience."
+      },
+      "健康": {
+        "ja": "舊疾漸く癒ゆ。調養を怠る勿れ。",
+        "zh": "旧疾渐愈，调养不可懈怠。",
+        "en": "Old ailments slowly heal. Do not neglect care."
+      },
+      "旅行": {
+        "ja": "遲き出立こそ吉なり。",
+        "zh": "迟行为吉，早出反有阻滞。",
+        "en": "A delayed departure brings fortune."
+      },
+      "失物": {
+        "ja": "時を經て現るべし。草木の間を尋ねよ。",
+        "zh": "失物迟出，宜寻草木之间。",
+        "en": "Found after time. Search among plants and trees."
+      },
+      "待人": {
+        "ja": "遲く來る。音信まづ至らん。",
+        "zh": "所待之人迟至，音信先到。",
+        "en": "They come late; news arrives first."
+      }
+    }
+  },
+  {
+    "number": 6,
+    "fortune": "吉",
+    "poem_ja": "春風桃李花\n一夜發萬枝\n行人休悵望\n好景自相隨",
+    "poem_reading": "しゅんぷうのとうりのはな　いちやにばんしにひらく　こうじんちょうぼうをやめよ　こうけいおのづからあひしたがふ",
+    "meaning_ja": "春風吹きて桃李の花、一夜の間に萬枝に開くが如し。行人徒らに悵望すること勿れ。何となれば好景自ら身に隨ひ來るなり。時至らば事自ら成るべし。唯だ怠ることなく勤むべし。",
+    "meaning_zh": "春风拂过，桃李一夜花开万枝。行人莫作怅然之望，美景自随身而至。时机将至，事必自成。唯须勤勉不怠，福缘乃深。",
+    "meaning_en": "Spring winds bring peach and plum blossoms, blooming overnight upon ten thousand branches. Traveler, cease your wistful gazing; fair scenes will follow of their own accord. When the time ripens, all things fulfill themselves.",
+    "details": {
+      "願事": {
+        "ja": "遲かれど叶ふべし。焦らず待つべし。",
+        "zh": "所愿虽迟终成，不可焦躁。",
+        "en": "Wishes will come true, though slowly. Wait patiently."
+      },
+      "恋愛": {
+        "ja": "縁結ばれん。誠意をもて交はれ。",
+        "zh": "姻缘可成，宜以真心相交。",
+        "en": "Love will blossom. Approach with sincerity."
+      },
+      "仕事": {
+        "ja": "漸く進むべし。勤めて怠る勿れ。",
+        "zh": "事业渐进，勤勉不可懈怠。",
+        "en": "Work progresses steadily. Be diligent, never idle."
+      },
+      "健康": {
+        "ja": "小恙あるも癒ゆべし。",
+        "zh": "偶有小恙，调养即愈。",
+        "en": "Minor ailments will soon recover."
+      },
+      "旅行": {
+        "ja": "吉なり。春日の行樂宜し。",
+        "zh": "出行吉利，春日游赏相宜。",
+        "en": "Auspicious. Spring journeys bring delight."
+      },
+      "失物": {
+        "ja": "日を經て出づべし。花木の邊を尋ねよ。",
+        "zh": "失物迟现，宜于花木之处寻之。",
+        "en": "Found after some days. Search near trees and flowers."
+      },
+      "待人": {
+        "ja": "遲れて來るべし。憂ふる勿れ。",
+        "zh": "所待之人稍迟必至，不必忧虑。",
+        "en": "They will come, though a little late. Do not worry."
+      }
+    }
+  },
+  {
+    "number": 7,
+    "fortune": "大吉",
+    "poem_ja": "春風吹柳岸\n花發滿枝紅\n蜂蝶爭相戲\n芳菲處處同",
+    "poem_reading": "しゅんぷうりゅうがんにふき　はなひらきてえだにみちてくれなゐなり　ほうちょうあらそひたはむる　はうひしょしょおなじ",
+    "meaning_ja": "春風柳岸に吹き、花開きて枝に滿ち紅なり。蜂蝶爭ひて相戲れ、芳しき香り處處に同じく薰れり。此の籤に遇ふ者、時運正に到り、諸事和合すべし。春の氣に乘じて動けば、福慶重ねて至らん。",
+    "meaning_zh": "春风拂柳，岸边花开满枝，红艳灼灼。蜂蝶争戏于花丛，芳菲之气四处飘溢。此签者，时运正盛，诸事和合。乘春气而动，则福庆重至，喜乐绵延。",
+    "meaning_en": "Spring breezes caress the willow shore, blossoms crowd the branches in crimson splendor. Bees and butterflies frolic among the flowers, and sweet fragrance fills every corner. Your fortune is in full bloom; act with the season, and joy shall multiply.",
+    "details": {
+      "願事": {
+        "ja": "速やかに叶ふべし。時に乘ずべし。",
+        "zh": "心愿速成，宜乘时而动。",
+        "en": "Wishes swiftly granted. Seize the moment."
+      },
+      "恋愛": {
+        "ja": "花開く如し。良縁必ず結ばれん。",
+        "zh": "爱如花开，良缘必结。",
+        "en": "Love blossoms. A fine union is certain."
+      },
+      "仕事": {
+        "ja": "諸事順調なり。共に事を成すべし。",
+        "zh": "事业顺遂，宜与人合力而成。",
+        "en": "All affairs prosper. Cooperate to succeed."
+      },
+      "健康": {
+        "ja": "氣力充實す。憂ひなかるべし。",
+        "zh": "气血充盈，身心无忧。",
+        "en": "Vitality abounds. No cause for worry."
+      },
+      "旅行": {
+        "ja": "大吉なり。途中樂しみ多し。",
+        "zh": "出行大吉，途中多有喜乐。",
+        "en": "Most auspicious. Joys await along the way."
+      },
+      "失物": {
+        "ja": "出づべし。花の近くを尋ねよ。",
+        "zh": "失物可得，宜于花木近处寻之。",
+        "en": "Will be found near flowers or gardens."
+      },
+      "待人": {
+        "ja": "早く來たるべし。喜びを伴ふ。",
+        "zh": "所待之人速至，携喜而来。",
+        "en": "They arrive soon, bearing happiness."
+      }
+    }
+  },
+  {
+    "number": 8,
+    "fortune": "凶",
+    "poem_ja": "孤舟逢惡浪\n帆破櫓還摧\n前程煙霧暗\n何處泊身來",
+    "poem_reading": "こしうあくらうにあひ　ほやぶれろまたくだく　ぜんていえんむくらし　いづくにかみをはくせん",
+    "meaning_ja": "孤舟惡浪に逢ひ、帆も櫓も共に摧くるなり。前途は煙霧深く暗くして、身を寄すべき岸も見えず。此の籤に遇ふ者、萬事慎みて動くべからず。何となれば輕々しく進めば禍を招かん。靜かに時を待ち、神佛に祈るべし。",
+    "meaning_zh": "孤舟遭遇惡浪，帆破櫓折，進退無依。前路煙霧迷茫，不知何處可泊。此籤凡事不宜輕動，妄進則禍至。宜靜守本分，修心祈福，以待時運轉機。",
+    "meaning_en": "A lone boat meets fierce waves; sail torn, oar broken. The road ahead is veiled in dark mist, with no shore in sight. Refrain from rash action; wait quietly, pray, and let the storm pass.",
+    "details": {
+      "願事": {
+        "ja": "叶ひ難し。時を待つべし。",
+        "zh": "心愿难成，宜守静待时。",
+        "en": "Hard to fulfill. Wait patiently for better times."
+      },
+      "恋愛": {
+        "ja": "障り多し。別離あるべし。",
+        "zh": "阻碍重重，恐有离散之忧。",
+        "en": "Many obstacles; separation may come."
+      },
+      "仕事": {
+        "ja": "損失あり。新事を起すべからず。",
+        "zh": "事业有损，不宜创新举事。",
+        "en": "Losses loom. Do not start new ventures."
+      },
+      "健康": {
+        "ja": "病重し。早く良醫を求めよ。",
+        "zh": "病势沉重，宜速访良医。",
+        "en": "Serious illness. Seek a skilled physician soon."
+      },
+      "旅行": {
+        "ja": "凶。行くこと勿れ。",
+        "zh": "出行不利，切莫远游。",
+        "en": "Inauspicious. Do not travel."
+      },
+      "失物": {
+        "ja": "出でず。水邊を疑ふべし。",
+        "zh": "失物难寻，恐落水边。",
+        "en": "Hard to recover. Perhaps lost near water."
+      },
+      "待人": {
+        "ja": "来らず。音信も絶ゆべし。",
+        "zh": "所待不至，音信亦绝。",
+        "en": "They will not come; no word arrives."
+      }
+    }
+  },
+  {
+    "number": 9,
+    "fortune": "大吉",
+    "poem_ja": "鶴銜丹桂枝\n飛來降碧池\n主人開宴處\n共慶太平時",
+    "poem_reading": "つるたんけいのえだをふくみ　とびきたりてへきちにくだる　しゅじんえんをひらくところ　ともにたいへいのときをよろこぶ",
+    "meaning_ja": "仙鶴丹桂の枝を銜へ、飛び來りて碧き池に降る。主人宴を開きて賓客を迎へ、共に太平の世を慶ぶなり。此の籤に遇ふ者、吉兆重なりて喜事頻りなるべし。心を寛やかに保ちて德を修むべし。然らば福祿自ら來り、名聲遠く揚がらん。",
+    "meaning_zh": "仙鹤衔丹桂之枝，翩然降于碧池之上。主人开筵，嘉宾云集，共庆太平盛世。此签者，吉兆叠至，喜事频来。宜宽怀修德，则福禄自臻，声名远播。",
+    "meaning_en": "A crane bearing a cinnamon branch descends upon a jade-green pool. The host opens a feast; all gather to celebrate an age of peace. This lot brings layered blessings and joyful tidings. Cultivate virtue with an open heart, and honor shall spread far.",
+    "details": {
+      "願事": {
+        "ja": "大いに叶ふべし。喜び重なりて至らん。",
+        "zh": "心愿大遂，喜事接踵而至。",
+        "en": "Wishes greatly fulfilled; joys arrive in succession."
+      },
+      "恋愛": {
+        "ja": "緣深し。共に白首を契るべし。",
+        "zh": "情缘深厚，可许白首之约。",
+        "en": "Deep affinity. A vow till white hair may be made."
+      },
+      "仕事": {
+        "ja": "大功立つべし。名聲四方に揚がらん。",
+        "zh": "功业有成，声名远扬四方。",
+        "en": "Great achievement; your name spreads afar."
+      },
+      "健康": {
+        "ja": "康寧なり。鶴の如く長壽を得ん。",
+        "zh": "身心康宁，如鹤享长寿。",
+        "en": "Robust health; long life like the crane's."
+      },
+      "旅行": {
+        "ja": "大吉。所到の處に貴人あり。",
+        "zh": "旅途大吉，所至之处逢贵人。",
+        "en": "Highly auspicious. Noble helpers await wherever you go."
+      },
+      "失物": {
+        "ja": "必ず出づべし。水邊を尋ねよ。",
+        "zh": "失物必现，宜往水边寻之。",
+        "en": "Will surely appear. Search near water."
+      },
+      "待人": {
+        "ja": "速やかに來る。吉報を携ふべし。",
+        "zh": "所待之人速至，必携佳音。",
+        "en": "They come swiftly, bringing happy news."
+      }
+    }
+  },
+  {
+    "number": 10,
+    "fortune": "凶",
+    "poem_ja": "孤舟迷暗夜\n風雨打殘燈\n岸遠無人渡\n愁雲鎖遠峰",
+    "poem_reading": "こしゅうあんやにまよふ　ふうう ざんとうをうつ　きしとほくしてひとのわたるなし　しゅううん えんぽうをとざす",
+    "meaning_ja": "孤舟暗夜に迷ひ、風雨殘燈を打つ。岸遠くして渡る人なく、愁雲遠峯を鎖せり。此の籤に遇ふ者、萬事阻滯して進み難し。妄りに動く勿れ、何となれば災禍身に及ばんとすればなり。靜かに守りて時を待つべし。",
+    "meaning_zh": "孤舟迷于暗夜，风雨摧残灯烛。岸远无人可渡，愁云锁住远峰。此签诸事阻滞，切勿妄动，动则招祸。宜静守以待天明，修身积德，方可转机。",
+    "meaning_en": "A lone boat drifts lost in the dark night, wind and rain beating the dying lamp. The shore is far, no ferryman in sight, and sorrowful clouds seal the distant peaks. Do not act rashly; stay still and wait for the dawn.",
+    "details": {
+      "願事": {
+        "ja": "叶ひ難し。時を待ちて動く勿れ。",
+        "zh": "心愿难成，宜守静待时。",
+        "en": "Hard to fulfill. Wait quietly; do not force matters."
+      },
+      "恋愛": {
+        "ja": "縁薄し。誤解生じて離れやすし。",
+        "zh": "缘分浅薄，易生误会而分离。",
+        "en": "Thin ties. Misunderstandings may cause parting."
+      },
+      "仕事": {
+        "ja": "阻滯多し。新事を始むる勿れ。",
+        "zh": "阻碍重重，不宜开创新业。",
+        "en": "Many obstacles. Do not begin new ventures."
+      },
+      "健康": {
+        "ja": "憂ひあり。早く醫に問ふべし。",
+        "zh": "身体堪忧，宜早求医诊治。",
+        "en": "Health concerns. Seek a physician promptly."
+      },
+      "旅行": {
+        "ja": "凶。延期すべし、風波あり。",
+        "zh": "出行不利，宜延期，恐有风波。",
+        "en": "Inauspicious. Postpone; storms await."
+      },
+      "失物": {
+        "ja": "出で難し。水邊を尋ぬとも空し。",
+        "zh": "失物难寻，纵觅水边亦无果。",
+        "en": "Hard to recover. Even searching by water yields nothing."
+      },
+      "待人": {
+        "ja": "来らず。音信も絶ゆべし。",
+        "zh": "所待之人不至，音信亦绝。",
+        "en": "They will not come; word may cease."
+      }
+    }
+  },
+  {
+    "number": 11,
+    "fortune": "凶",
+    "poem_ja": "孤舟遇逆風\n波浪暗中翻\n前程何處是\n煙霧鎖江村",
+    "poem_reading": "こしゅうぎゃくふうにあひ　はらうあんちゅうにひるがへる　ぜんていいづれのところぞ　えんむこうそんをとざす",
+    "meaning_ja": "孤舟逆風に遇ひ、波浪暗中に翻る。前程何れの處なるか、煙霧江村を鎖せり。此の籤に遇ふ者、災難身に迫るべし。妄りに動くこと勿れ、何となれば進めば禍を招くが故なり。靜かに時を待ちて身を慎むべし。",
+    "meaning_zh": "孤舟逆风，波涛暗涌，前路茫茫，烟雾锁村。此签者，凶险当前，切勿妄动。宜静守本分，收敛锋芒，以待风平浪静，方可图进。",
+    "meaning_en": "A lone boat meets contrary winds; waves churn in darkness. The road ahead is lost, and mist shrouds the riverside village. Danger approaches; do not act rashly. Stay still and wait for calmer times.",
+    "details": {
+      "願事": {
+        "ja": "叶ひ難し。退きて時を待つべし。",
+        "zh": "心愿难成，宜退守以待时机。",
+        "en": "Wishes are hard to fulfill. Withdraw and await your time."
+      },
+      "恋愛": {
+        "ja": "縁薄し。強ひて求むれば却つて破る。",
+        "zh": "缘分浅薄，强求反致破裂。",
+        "en": "The bond is thin. Forcing it brings only ruin."
+      },
+      "仕事": {
+        "ja": "障り多し。新事を起すこと勿れ。",
+        "zh": "事多阻滞，切勿另起新业。",
+        "en": "Many obstacles. Do not begin new ventures."
+      },
+      "健康": {
+        "ja": "病重し。早く醫に就くべし。",
+        "zh": "病情堪忧，宜速延医诊治。",
+        "en": "Illness is serious. Seek a physician at once."
+      },
+      "旅行": {
+        "ja": "凶。途中に災ひあり、止むべし。",
+        "zh": "出行不利，途中有险，宜止。",
+        "en": "Inauspicious. Danger on the road; stay home."
+      },
+      "失物": {
+        "ja": "出でず。水邊を探るも空し。",
+        "zh": "失物难寻，纵觅水畔亦无获。",
+        "en": "Lost for good. Even searching by water yields nothing."
+      },
+      "待人": {
+        "ja": "來らず。音信も絕ゆべし。",
+        "zh": "所待之人不来，音信亦绝。",
+        "en": "They will not come; even word fails to arrive."
+      }
+    }
+  },
+  {
+    "number": 12,
+    "fortune": "大吉",
+    "poem_ja": "春風吹柳岸\n畫舫載瓊華\n一棹凌波去\n蓬萊是我家",
+    "poem_reading": "しゅんぷうりゅうがんにふく　がぼうけいかをのす　いっとうなみをしのぎてさる　ほうらいはわがいへなり",
+    "meaning_ja": "春風柳岸に吹きて、畫舫瓊華を載す。一棹もて波を凌ぎ去れば、蓬萊の仙境即ち我が家なり。此の籤に遇ふ者、時運盛んにして、行く先々に喜びあるべし。心を清くして進まば、所願悉く成就せん。",
+    "meaning_zh": "春风拂柳，画舫载花，一棹凌波，直抵蓬莱仙境。此签运势鼎盛，所到之处皆有喜庆。心怀清明，勇往直前，则诸事遂意，福至门庭。",
+    "meaning_en": "Spring breezes caress willowed banks, and a painted boat bears jeweled blossoms. With one stroke of the oar, you cross the waves to reach the fairy isle of Penglai. Fortune is at its fullest; move forward with a pure heart, and all wishes shall be granted.",
+    "details": {
+      "願事": {
+        "ja": "大いに叶ふ。順風に帆を揚ぐるが如し。",
+        "zh": "心愿大成，如顺风扬帆。",
+        "en": "Wishes greatly fulfilled, as sails catch a fair wind."
+      },
+      "恋愛": {
+        "ja": "良縁相逢ふ。水上の花の如く美し。",
+        "zh": "良缘相逢，情意如水上花开。",
+        "en": "A fine love blossoms like flowers on the water."
+      },
+      "仕事": {
+        "ja": "事業進展す。遠き地にも利あり。",
+        "zh": "事业顺遂，远方亦得利。",
+        "en": "Work progresses well; profit comes even from afar."
+      },
+      "健康": {
+        "ja": "身軽く爽やかなり。遊山も吉。",
+        "zh": "身心轻健，出游亦宜。",
+        "en": "Body and spirit are light; outings bring joy."
+      },
+      "旅行": {
+        "ja": "大吉。水路陸路ともに安らかなり。",
+        "zh": "旅途大吉，水陆皆安。",
+        "en": "Highly auspicious. Both land and water journeys are safe."
+      },
+      "失物": {
+        "ja": "出づべし。水邊を尋ねよ。",
+        "zh": "失物可得，宜往水边寻觅。",
+        "en": "Will be found. Search near the water."
+      },
+      "待人": {
+        "ja": "程なく至る。佳き音信を携ふ。",
+        "zh": "所待之人将至，携来佳音。",
+        "en": "They will soon arrive, bearing good tidings."
+      }
+    }
+  },
+  {
+    "number": 13,
+    "fortune": "半吉",
+    "poem_ja": "孤舟泛煙波\n風逆浪還多\n且待雲收後\n揚帆奏凱歌",
+    "poem_reading": "こしゅうえんぱにうかぶ　かぜさからひなみまたおほし　しばらくまてくもをさまるののち　ほをあげてがいかをそうせん",
+    "meaning_ja": "孤舟煙波に浮かぶも、風逆らひて浪また多し。暫く雲の收まるを待つべし。何となれば時未だ至らざるなり。焦りて進まば覆らん。靜かに時を俟てば、やがて帆を揚げて凱歌を奏すべし。",
+    "meaning_zh": "孤舟泛于烟波，风逆而浪多，行路艰难。且待云开雾散，时至自可扬帆。先难后易之象，急进则覆，静守则成。忍耐以俟天时，终奏凯歌。",
+    "meaning_en": "A lonely boat drifts on misty waves, facing contrary winds and rising tides. Wait for the clouds to clear before setting sail. Patience transforms hardship into triumph.",
+    "details": {
+      "願事": {
+        "ja": "半ばなり。時を待てば後に叶ふべし。",
+        "zh": "半成之象，待时而后可遂。",
+        "en": "Half-fulfilled. Await the right moment for success."
+      },
+      "恋愛": {
+        "ja": "障り多し。誠を盡さば末に結ばれん。",
+        "zh": "初有阻碍，真心相待终成眷属。",
+        "en": "Obstacles now, but sincere love will prevail."
+      },
+      "仕事": {
+        "ja": "難あり。忍耐すれば後に道開けん。",
+        "zh": "事业多阻，忍耐以待转机自现。",
+        "en": "Difficulties arise. Patience will open the way later."
+      },
+      "健康": {
+        "ja": "小患あり。養生怠る勿れ。",
+        "zh": "小恙在身，调养不可懈怠。",
+        "en": "Minor ailments. Do not neglect your care."
+      },
+      "旅行": {
+        "ja": "延ばすべし。時期を改めよ。",
+        "zh": "宜延后再行，另择良辰。",
+        "en": "Postpone your journey to a better time."
+      },
+      "失物": {
+        "ja": "出で難し。水邊を尋ねよ。",
+        "zh": "难以速得，可往水边寻觅。",
+        "en": "Hard to find. Search near water."
+      },
+      "待人": {
+        "ja": "遲し。來らざるにあらず。",
+        "zh": "来迟而非不来，耐心以候。",
+        "en": "They will come, though delayed."
+      }
+    }
+  },
+  {
+    "number": 14,
+    "fortune": "半吉",
+    "poem_ja": "孤舟泛煙波\n風急浪漸高\n暫繫蘆花岸\n雲開月自皎",
+    "poem_reading": "こしゅうえんぱにうかぶ　かぜきゅうにしてなみやうやくたかし　しばらくろかのきしにつなぐ　くもひらけてつきおのづからきよし",
+    "meaning_ja": "孤舟煙波に泛び、風急にして浪漸く高し。暫く蘆花の岸に繫ぎて風を避くべし。焦る勿れ、何となれば雲開けば月自ら皎かなればなり。初めに難あれども、後に必ず通ずべし。",
+    "meaning_zh": "孤舟漂于烟波，风急浪高，行路艰难。宜暂泊芦岸以避其锋，不可强进。须知云散则月明自现，先难后易之象。守静待时，终有通达之日。",
+    "meaning_en": "A lone boat drifts on misty waves as wind rises and billows swell. Moor awhile by reeded shores and wait; when clouds part, the moon shines clear of itself. Hardship first, ease after.",
+    "details": {
+      "願事": {
+        "ja": "半ば叶ふべし。時を待ちて動くべし。",
+        "zh": "心愿半成，宜待时而动。",
+        "en": "Half fulfilled. Wait for the right time to act."
+      },
+      "恋愛": {
+        "ja": "初めは障りあり、誠なれば後に和合すべし。",
+        "zh": "初有波折，以诚相守则终得和合。",
+        "en": "Early troubles, but sincerity brings eventual harmony."
+      },
+      "仕事": {
+        "ja": "進みがたし。暫く守りて時を窺ふべし。",
+        "zh": "事业暂滞，宜守成观望时机。",
+        "en": "Progress is slow. Hold your ground and watch for opportunity."
+      },
+      "健康": {
+        "ja": "小恙あり。靜養すれば癒ゆべし。",
+        "zh": "略有小恙，静养可愈。",
+        "en": "Minor illness. Rest brings recovery."
+      },
+      "旅行": {
+        "ja": "急ぐ勿れ。延期すれば吉なり。",
+        "zh": "不宜急行，延期则吉。",
+        "en": "Do not rush. Postponement brings fortune."
+      },
+      "失物": {
+        "ja": "遲く出づべし。水邊を尋ねよ。",
+        "zh": "失物迟现，宜向水边寻之。",
+        "en": "Found late. Search near water."
+      },
+      "待人": {
+        "ja": "遲れて來るべし。憂ふる勿れ。",
+        "zh": "所待之人迟至，不必忧虑。",
+        "en": "They come late, but do come. Do not worry."
+      }
+    }
+  },
+  {
+    "number": 15,
+    "fortune": "凶",
+    "poem_ja": "孤舟逢逆浪\n日暮大江空\n雲暗千山暝\n風悲万木中",
+    "poem_reading": "こしゅうぎゃくろうにあふ　ひくれてたいこうむなし　くもくらくしてせんざんくらし　かぜかなしばんぼくのうち",
+    "meaning_ja": "孤舟逆浪に遇ひ、日暮れて大江空し。雲暗く千山冥く、風は万木の中に悲しく鳴る。此の籤に遇ふ者、百事進むべからず。静かに身を守り、時を待つべし。妄りに動かば禍を招かん。",
+    "meaning_zh": "孤舟遇逆浪，日暮江空，云暗山冥，风悲林野。此签诸事不利，宜静守待时。切勿妄动躁进，恐招祸患。修身慎行，方免其咎。",
+    "meaning_en": "A lone boat meets contrary waves; dusk falls on the empty river. Dark clouds veil a thousand peaks, and mournful winds cry through the woods. All endeavors are ill-fated now. Remain still, guard yourself, and await better days.",
+    "details": {
+      "願事": {
+        "ja": "叶ひ難し。時を待ちて動くべからず。",
+        "zh": "心愿难成，宜静待时机，勿强求。",
+        "en": "Hard to fulfill. Wait patiently; do not force."
+      },
+      "恋愛": {
+        "ja": "縁薄し。誤解生じて離れん。",
+        "zh": "姻缘浅薄，易生误会而分离。",
+        "en": "A weak bond. Misunderstandings may cause parting."
+      },
+      "仕事": {
+        "ja": "滯るべし。新事を興すこと勿れ。",
+        "zh": "事业停滞，不宜开创新局。",
+        "en": "Work stagnates. Do not begin new ventures."
+      },
+      "健康": {
+        "ja": "病を患ふべし。早く医に就くべし。",
+        "zh": "恐有疾病，宜速就医调养。",
+        "en": "Illness threatens. Seek treatment without delay."
+      },
+      "旅行": {
+        "ja": "凶なり。遠路行くこと勿れ。",
+        "zh": "出行不利，切勿远行。",
+        "en": "Inauspicious. Avoid distant travel."
+      },
+      "失物": {
+        "ja": "出で難し。水辺を尋ぬとも空し。",
+        "zh": "失物难寻，虽访水畔亦徒劳。",
+        "en": "Hard to recover. Even searching by water is vain."
+      },
+      "待人": {
+        "ja": "来たらず。音信も絶ゆべし。",
+        "zh": "所待之人不至，音信亦绝。",
+        "en": "They will not come; news may cease."
+      }
+    }
+  },
+  {
+    "number": 16,
+    "fortune": "吉",
+    "poem_ja": "春園花競發\n蜂蝶自徘徊\n莫嘆東風急\n天時次第開",
+    "poem_reading": "しゅんゑんはなきそひひらく　ほうてふおのづからはいくわいす　なげくなかれとうふうのきゅうなるを　てんじしだいにひらかん",
+    "meaning_ja": "春の園に百花競ひて咲き、蜂蝶自ら舞ひ遊ぶ。東風の急にして花を散らすを嘆く勿れ。何となれば天時移り來りて、後の時節いよいよ開くべきなり。心靜かに待てば、福自ら至らん。",
+    "meaning_zh": "春园百花争发，蜂蝶自往来徘徊。莫叹东风过急吹落花枝，天时有序，好景在后。此签者宜静心以待，勿躁勿忧，吉庆自临门。",
+    "meaning_en": "In the spring garden a hundred flowers bloom, and bees and butterflies wander freely. Do not lament the swift east wind; heaven's seasons unfold in turn. Wait with a calm heart, and blessings shall come.",
+    "details": {
+      "願事": {
+        "ja": "時を待てば叶ふべし。焦る勿れ。",
+        "zh": "心愿随时而成，切勿心急。",
+        "en": "Wishes fulfilled in due time. Do not be impatient."
+      },
+      "恋愛": {
+        "ja": "春花の如し。誠なれば實を結ばん。",
+        "zh": "恋情如春花烂漫，诚意则结良缘。",
+        "en": "Love blooms like spring flowers. Sincerity bears fruit."
+      },
+      "仕事": {
+        "ja": "漸く開くべし。勤めて怠る勿れ。",
+        "zh": "事业渐次开展，勤勉不可懈怠。",
+        "en": "Work gradually flourishes. Stay diligent."
+      },
+      "健康": {
+        "ja": "小さき恙あれど癒ゆべし。",
+        "zh": "虽有小疾，调养可愈。",
+        "en": "Minor ailments will pass with care."
+      },
+      "旅行": {
+        "ja": "吉なり。春日の行樂よろし。",
+        "zh": "出行吉利，春日行乐甚宜。",
+        "en": "Favorable. A fine time for a journey."
+      },
+      "失物": {
+        "ja": "花木の陰を尋ねよ。出づべし。",
+        "zh": "可寻于花木之下，终能得之。",
+        "en": "Search near flowers or trees; it will appear."
+      },
+      "待人": {
+        "ja": "遲れども必ず來るべし。",
+        "zh": "所待之人虽迟，终必至。",
+        "en": "They will come, though somewhat delayed."
+      }
+    }
+  },
+  {
+    "number": 17,
+    "fortune": "吉",
+    "poem_ja": "春風吹柳岸\n一葉渡扁舟\n遠水連天碧\n行人到渡頭",
+    "poem_reading": "しゅんぷうりゅうがんにふき　いちようへんしゅうをわたす　えんすいてんにつらなってみどりなり　こうじんととうにいたる",
+    "meaning_ja": "春風柳の岸に吹き、一葉の小舟人を渡す。遠き水は天に連なりて碧く、行人無事に渡頭に到るべし。此の籤に遇ふ者、緩やかに進めば事を成すべし。焦る勿れ、時到らば自ら彼岸に達せん。",
+    "meaning_zh": "春风拂柳，扁舟一叶载人而渡。远水连天，行者安抵津头。此签者，顺流而进，不急不躁，自可达成所愿。时至则事成，勿忧勿虑。",
+    "meaning_en": "Spring breezes stir the willow shore as a small boat ferries its traveler across. Waters stretch to the sky in jade hue, and the wayfarer safely reaches the landing. Move with the current, and your goal will be attained in its time.",
+    "details": {
+      "願事": {
+        "ja": "順次に叶ふべし。焦らず待つべし。",
+        "zh": "心愿渐次可成，切勿心急。",
+        "en": "Wishes fulfilled in due course. Do not be impatient."
+      },
+      "恋愛": {
+        "ja": "縁結ばる。誠意をもて進むべし。",
+        "zh": "姻缘有成，以诚相向则佳。",
+        "en": "Love blossoms. Proceed with sincerity."
+      },
+      "仕事": {
+        "ja": "進展あり。流れに乗れば利あり。",
+        "zh": "事业渐进，顺势而为则利。",
+        "en": "Progress awaits. Ride the current for gain."
+      },
+      "健康": {
+        "ja": "平穏なり。過労を避けよ。",
+        "zh": "身体平安，忌过劳费神。",
+        "en": "Stable health. Avoid overexertion."
+      },
+      "旅行": {
+        "ja": "吉。水路殊に宜し。",
+        "zh": "出行吉利，水路尤佳。",
+        "en": "Favorable, especially by water."
+      },
+      "失物": {
+        "ja": "出づべし。水邊を尋ねよ。",
+        "zh": "失物可寻，宜往水边觅之。",
+        "en": "Will be found. Search near water."
+      },
+      "待人": {
+        "ja": "遅れて来る。心配無用なり。",
+        "zh": "所待之人稍迟必至，勿忧。",
+        "en": "They will arrive, though delayed. No need to worry."
+      }
+    }
+  },
+  {
+    "number": 18,
+    "fortune": "凶",
+    "poem_ja": "孤舟遇逆風\n波濤滿目中\n扁舟歸不得\n愁思幾時窮",
+    "poem_reading": "こしゅうぎゃくふうにあふ　はとうまなこにみつるなかに　へんしゅうかへることをえず　しゅうしいづれのときかきはまらん",
+    "meaning_ja": "孤舟逆風に遇ひ、波濤目に滿つ。小舟歸るを得ず、愁思窮まる時なし。此の籤に遇ふ者、諸事障り多く、進退ともに難し。靜かに時を待ち、妄動すべからず。神佛に祈りて身を慎むべし。",
+    "meaning_zh": "孤舟逢逆风，波涛满目，扁舟难归，愁思无尽。此签者，诸事阻滞，进退两难。宜静守待时，不可妄动。谨身修德，祈祷神佛，方能渐解厄难。",
+    "meaning_en": "A lone boat meets contrary winds, waves surging all around. The small craft cannot return, and sorrow knows no end. This lot warns of obstacles on every side. Remain still, wait patiently, and pray with a humble heart.",
+    "details": {
+      "願事": {
+        "ja": "叶ひ難し。時を待ちて妄動する勿れ。",
+        "zh": "所愿难成，宜待时机，勿妄举动。",
+        "en": "Wishes are hard to fulfill. Wait; do not act rashly."
+      },
+      "恋愛": {
+        "ja": "障りあり。疑心生ずれば破れん。",
+        "zh": "情路多阻，若起疑心则恐破裂。",
+        "en": "Trouble looms. Suspicion will break the bond."
+      },
+      "仕事": {
+        "ja": "滞りあり。新事を起すべからず。",
+        "zh": "事业停滞，不宜另起新图。",
+        "en": "Work stagnates. Do not begin new ventures."
+      },
+      "健康": {
+        "ja": "病重し。早く醫を求むべし。",
+        "zh": "病情较重，宜速求医诊治。",
+        "en": "Illness is serious. Seek a doctor at once."
+      },
+      "旅行": {
+        "ja": "凶なり。遠行は見合はすべし。",
+        "zh": "出行不利，远行宜暂作罢。",
+        "en": "Inauspicious. Postpone distant journeys."
+      },
+      "失物": {
+        "ja": "出で難し。水邊にては尋ね難し。",
+        "zh": "失物难寻，水边更不可得。",
+        "en": "Hard to find. Not recoverable near water."
+      },
+      "待人": {
+        "ja": "来らず。音信も絶ゆべし。",
+        "zh": "所待之人不至，音信亦断。",
+        "en": "They will not come; word will be silent."
+      }
+    }
+  },
+  {
+    "number": 19,
+    "fortune": "凶",
+    "poem_ja": "枯木逢霜雪\n寒枝鳥不棲\n行人迷遠路\n日暮憶悽悽",
+    "poem_reading": "こぼくさうせつにあふ　かんしにとりすまず　かうじんゑんろにまよふ　ひぼにおくしてせいせいたり",
+    "meaning_ja": "枯れし木霜雪に遇ひ、寒き枝には鳥も棲まず。行人遠き路に迷ひ、日暮れて悽々たり。此の籤に遇はば、萬事如意ならず。慎みて動かず、身を守るべし。妄りに進まば災ひを招かん。",
+    "meaning_zh": "枯木遭逢霜雪，寒枝无鸟可栖。行人迷失远路，日暮愁思凄凄。此签者，诸事不遂，宜静不宜动，守身为上。妄动则招祸，慎之慎之。",
+    "meaning_en": "A withered tree meets frost and snow; no bird rests on its cold branches. The traveler loses his way on a distant road, and dusk brings only sorrow. This lot warns of adversity; remain still and guard yourself, for rash action invites misfortune.",
+    "details": {
+      "願事": {
+        "ja": "叶ひ難し。時を待つべし。",
+        "zh": "心愿难成，且待时运转。",
+        "en": "Hard to fulfill. Await a better time."
+      },
+      "恋愛": {
+        "ja": "縁薄し。強ひて求むる勿れ。",
+        "zh": "缘分浅薄，不可强求。",
+        "en": "Love is thin. Do not force the bond."
+      },
+      "仕事": {
+        "ja": "障り多し。新事を起すべからず。",
+        "zh": "阻碍重重，不宜开创新业。",
+        "en": "Many obstacles. Avoid new ventures."
+      },
+      "健康": {
+        "ja": "病あり。早く医を求むべし。",
+        "zh": "恐有疾患，宜速求医。",
+        "en": "Illness looms. Seek a doctor promptly."
+      },
+      "旅行": {
+        "ja": "凶。遠路は避くべし。",
+        "zh": "出行不利，远行宜止。",
+        "en": "Inauspicious. Avoid distant travel."
+      },
+      "失物": {
+        "ja": "出で難し。諦むべし。",
+        "zh": "失物难寻，不如放下。",
+        "en": "Hard to recover. Let it go."
+      },
+      "待人": {
+        "ja": "来らず。音信もなし。",
+        "zh": "所待之人不至，音信亦无。",
+        "en": "They will not come, nor send word."
+      }
+    }
+  },
+  {
+    "number": 20,
+    "fortune": "吉",
+    "poem_ja": "孤舟泛碧波\n順風過五湖\n前程無限好\n魚躍化神龍",
+    "poem_reading": "こしゅうへきはにうかぶ　じゅんぷうごこをすぐ　ぜんていかぎりなくよし　うををどりてしんりゅうとなる",
+    "meaning_ja": "孤舟碧波に浮かび、順風を得て五湖を過ぐ。前程限りなく好く、魚躍りて神龍と化すべし。此の籤に遇ふ者、時運めぐり來り、志ざす所成就すべし。但し慢心すること勿れ、謙しく勤むれば大いに榮えん。",
+    "meaning_zh": "孤舟乘碧波，顺风越五湖，前程无限光明，鱼跃化为神龙。此签得之，时来运转，志愿可成。然不可骄矜，谦虚勤勉，则荣华可期。",
+    "meaning_en": "A lone boat glides on emerald waves, carried by favorable winds across five lakes. The road ahead is boundlessly bright, as a fish leaps to become a divine dragon. Fortune turns in your favor, yet remain humble and diligent.",
+    "details": {
+      "願事": {
+        "ja": "叶ふべし。時を得て事成らん。",
+        "zh": "所愿可成，得时而就。",
+        "en": "Wishes fulfilled at the right time."
+      },
+      "恋愛": {
+        "ja": "縁結ばる。誠心を保つべし。",
+        "zh": "姻缘得结，宜守诚心。",
+        "en": "Love blossoms. Keep your heart true."
+      },
+      "仕事": {
+        "ja": "順風なり。大躍進あるべし。",
+        "zh": "事业顺利，必有跃升。",
+        "en": "Smooth sailing. A great leap awaits."
+      },
+      "健康": {
+        "ja": "憂ひなし。鍛練を怠る勿れ。",
+        "zh": "身无忧患，勿忘锻炼。",
+        "en": "No worries. Do not neglect exercise."
+      },
+      "旅行": {
+        "ja": "大吉。水路殊に良し。",
+        "zh": "出行甚吉，水路尤佳。",
+        "en": "Very auspicious, especially by water."
+      },
+      "失物": {
+        "ja": "出づべし。水邊を尋ねよ。",
+        "zh": "失物可得，宜寻水畔。",
+        "en": "Will be found near water."
+      },
+      "待人": {
+        "ja": "必ず來る。吉報を携へん。",
+        "zh": "所待必至，携有佳音。",
+        "en": "They will come with good news."
+      }
+    }
+  },
+  {
+    "number": 21,
+    "fortune": "吉",
+    "poem_ja": "一葉小漁舟\n順風上碧流\n前程無阻隔\n到處得安休",
+    "poem_reading": "いちえふのせうぎょしう　じゅんぷうにへきりうをのぼる　ぜんていそかくなし　いたるところあんきうをえん",
+    "meaning_ja": "一葉の小舟、順風を得て碧き流れを遡る。前途に阻む障りなく、到る處にて安らぎを得べし。此の籤に遇ふ者、事を謀れば皆通ずべし。然れども風向き變じ易ければ、油斷すること勿れ。誠を守り進まば、必ず吉慶あらん。",
+    "meaning_zh": "一叶扁舟，顺风碧流，前程无阻，所至皆安。此签者谋事皆通，坦途可期。然风向易变，不可懈怠。守诚前行，必获吉庆。",
+    "meaning_en": "A small boat rides the favorable wind upon emerald waters. No obstacles lie ahead; peace awaits wherever you go. Plans shall proceed smoothly, yet winds may shift—stay vigilant. Hold to sincerity and good fortune follows.",
+    "details": {
+      "願事": {
+        "ja": "遂ぐべし。時流に乗りて進め。",
+        "zh": "所愿可遂，顺势而为则成。",
+        "en": "Wishes fulfilled. Move with the current of time."
+      },
+      "恋愛": {
+        "ja": "和合すべし。言葉を惜しまず通ぜよ。",
+        "zh": "情意和合，坦诚相通则美满。",
+        "en": "Harmony in love. Speak openly and hearts will unite."
+      },
+      "仕事": {
+        "ja": "順調なり。新たな途を開くべし。",
+        "zh": "事业顺遂，宜开拓新途。",
+        "en": "Smooth progress. Open new paths boldly."
+      },
+      "健康": {
+        "ja": "大事なし。水邊に氣を配るべし。",
+        "zh": "身无大恙，近水处宜留神。",
+        "en": "Generally well. Be cautious near water."
+      },
+      "旅行": {
+        "ja": "吉。水路殊に良し。",
+        "zh": "旅途吉利，水路尤佳。",
+        "en": "Favorable. Travel by water is especially good."
+      },
+      "失物": {
+        "ja": "出づべし。水邊を尋ねよ。",
+        "zh": "失物可得，宜寻水边。",
+        "en": "Will be found. Search near water."
+      },
+      "待人": {
+        "ja": "必ず來る。遲れても障りなし。",
+        "zh": "所待者必至，虽迟无妨。",
+        "en": "They will come, though perhaps delayed."
+      }
+    }
+  },
+  {
+    "number": 22,
+    "fortune": "吉",
+    "poem_ja": "孤舟過遠浦\n細雨濕蓑衣\n漁火明深夜\n前程月色輝",
+    "poem_reading": "こしゅうえんぽをすぎ　さいうさいをうるほす　ぎょかしんやにあきらかなり　ぜんていげっしょくかがやく",
+    "meaning_ja": "一葉の孤舟、遠き浦を過ぎ行き、細雨蓑衣を濕らすといへども、漁火深夜に明らかなり。前途月光輝きて照らすべし。此の籤を得る者、初めは勞苦ありとも、漸く光明に至らん。怠らず進むべきなり。",
+    "meaning_zh": "孤舟远渡，烟雨沾衣，然渔火照夜，月色映途。虽初程有劳，终得光明。凡事勉力而行，切莫半途而废，自有佳境在前。",
+    "meaning_en": "A lone boat passes the distant shore, fine rain dampening the straw cloak, yet fishing lights glow in the deep night and moonlight illumines the way ahead. Hardship at first yields to brightness. Press on without faltering.",
+    "details": {
+      "願事": {
+        "ja": "遲くして叶ふべし。焦る勿れ。",
+        "zh": "所愿虽迟必成，切勿焦躁。",
+        "en": "Wishes fulfilled in time. Do not be impatient."
+      },
+      "恋愛": {
+        "ja": "初めは隔てあれど、後に親しまん。",
+        "zh": "初似疏远，渐生情意，终得相亲。",
+        "en": "Distant at first, but affection grows with time."
+      },
+      "仕事": {
+        "ja": "勞苦の後、功を得べし。",
+        "zh": "勤劳之后，必有所成。",
+        "en": "After toil, success shall come."
+      },
+      "健康": {
+        "ja": "小恙あれど大事なし。靜養せよ。",
+        "zh": "偶有小恙，无妨大事，宜静养。",
+        "en": "Minor ailments, nothing serious. Rest well."
+      },
+      "旅行": {
+        "ja": "雨に遇ふも、終には安し。",
+        "zh": "途中虽逢雨，终得平安。",
+        "en": "Rain on the road, yet safe in the end."
+      },
+      "失物": {
+        "ja": "水邊を尋ねよ。遲くして出づ。",
+        "zh": "宜往水边寻觅，迟而可得。",
+        "en": "Seek near water. Found after delay."
+      },
+      "待人": {
+        "ja": "來るべし。夜に音信あり。",
+        "zh": "所待之人将至，夜间有信。",
+        "en": "They will come; tidings arrive by night."
+      }
+    }
+  },
+  {
+    "number": 23,
+    "fortune": "吉",
+    "poem_ja": "春園花爛漫\n蝶舞戲東風\n莫惜枝頭色\n秋來結實紅",
+    "poem_reading": "しゅんえんはならんまん　ちょうまひてとうふうにたはむる　ししょくをしむことなかれ　あききたりてみをむすばんこと",
+    "meaning_ja": "春の園に花爛漫と咲き誇り、蝶は東風に舞ひ戲る。今の華やかさを惜しむこと勿れ、何となれば秋至れば必ず紅き實を結ぶべきなり。時を待ちて勤めば、福祿自ら來らん。焦る勿れ。",
+    "meaning_zh": "春园花开烂漫，蝶舞东风之间。莫惜枝头艳色，秋来自结丹实。此签者，眼前虽似繁华转瞬，然勤耕不辍，终有丰收。宜守其时，勿生焦躁。",
+    "meaning_en": "Flowers bloom lavishly in the spring garden, and butterflies dance upon the eastern breeze. Do not mourn the fading of blossoms, for autumn brings crimson fruit. Patience and diligence shall ripen into reward.",
+    "details": {
+      "願事": {
+        "ja": "叶ふべし。時を待ちて焦る勿れ。",
+        "zh": "所愿可成，须候时机，勿急。",
+        "en": "Wishes will be granted. Wait for the right time."
+      },
+      "恋愛": {
+        "ja": "縁あり。花の如く徐々に實らん。",
+        "zh": "有缘可期，如花渐结其实。",
+        "en": "Love blossoms gradually, like flowers bearing fruit."
+      },
+      "仕事": {
+        "ja": "進むべし。勤めて怠らざれば成る。",
+        "zh": "事业可进，勤勉不怠则成。",
+        "en": "Work progresses well. Diligence brings fruition."
+      },
+      "健康": {
+        "ja": "おほむね良し。過勞を慎むべし。",
+        "zh": "身体大抵康泰，慎防过劳。",
+        "en": "Generally well. Beware of overexertion."
+      },
+      "旅行": {
+        "ja": "吉。春の如く和やかに行くべし。",
+        "zh": "出行顺遂，和悦而往。",
+        "en": "A pleasant journey, gentle as spring."
+      },
+      "失物": {
+        "ja": "出づべし。園中草木の間を尋ねよ。",
+        "zh": "失物可得，宜寻草木花间。",
+        "en": "Will be found among grass and flowers."
+      },
+      "待人": {
+        "ja": "遲けれど必ず來るべし。",
+        "zh": "所待之人虽迟必至。",
+        "en": "They will come, though somewhat delayed."
+      }
+    }
+  },
+  {
+    "number": 24,
+    "fortune": "凶",
+    "poem_ja": "孤舟入暗灘\n風急浪濤寒\n岸遠燈光滅\n歸期卜未安",
+    "poem_reading": "こしゅうあんたんにいる　かぜきゅうにしてらうたうさむし　きしとほくしてとうくわうきえ　きごうらなふもいまだやすからず",
+    "meaning_ja": "孤舟暗き灘に入り、風急に浪寒し。岸は遠くして燈影も消え、歸る期も未だ定まらず。此の籤に遇ふ者、事皆阻滞すべし。妄りに動く勿れ、靜かに時を待つべきなり。何となれば、逆風の中に櫂を進むれば、舟覆る憂ひあればなり。",
+    "meaning_zh": "孤舟误入暗滩，风急浪寒，岸远灯灭，归期难定。此签诸事阻滞，不可妄动。宜静守待时，修身省过，则凶可转平。",
+    "meaning_en": "A lone boat drifts into dark rapids; winds howl and waves chill. The shore is far, the lanterns have died, and no safe return is in sight. Do not act rashly—wait in stillness for calmer tides.",
+    "details": {
+      "願事": {
+        "ja": "叶ひ難し。時を待ちて動く勿れ。",
+        "zh": "所愿难成，宜静守，不可妄动。",
+        "en": "Wishes hard to fulfill. Wait; do not act now."
+      },
+      "恋愛": {
+        "ja": "縁薄し。強ひて求むれば却つて破る。",
+        "zh": "缘分浅薄，强求反致决裂。",
+        "en": "Love is thin. Forcing it brings only ruin."
+      },
+      "仕事": {
+        "ja": "滞るべし。新事を始む勿れ。",
+        "zh": "事业阻滞，不宜另起炉灶。",
+        "en": "Work stalls. Begin no new ventures."
+      },
+      "健康": {
+        "ja": "病慎むべし。medicineを怠る勿れ。",
+        "zh": "病须谨慎，勿怠医药调理。",
+        "en": "Guard your health. Do not neglect treatment."
+      },
+      "旅行": {
+        "ja": "行く勿れ。途中に災ひあらん。",
+        "zh": "不宜远行，途中恐有灾厄。",
+        "en": "Do not travel. Misfortune lies on the road."
+      },
+      "失物": {
+        "ja": "出で難し。水邊に沈めるか。",
+        "zh": "失物难寻，恐已沉于水畔。",
+        "en": "Hard to find. Perhaps lost by the water."
+      },
+      "待人": {
+        "ja": "来らず。音信も絶ゆべし。",
+        "zh": "所待之人不至，音讯亦断。",
+        "en": "They will not come; even news may cease."
+      }
+    }
+  },
+  {
+    "number": 25,
+    "fortune": "凶",
+    "poem_ja": "孤舟逢逆浪\n帆破又檣摧\n四顧無津岸\n愁雲鎖夜臺",
+    "poem_reading": "こしゅうぎゃくろうにあふ　ほやぶれまたはしらくだく　しこすればしんがんなく　しうううんやたいをとざす",
+    "meaning_ja": "孤舟逆浪に遇ひ、帆は破れ檣は摧く。四方を顧みるも津岸なく、愁雲夜臺を鎖せり。此の籤に遇ふ者、萬事阻滞して進むこと難し。妄りに動くこと勿れ、何となれば動けば禍を招くが故なり。心を鎮め時を待つべし。",
+    "meaning_zh": "孤舟逢逆浪，帆破桅折，四望无岸可泊，愁云锁夜。此签诸事艰难，动辄招祸。宜静守退藏，敛迹修身，候时而后动，庶几可免大咎。",
+    "meaning_en": "A lone boat meets contrary waves; sail torn and mast broken, no shore in sight as sorrowful clouds descend. All matters face peril now. Remain still, retreat inward, and await a better season.",
+    "details": {
+      "願事": {
+        "ja": "叶はず。時を待ちて妄動すべからず。",
+        "zh": "心愿难成，宜静守待时。",
+        "en": "Wishes will not come true. Wait and do not act rashly."
+      },
+      "恋愛": {
+        "ja": "破るる兆あり。爭ひを慎むべし。",
+        "zh": "情缘有破兆，须慎言避争。",
+        "en": "Signs of rupture. Avoid quarrels with care."
+      },
+      "仕事": {
+        "ja": "障り多し。新事を起すこと勿れ。",
+        "zh": "事多阻滞，切勿另图新举。",
+        "en": "Many obstacles. Do not start new ventures."
+      },
+      "健康": {
+        "ja": "病重し。早く良醫に診せよ。",
+        "zh": "病势沉重，宜速就良医。",
+        "en": "Illness is serious. Seek a good doctor swiftly."
+      },
+      "旅行": {
+        "ja": "凶。行くこと勿れ、災あり。",
+        "zh": "出行大凶，切莫远行。",
+        "en": "Inauspicious. Do not travel; danger awaits."
+      },
+      "失物": {
+        "ja": "出でず。水邊を探せども空し。",
+        "zh": "失物难寻，水畔觅之亦空。",
+        "en": "Lost and unfound, even by the water's edge."
+      },
+      "待人": {
+        "ja": "来たらず。音信も絶ゆべし。",
+        "zh": "所待之人不至，音信亦绝。",
+        "en": "They will not come; even news is cut off."
+      }
+    }
+  },
+  {
+    "number": 26,
+    "fortune": "吉",
+    "poem_ja": "春風楊柳岸\n扁舟泛碧波\n漁翁歌一曲\n萬里任消磨",
+    "poem_reading": "しゅんぷうやうりうのきし　へんしうへきはにうかぶ　ぎょおううたひとふし　ばんりにまかせてせうまさん",
+    "meaning_ja": "春風楊柳の岸に吹き、小舟碧き波に浮かぶ。漁翁一曲を歌ひて、萬里の道を心に任せて行くなり。此の籤に遇ふ者、行く手穏やかにして志を遂ぐべし。焦らず流れに従へば、自づから佳境に至らん。何となれば、天時地利人和悉く備はればなり。",
+    "meaning_zh": "春风拂柳，扁舟泛碧波之上。渔翁高歌一曲，万里前程任意消磨。得此签者，前途顺遂，志愿可成。顺水行舟，不必强求，自有佳境相迎。",
+    "meaning_en": "Spring breeze stirs the willow shore as a small boat drifts on emerald waves. The fisherman sings his song, wandering ten thousand miles with ease. Follow the current without haste, and good fortune will meet you along the way.",
+    "details": {
+      "願事": {
+        "ja": "叶ふべし。流れに従ひて急ぐ勿れ。",
+        "zh": "心愿可遂，顺势而为，不必强求。",
+        "en": "Wishes shall be granted. Go with the flow, do not force."
+      },
+      "恋愛": {
+        "ja": "穏やかなる縁あり。情を温めて育つべし。",
+        "zh": "情缘温和，以温情培育则渐深。",
+        "en": "A gentle bond. Nurture it with warmth and it will grow."
+      },
+      "仕事": {
+        "ja": "事順調なり。同志と和せば成るべし。",
+        "zh": "事业顺利，与人和合则成。",
+        "en": "Work proceeds smoothly. Harmony with others brings success."
+      },
+      "健康": {
+        "ja": "おほむね安し。心を閑にせよ。",
+        "zh": "身体大致安泰，宜养心静气。",
+        "en": "Generally well. Keep your mind calm and at ease."
+      },
+      "旅行": {
+        "ja": "吉。水路殊に利あり。",
+        "zh": "出行吉利，水路尤为有利。",
+        "en": "Auspicious. Travel by water is especially favorable."
+      },
+      "失物": {
+        "ja": "出づべし。水邊を尋ねよ。",
+        "zh": "失物可得，宜往水边寻觅。",
+        "en": "Will be found. Search near water."
+      },
+      "待人": {
+        "ja": "遅れて来たる。音信穏やかなり。",
+        "zh": "所待之人稍迟即至，音信平和。",
+        "en": "They will come, a little late, with peaceful news."
+      }
+    }
+  },
+  {
+    "number": 27,
+    "fortune": "凶",
+    "poem_ja": "孤舟遇逆風\n帆破浪濤中\n前程多險阻\n何日達江東",
+    "poem_reading": "こしゅうぎゃくふうにあふ　ほはらうとうのなかにやぶる　ぜんていけんそおほし　いづれのひかかうとうにたっせん",
+    "meaning_ja": "孤なる舟、逆風に遇ひて帆破れ、怒濤の中に漂ふ。前途險阻多くして、江東に達する日を知らず。此の籤を得る者、萬事思ふに任せず、災ひ重なるべし。妄りに動く勿れ、靜かに時を待つべし。何となれば時未だ至らざればなり。",
+    "meaning_zh": "孤舟逆风，帆破浪中，前路险阻，归期难卜。此签者，诸事不遂，祸患相寻。切勿妄动，宜静守以待时。修身敬神，或可免灾。",
+    "meaning_en": "A lone boat meets a headwind, its sail torn amid raging waves. The road ahead is full of peril, and the destination uncertain. Do not act rashly; wait quietly for better times.",
+    "details": {
+      "願事": {
+        "ja": "叶ひ難し。時を待つべし、妄動する勿れ。",
+        "zh": "所愿难成，宜静候时机，勿妄为。",
+        "en": "Wishes hard to fulfill. Wait patiently; do not act rashly."
+      },
+      "恋愛": {
+        "ja": "障りあり。疑ひ生じて離るべし。",
+        "zh": "情缘多阻，疑心生隙，恐致离散。",
+        "en": "Obstacles arise. Doubt may lead to parting."
+      },
+      "仕事": {
+        "ja": "失敗多し。新事を起す勿れ。",
+        "zh": "事业多挫，切勿轻启新业。",
+        "en": "Many setbacks. Do not start new ventures."
+      },
+      "健康": {
+        "ja": "病あり。早く醫に問ふべし。",
+        "zh": "身有病患，宜速就医调治。",
+        "en": "Illness looms. Seek a doctor without delay."
+      },
+      "旅行": {
+        "ja": "凶なり。出立を延ばすべし。",
+        "zh": "出行不利，宜延期再议。",
+        "en": "Inauspicious. Postpone your journey."
+      },
+      "失物": {
+        "ja": "出で難し。水邊に失ひしか。",
+        "zh": "失物难寻，恐落于水边。",
+        "en": "Hard to recover. Perhaps lost near water."
+      },
+      "待人": {
+        "ja": "来らず。便りさへも絕ゆべし。",
+        "zh": "所待之人不至，音信亦恐断绝。",
+        "en": "They will not come; even news may cease."
+      }
+    }
+  },
+  {
+    "number": 28,
+    "fortune": "吉",
+    "poem_ja": "春風吹柳岸\n輕舟過萬山\n前程雲霧散\n一路月光寒",
+    "poem_reading": "しゅんぷうりうがんにふく　けいしうばんざんをすぐ　ぜんていうんむさんじ　いちろげつくわうさむし",
+    "meaning_ja": "春風柳岸に吹き、輕舟は萬山を過ぎ行くが如し。前途の雲霧やうやく散じて、一路月光澄み渡るべし。此の籤を得る者、暫く困難あれども、やがて通達すべし。心を澄まし志を堅くすれば、吉運自ら至らん。",
+    "meaning_zh": "春风拂柳岸，轻舟已过万重山。前途云雾渐散，一路月光清寒。得此签者，虽有小阻，终能通达。澄心定志，吉运自临。",
+    "meaning_en": "Spring breeze stirs the willow shore; a light boat passes ten thousand peaks. The mists ahead disperse, and moonlight shines cold along the way. Clear your mind, hold firm your will, and fortune will arrive.",
+    "details": {
+      "願事": {
+        "ja": "漸く叶ふべし。急がずして待つべし。",
+        "zh": "心愿渐成，不可急于一时。",
+        "en": "Wishes will gradually come true. Be patient."
+      },
+      "恋愛": {
+        "ja": "初め淡くして後に深し。誠を守るべし。",
+        "zh": "初淡后浓，守诚则缘深。",
+        "en": "Love deepens with time. Stay sincere."
+      },
+      "仕事": {
+        "ja": "障り漸く去り、榮進の兆しあり。",
+        "zh": "阻碍渐消，事业有进展之兆。",
+        "en": "Obstacles fade; progress awaits."
+      },
+      "健康": {
+        "ja": "小疾あれども憂ふるに足らず。調ふべし。",
+        "zh": "小恙无妨，调养即愈。",
+        "en": "Minor ailments will pass with care."
+      },
+      "旅行": {
+        "ja": "吉。水路殊に利あり。",
+        "zh": "出行平吉，水路尤佳。",
+        "en": "Auspicious, especially by water."
+      },
+      "失物": {
+        "ja": "遲くして出づべし。水邊を尋ねよ。",
+        "zh": "失物迟归，宜向水边寻之。",
+        "en": "Found later. Seek near water."
+      },
+      "待人": {
+        "ja": "遲けれど必ず來るべし。",
+        "zh": "所待之人虽迟必至。",
+        "en": "They will come, though late."
+      }
+    }
+  },
+  {
+    "number": 29,
+    "fortune": "凶",
+    "poem_ja": "枯木逢霜雪\n孤舟失舵篙\n前程風浪惡\n何處覓歸巢",
+    "poem_reading": "こぼくそうせつにあふ　こしゅうだこうをうしなふ　ぜんていふうらうあし　いづれのところにかきさうをもとめん",
+    "meaning_ja": "枯木霜雪に遭ひ、孤舟舵篙を失へり。前途風浪惡しくして、歸る巢を尋ぬるに所無し。此の籤に遇ふ者、萬事慎むべし。妄りに動けば災禍招かん。靜かに時を待ち、身を守るべきなり。",
+    "meaning_zh": "枯木遭霜雪，孤舟失舵篙。前程风浪险恶，归巢无处可寻。此签者，凡事当慎，妄动招祸。宜静守待时，修身避灾，勿存侥幸。",
+    "meaning_en": "A withered tree meets frost and snow; a lone boat loses its rudder. Storms lie ahead, and no nest awaits the return. Be cautious in all things; stillness preserves, rashness invites ruin.",
+    "details": {
+      "願事": {
+        "ja": "叶ひ難し。妄動すれば禍を招かん。",
+        "zh": "心愿难成，妄动则招祸患。",
+        "en": "Hard to fulfill. Rash action invites misfortune."
+      },
+      "恋愛": {
+        "ja": "縁薄し。執着すれば却つて傷つかん。",
+        "zh": "姻缘浅薄，执着反受其伤。",
+        "en": "The bond is weak. Clinging only brings pain."
+      },
+      "仕事": {
+        "ja": "障り多し。新事を起すべからず。",
+        "zh": "阻碍重重，不宜兴办新业。",
+        "en": "Many obstacles. Do not start new ventures."
+      },
+      "健康": {
+        "ja": "病重し。早く良醫を求むべし。",
+        "zh": "病势沉重，宜速求良医诊治。",
+        "en": "Serious illness. Seek a skilled doctor soon."
+      },
+      "旅行": {
+        "ja": "凶。風浪惡しく行くこと勿れ。",
+        "zh": "出行大凶，风浪险恶莫动身。",
+        "en": "Inauspicious. Storms ahead, do not travel."
+      },
+      "失物": {
+        "ja": "出で難し。水邊にて失せん。",
+        "zh": "失物难寻，恐落水边泥中。",
+        "en": "Hard to recover. Lost near water."
+      },
+      "待人": {
+        "ja": "來らず。音信も絶ゆべし。",
+        "zh": "所待之人不来，音信亦绝。",
+        "en": "They will not come; word will be lost."
+      }
+    }
+  },
+  {
+    "number": 30,
+    "fortune": "吉",
+    "poem_ja": "春園百花發\n蝶舞繞芳叢\n莫嫌風雨急\n結實待秋中",
+    "poem_reading": "しゅんえんひゃっかひらく　てふまひてはうそうをめぐる　ふううのきふなるをいとふなかれ　じつをむすびてしうちゅうをまつ",
+    "meaning_ja": "春の園に百花開き、蝶の舞ひて芳しき叢を繞る。風雨の急なるを嫌ふ勿れ。何となれば、花落ちて後に實を結び、秋を待ちて豐かなる收穫を得べきなり。今の苦しみは將來の福の種子なり。心を堅くして時を待つべし。",
+    "meaning_zh": "春园百花齐放，彩蝶翩翩绕丛。莫嫌风雨骤急，花谢方能结实，静待金秋收获。眼前之艰辛，乃他日之福荫。坚心守志，时至自亨。",
+    "meaning_en": "In the spring garden a hundred flowers bloom, and butterflies dance among the fragrant clusters. Do not grumble at sudden wind and rain, for blossoms must fall to bear fruit, and autumn shall bring the harvest. Hold firm, and good fortune will ripen in its time.",
+    "details": {
+      "願事": {
+        "ja": "時を經て叶ふべし。焦る勿れ。",
+        "zh": "所願待时可成，切勿急躁。",
+        "en": "Wishes fulfill in due time. Do not be impatient."
+      },
+      "恋愛": {
+        "ja": "花の如き縁あり。誠意を持して守れ。",
+        "zh": "良缘如花初绽，宜以诚心守护。",
+        "en": "Love blooms like a flower; guard it with sincerity."
+      },
+      "仕事": {
+        "ja": "困難あれど後に成就すべし。",
+        "zh": "事业虽有波折，终必有成。",
+        "en": "Hardship comes first, success follows."
+      },
+      "健康": {
+        "ja": "小疾あり。養生すれば平癒せん。",
+        "zh": "略有小恙，调养自可痊愈。",
+        "en": "Minor ailments; careful rest will heal you."
+      },
+      "旅行": {
+        "ja": "吉なり。ただ風雨に備へよ。",
+        "zh": "出行吉利，惟需防风雨。",
+        "en": "Auspicious travel; prepare for weather."
+      },
+      "失物": {
+        "ja": "遲く出づべし。花木の下を探せ。",
+        "zh": "失物迟出，宜于花木之下寻之。",
+        "en": "Found later, beneath flowers or trees."
+      },
+      "待人": {
+        "ja": "遅れて來る。必ず音信あり。",
+        "zh": "来人虽迟，必有音信至。",
+        "en": "They come late, but tidings will arrive."
+      }
+    }
+  },
+  {
+    "number": 31,
+    "fortune": "大吉",
+    "poem_ja": "明月照蒼海\n金波萬里通\n乘舟遊玉闕\n歸路有仙風",
+    "poem_reading": "めいげつさうかいをてらし　きんぱばんりにつうず　ふねにのりてぎょくけつにあそび　きろにせんぷうあり",
+    "meaning_ja": "明月蒼海を照らし、金波萬里に通ず。舟に乘りて玉樓に遊び、歸路には仙風の助けあり。此の籤を得る者、前途洋々として障り無し。心を澄ませば神明の加護を得て、所願悉く成就すべし。",
+    "meaning_zh": "明月朗照沧海，金波万里通达。乘舟遨游玉阙，归途仙风送爽。此签大吉，前程光明，事事通达。心怀澄明，神明护佑，所求皆遂。",
+    "meaning_en": "The bright moon illumines the vast blue sea, and golden waves stretch ten thousand miles. Sailing to jade palaces, you return borne by celestial winds. All paths open before you; with a clear heart, divine blessings bring every wish to fruition.",
+    "details": {
+      "願事": {
+        "ja": "皆叶ふべし。神佛の加護篤し。",
+        "zh": "诸愿皆成，神佛护佑深厚。",
+        "en": "All wishes granted. Divine favor is abundant."
+      },
+      "恋愛": {
+        "ja": "月下の良縁なり。共に白頭に到らん。",
+        "zh": "月老牵线良缘，可偕白首。",
+        "en": "A moonlit destined love, lasting till white hair."
+      },
+      "仕事": {
+        "ja": "大いに榮ゆべし。上の引立てあり。",
+        "zh": "事业大兴，得贵人提携。",
+        "en": "Great prosperity. Superiors will lift you up."
+      },
+      "健康": {
+        "ja": "無病息災なり。心身共に健やかなり。",
+        "zh": "无病无灾，身心俱健。",
+        "en": "Free from illness. Body and mind are strong."
+      },
+      "旅行": {
+        "ja": "大吉。海路も空路も順風なり。",
+        "zh": "出行大吉，水陆皆顺风。",
+        "en": "Highly auspicious. Fair winds on every route."
+      },
+      "失物": {
+        "ja": "必ず出でん。水邊を尋ねよ。",
+        "zh": "失物必现，宜向水畔寻觅。",
+        "en": "Surely found. Seek near water."
+      },
+      "待人": {
+        "ja": "速やかに来る。吉報を携ふ。",
+        "zh": "来人速至，携吉讯同来。",
+        "en": "Arriving swiftly, bearing good tidings."
+      }
+    }
+  },
+  {
+    "number": 32,
+    "fortune": "吉",
+    "poem_ja": "孤舟過江浦\n遠望見樓臺\n風順帆初擧\n前程次第開",
+    "poem_reading": "こしゅうこうほをよぎる　とほくろうだいをみる　かぜじゅんにしてほはじめてあがる　ぜんていしだいにひらく",
+    "meaning_ja": "孤舟江の浦を過ぎ、遙かに樓臺を望む。風順ひて帆初めて擧がり、行く手次第に開くべし。此の籤に遇ふ者、初めは寂寞たれども、時至れば運勢自ら通ずるなり。焦らず順風を待つべし。",
+    "meaning_zh": "孤舟渡江浦，遥望楼台隐现。顺风既起，帆初张举，前程渐次开展。此签者，初虽寂寥，时至则运通。当静待天时，勿躁勿惰，自有佳境在前。",
+    "meaning_en": "A lone boat crosses the river shore, and a distant tower comes into view. Favorable winds lift the sail; the road ahead opens step by step. Though lonely at first, fortune will gradually unfold. Wait patiently for the right wind.",
+    "details": {
+      "願事": {
+        "ja": "遲くとも叶ふべし。時を待つべし。",
+        "zh": "所愿虽迟必成，宜耐心候时。",
+        "en": "Wishes will be granted, though slowly. Await the right moment."
+      },
+      "恋愛": {
+        "ja": "初めは隔たれど、後に結ばれん。",
+        "zh": "初时有阻，终成眷属。",
+        "en": "Distance at first, union in time."
+      },
+      "仕事": {
+        "ja": "順風に乗りて次第に榮ゆべし。",
+        "zh": "乘顺风之势，渐次兴隆。",
+        "en": "Ride the favorable wind; prosperity grows step by step."
+      },
+      "健康": {
+        "ja": "小恙あれど漸く癒ゆべし。",
+        "zh": "小疾无妨，调养渐愈。",
+        "en": "Minor ailments will gradually heal."
+      },
+      "旅行": {
+        "ja": "吉。水路殊によろし。",
+        "zh": "出行顺利，水路尤佳。",
+        "en": "Auspicious, especially by water."
+      },
+      "失物": {
+        "ja": "遲れて出づべし。水邊を尋ねよ。",
+        "zh": "失物迟现，宜于水边寻觅。",
+        "en": "Found late. Search near water."
+      },
+      "待人": {
+        "ja": "遲れて來るべし。音信あり。",
+        "zh": "其人稍迟将至，先有音信。",
+        "en": "They arrive late; news comes first."
+      }
+    }
+  },
+  {
+    "number": 33,
+    "fortune": "小吉",
+    "poem_ja": "細雨潤苗田\n東風拂柳煙\n農夫勤耕種\n秋至慶豐年",
+    "poem_reading": "さいうびょうでんをうるほし　とうふうりゅうえんをはらふ　のうふつとめてこうしゅし　あきいたりてほうねんをよろこぶ",
+    "meaning_ja": "細やかなる雨、苗田を潤し、東風靜かに柳煙を拂ふ。農夫勤めて耕種すれば、秋至りて豐年を慶ぶべし。此の籤に遇ふ者、小さき利ありといへども、怠る勿れ。何となれば、日々の勤勞こそ後の實りを成すなり。",
+    "meaning_zh": "细雨润田，东风拂柳，农夫勤耕，秋收可期。此签者，眼前虽得小利，不可懈怠。须知日积月累，方成大器，勤耕不辍，福庆渐至。",
+    "meaning_en": "Gentle rain nourishes the young rice fields, and the east wind sweeps through willow mists. The farmer who toils at planting shall rejoice in autumn's harvest. Small gains await; persevere, for daily effort ripens into abundance.",
+    "details": {
+      "願事": {
+        "ja": "小さく叶ふべし。時を待ちて勤むべし。",
+        "zh": "心愿渐成，宜待时而勤勉耕耘。",
+        "en": "Small wishes fulfilled. Work steadily and await the right time."
+      },
+      "恋愛": {
+        "ja": "淡き縁なり。誠を積めば深くならん。",
+        "zh": "情缘初淡，诚意渐积则愈深。",
+        "en": "A gentle bond. Sincerity will deepen affection over time."
+      },
+      "仕事": {
+        "ja": "順調なり。小さき成果を重ぬべし。",
+        "zh": "工作顺遂，宜积小成以就大业。",
+        "en": "Steady progress. Accumulate small achievements patiently."
+      },
+      "健康": {
+        "ja": "おほむね良し。飲食を慎むべし。",
+        "zh": "身体大致安康，饮食宜节制。",
+        "en": "Generally well. Be mindful of diet and moderation."
+      },
+      "旅行": {
+        "ja": "近き旅は吉。遠きは慎むべし。",
+        "zh": "近行吉利，远途宜慎。",
+        "en": "Short trips favorable; caution advised for long journeys."
+      },
+      "失物": {
+        "ja": "遲れて出づ。田畑の邊を尋ねよ。",
+        "zh": "失物迟现，可于田园近处寻之。",
+        "en": "Found late. Search near fields or gardens."
+      },
+      "待人": {
+        "ja": "遲くとも來るべし。音信あり。",
+        "zh": "所待之人虽迟必至，先有音讯。",
+        "en": "They will come, though late; a message arrives first."
+      }
+    }
+  },
+  {
+    "number": 34,
+    "fortune": "末小吉",
+    "poem_ja": "寒梅雪裏開\n暗香透枝來\n春遲終有信\n一笑向陽臺",
+    "poem_reading": "かんばいゆきのうちにひらく　あんこうえだをとほしてきたる　はるおそくついにしんあり　いっしょうようだいにむかふ",
+    "meaning_ja": "寒梅雪中に密かに咲き、暗香枝を透して來る。春の訪れ遲しと雖も、終には消息あるべし。焦る勿れ、時を待ちて陽臺に向かひて一笑せよ。初めは寂しけれども、末には小さき吉兆顯るべし。何となれば、誠心にて耐へ忍ぶ者は、必ず報はるるなり。",
+    "meaning_zh": "寒梅雪里暗开，幽香穿枝而至。春虽来迟，终有音信。勿焦勿躁，待时而笑向阳台。初时清寂，末后渐有小吉之兆。诚心坚忍者，终得其报。",
+    "meaning_en": "Plum blossoms bloom quietly amid snow, their fragrance drifting through the branches. Though spring comes late, tidings shall surely arrive. Be patient; small blessings ripen at the end for those who endure with a sincere heart.",
+    "details": {
+      "願事": {
+        "ja": "遲くして叶ふべし。焦る勿れ。",
+        "zh": "所愿虽迟，终可得成，切莫心急。",
+        "en": "Wishes come late but surely. Do not be impatient."
+      },
+      "恋愛": {
+        "ja": "始めは冷たけれど、末に情厚かるべし。",
+        "zh": "初时清淡，后渐生情，终成佳偶。",
+        "en": "Cool at first, yet warmth will grow in time."
+      },
+      "仕事": {
+        "ja": "忍耐すべし。遲れて小利を得ん。",
+        "zh": "宜忍耐坚守，迟中自有小获。",
+        "en": "Persevere. Modest gains come after delay."
+      },
+      "健康": {
+        "ja": "寒氣に注意せよ。養生すれば癒ゆべし。",
+        "zh": "谨防寒邪，调养得法则渐安。",
+        "en": "Beware of cold. Careful care restores health."
+      },
+      "旅行": {
+        "ja": "遲發よろし。急げば障りあらん。",
+        "zh": "宜晚出行，急行恐有阻碍。",
+        "en": "Travel late rather than early; haste brings trouble."
+      },
+      "失物": {
+        "ja": "遲れて出づべし。草木の下を探せ。",
+        "zh": "迟日可得，宜寻草木之下。",
+        "en": "Found after delay. Seek beneath plants and trees."
+      },
+      "待人": {
+        "ja": "遲れて來たる。便りまづ至らん。",
+        "zh": "其人来迟，音信则先至。",
+        "en": "They arrive late; word comes first."
+      }
+    }
+  },
+  {
+    "number": 35,
+    "fortune": "凶",
+    "poem_ja": "孤舟泊暮煙\n風急浪翻天\n前路迷津處\n帆斜月未圓",
+    "poem_reading": "こしゅうぼえんにはくす　かぜきゅうにしてなみてんをひるがへす　ぜんろしんにまよふところ　ほはななめにしてつきいまだまどかならず",
+    "meaning_ja": "孤舟暮煙の中に泊まり、風急にして浪天を覆す。前路津を見失ひ、帆は斜めに傾きて月未だ圓からず。此の籤に遇ふ者、暫く身を潛め、妄動すべからず。何となれば時運窮まり、動けば災ひを招かん。靜かに守りて時を待つべし。",
+    "meaning_zh": "孤舟暮泊烟波，风急浪翻如沸。前路津渡迷茫，帆斜月缺未圆。此签者，时运未通，切忌妄动。宜藏锋守拙，静候天晴，强行则祸患随之。",
+    "meaning_en": "A lone boat moors in twilight mist, fierce winds overturn waves to the sky. The road ahead is lost, sails tilt, the moon not yet full. Conceal yourself and do not act rashly; wait quietly for fortune's turn.",
+    "details": {
+      "願事": {
+        "ja": "叶ひ難し。時を待ちて動くべからず。",
+        "zh": "心愿难成，宜守时，不可强求。",
+        "en": "Wishes hard to fulfill. Wait patiently; do not force."
+      },
+      "恋愛": {
+        "ja": "障り多し。言葉を慎まざれば破れん。",
+        "zh": "情缘多阻，慎言守礼，否则易散。",
+        "en": "Many obstacles. Guard your words, or love will break."
+      },
+      "仕事": {
+        "ja": "進むべからず。退きて守るを良しとす。",
+        "zh": "事业宜守不宜进，冒进必败。",
+        "en": "Do not advance. Retreat and hold steady is best."
+      },
+      "健康": {
+        "ja": "病あり。早く醫を求むべし。",
+        "zh": "恐有病患，宜速求医调理。",
+        "en": "Illness looms. Seek a physician without delay."
+      },
+      "旅行": {
+        "ja": "凶なり。延期すべし。",
+        "zh": "出行不利，宜延期勿行。",
+        "en": "Inauspicious. Postpone your journey."
+      },
+      "失物": {
+        "ja": "出で難し。水邊を疑ふも空し。",
+        "zh": "失物难寻，纵觅水畔亦空。",
+        "en": "Hard to recover. Even near water, hope is dim."
+      },
+      "待人": {
+        "ja": "来たらず。便りも絶えん。",
+        "zh": "所待之人不至，音信亦断。",
+        "en": "They will not come; even news is cut off."
+      }
+    }
+  },
+  {
+    "number": 36,
+    "fortune": "吉",
+    "poem_ja": "孤舟泛碧波\n順風到彼岸\n前程無限好\n勿憚路途難",
+    "poem_reading": "こしゅうへきはにうかぶ　じゅんぷうひがんにいたる　ぜんていかぎりなくよし　ろとのかたきをはばかるなかれ",
+    "meaning_ja": "一葉の孤舟、碧き波に浮かび、順風を得て彼岸に到るべし。前程限りなく好し。路途の難きを憚る勿れ。勇を鼓して進まば、必ず志を遂げん。天の助けあり、神佛の加護を蒙るべし。",
+    "meaning_zh": "一叶孤舟泛于碧波之上，顺风得利，必抵彼岸。前程广阔无限美好，莫惧路途之艰难。鼓勇前行，志必有成。天助神佑，吉庆随身。",
+    "meaning_en": "A lone boat drifts on emerald waves, borne by favorable winds to the far shore. The road ahead is boundlessly bright; fear not its hardships. Press on with courage, and your aims shall be fulfilled.",
+    "details": {
+      "願事": {
+        "ja": "遂ぐべし。勇を以て進めば成る。",
+        "zh": "心愿可成，鼓勇前行则遂。",
+        "en": "Wishes fulfilled. Advance with courage."
+      },
+      "恋愛": {
+        "ja": "縁あり。障り越えて睦まじかるべし。",
+        "zh": "有缘分，越过阻碍终成佳偶。",
+        "en": "Love prevails. Overcome hurdles for harmony."
+      },
+      "仕事": {
+        "ja": "順調なり。追ひ風を得て伸びん。",
+        "zh": "事业顺遂，得顺风而大展。",
+        "en": "Smooth progress. Favorable winds aid your rise."
+      },
+      "健康": {
+        "ja": "快方に向かふべし。心を安んぜよ。",
+        "zh": "病体渐愈，安心调养即可。",
+        "en": "Recovery is at hand. Rest your mind in peace."
+      },
+      "旅行": {
+        "ja": "吉。水路殊に佳し。",
+        "zh": "旅行吉利，水路尤为顺利。",
+        "en": "Auspicious. Travel by water is especially good."
+      },
+      "失物": {
+        "ja": "出づべし。水邊を尋ねよ。",
+        "zh": "失物可得，宜于水边寻觅。",
+        "en": "Will be found. Search near water."
+      },
+      "待人": {
+        "ja": "遅れて来るべし。音信あり。",
+        "zh": "来人稍迟，先有音信至。",
+        "en": "They come late, but word arrives first."
+      }
+    }
+  },
+  {
+    "number": 37,
+    "fortune": "凶",
+    "poem_ja": "孤舟入亂流\n風浪四方起\n欲渡無津梁\n茫茫何所止",
+    "poem_reading": "こしゅうらんりゅうにいる　ふうろうしほうよりおこる　わたらんとほっすれどもしんりょうなし　ぼうぼうとしていづくにかとどまらん",
+    "meaning_ja": "孤なる舟亂流に入り、風浪四方より起る。渡らんと欲すれども津も梁もなし、茫茫としていづくに止まるべきや。此の籤に遇ふ者、行く手塞がり災難多し。妄動すること勿れ、何となれば進めば必ず禍に遭ふべし。靜かに時を待ち、神佛に祈るべきなり。",
+    "meaning_zh": "孤舟误入乱流，风浪四起，欲渡无桥，茫茫何处是归。此签者，前途多阻，祸患潜伏。切勿妄动，静守待时，诚心祈祷，方可免于深灾。",
+    "meaning_en": "A lone boat drifts into turbulent waters; winds and waves rise on all sides. No bridge nor ford is in sight—where can one find rest? This lot warns of obstacles and hidden perils. Remain still, wait for calmer times, and pray with sincerity.",
+    "details": {
+      "願事": {
+        "ja": "叶ひ難し。妄りに動くこと勿れ。",
+        "zh": "心愿难成，切勿妄动强求。",
+        "en": "Wishes are hard to fulfill. Do not act rashly."
+      },
+      "恋愛": {
+        "ja": "破れ易し。疑心を去らざれば凶なり。",
+        "zh": "情缘易破，猜疑不去则凶。",
+        "en": "Love is fragile. Suspicion will destroy it."
+      },
+      "仕事": {
+        "ja": "障り多し。新事を起すべからず。",
+        "zh": "事业多阻，不宜另起新端。",
+        "en": "Many obstacles. Do not start new ventures."
+      },
+      "健康": {
+        "ja": "病重し。早く良醫を求むべし。",
+        "zh": "病势沉重，宜速求良医。",
+        "en": "Illness is serious. Seek a good physician promptly."
+      },
+      "旅行": {
+        "ja": "凶なり。行けば災あらん。",
+        "zh": "出行大凶，行则有灾。",
+        "en": "Inauspicious. Travel brings calamity."
+      },
+      "失物": {
+        "ja": "出でず。水邊にて失ひしか。",
+        "zh": "失物难寻，恐失于水边。",
+        "en": "Will not be found. Perhaps lost near water."
+      },
+      "待人": {
+        "ja": "来らず。音信も絶えん。",
+        "zh": "所待之人不至，音信亦绝。",
+        "en": "They will not come; even word is cut off."
+      }
+    }
+  },
+  {
+    "number": 38,
+    "fortune": "半吉",
+    "poem_ja": "寒梅雪裏開\n幽香動客懷\n春風猶未到\n且耐一時埃",
+    "poem_reading": "かんばいゆきのうちにひらく　いうかうかくくわいをうごかす　しゅんぷうなほいたらず　しばらくいちじのちりにたへよ",
+    "meaning_ja": "寒梅雪中に花を開き、幽かなる香り旅人の心を動かすなり。春風未だ至らざれば、暫く塵埃を忍ぶべし。何となれば、時至れば自ら芳しき運巡り來らん。焦るべからず、靜かに待つべし。",
+    "meaning_zh": "寒梅傲雪独开，幽香动人情怀。然春风未到，且耐一时风尘。时机未至，勿强求之；静守本分，终有芬芳之日。先难后易，终得小成。",
+    "meaning_en": "A winter plum blooms amid the snow, its faint fragrance stirring the heart. Spring wind has not yet come; endure the dust a while. In time, fortune shall bloom in its own season.",
+    "details": {
+      "願事": {
+        "ja": "半ば叶ふ。時を待ちて急ぐ勿れ。",
+        "zh": "愿事半成，宜待时机，勿急。",
+        "en": "Half fulfilled. Await the right moment; do not rush."
+      },
+      "恋愛": {
+        "ja": "縁薄けれど誠あれば後に結ばん。",
+        "zh": "缘分初浅，诚心守候终可成。",
+        "en": "A thin bond now, but sincerity will unite you later."
+      },
+      "仕事": {
+        "ja": "障り多し。辛抱すれば後に通ず。",
+        "zh": "事多阻滞，忍耐则后必通顺。",
+        "en": "Many obstacles. Patience will clear the path."
+      },
+      "健康": {
+        "ja": "冷えを避けよ。養生怠る勿れ。",
+        "zh": "宜防寒冷，调养不可懈怠。",
+        "en": "Avoid the cold. Do not neglect self-care."
+      },
+      "旅行": {
+        "ja": "延ばすべし。今は時宜ならず。",
+        "zh": "宜延后行，此时非其时也。",
+        "en": "Postpone your journey. Now is not the time."
+      },
+      "失物": {
+        "ja": "遲く出づ。低き處を尋ねよ。",
+        "zh": "失物迟现，宜寻低处之所。",
+        "en": "Found late. Search in lower places."
+      },
+      "待人": {
+        "ja": "遲れて來る。音信遠からず。",
+        "zh": "所待之人迟至，音信不远。",
+        "en": "They come late, but tidings will arrive soon."
+      }
+    }
+  },
+  {
+    "number": 39,
+    "fortune": "凶",
+    "poem_ja": "孤舟逢逆浪\n帆破櫓亦折\n前程風雨急\n何處泊行客",
+    "poem_reading": "こしゅうぎゃくろうにあふ　ほやぶれろもまたをる　ぜんていふううきふなり　いづこにかこうかくをはくせん",
+    "meaning_ja": "孤舟ひとり逆浪に遇ひ、帆破れ櫓も折れたり。前途は風雨急にして、行客の泊すべき處なし。此の籤に遇ふ者、災難重なりて進退谷まるべし。妄りに動く勿れ、靜かに身を守り時を待つべきなり。",
+    "meaning_zh": "孤舟独逢逆浪，帆破橹折，前途风雨交加，行客无处可泊。此签者，灾厄重叠，进退两难。切勿妄动，宜静守其身，韬光以待天时。",
+    "meaning_en": "A lone boat meets adverse waves; its sail is torn, its oar broken. The road ahead is lashed by storms, and the traveler finds no harbor. Misfortune gathers; do not act rashly. Stay still, guard yourself, and await a better time.",
+    "details": {
+      "願事": {
+        "ja": "叶ひ難し。時を待ちて動く勿れ。",
+        "zh": "心愿难成，须待时机，勿妄动。",
+        "en": "Hard to fulfill. Wait for the right time; do not act."
+      },
+      "恋愛": {
+        "ja": "縁薄し。爭ひ生じて離るべし。",
+        "zh": "缘分浅薄，争执纷起，恐致分离。",
+        "en": "The bond is weak. Quarrels arise and may part you."
+      },
+      "仕事": {
+        "ja": "障り多し。進めば損あり、守るべし。",
+        "zh": "事业多阻，冒进则损，宜守成。",
+        "en": "Many obstacles. Advancing brings loss; hold your ground."
+      },
+      "健康": {
+        "ja": "病重し。早く良醫を尋ぬべし。",
+        "zh": "病情堪忧，宜早访良医调治。",
+        "en": "Illness is serious. Seek a good physician promptly."
+      },
+      "旅行": {
+        "ja": "凶なり。延期するに如かず。",
+        "zh": "出行不利，莫如延期为宜。",
+        "en": "Inauspicious. Better to postpone the journey."
+      },
+      "失物": {
+        "ja": "出で難し。水邊に沒するか。",
+        "zh": "失物难寻，恐已没于水滨。",
+        "en": "Hard to find. It may be lost near water."
+      },
+      "待人": {
+        "ja": "来らず。途中に障りありと知るべし。",
+        "zh": "所待之人不至，途中必有阻碍。",
+        "en": "They will not come; obstacles block their way."
+      }
+    }
+  },
+  {
+    "number": 40,
+    "fortune": "大吉",
+    "poem_ja": "丹鳳銜書至\n祥雲映彩霞\n九重天上使\n喜報到君家",
+    "poem_reading": "たんほうしょをふくみていたる　しょううんさいかにえいず　きゅうちょうてんじょうのつかひ　きほうくんがにいたる",
+    "meaning_ja": "丹鳳書を銜へて飛び來り、祥雲彩霞に映ゆ。九重の天より使ひ下りて、喜ばしき報せ君が家に到る。此の籤に遇ふ者、思ひがけぬ吉報あり、諸事大いに榮ゆべし。天恩を謝し、徳を積むべきなり。",
+    "meaning_zh": "丹凤衔书而至，祥云映照彩霞。九重天上降使者，喜报传入君家门。此签者，忽得佳音，诸事亨通，福祉骈臻。当谢天恩，积德行善，方保长久之吉。",
+    "meaning_en": "A crimson phoenix bears a letter, auspicious clouds shine on rosy mists. A messenger descends from the ninefold heavens, bringing joyful tidings to your home. Unexpected good news arrives; all affairs flourish. Give thanks to heaven and cultivate virtue.",
+    "details": {
+      "願事": {
+        "ja": "必ず叶ふべし。天よりの助けあり。",
+        "zh": "心愿必成，天赐助力，可喜可贺。",
+        "en": "Wishes surely granted. Heaven itself lends its aid."
+      },
+      "恋愛": {
+        "ja": "喜事あり。良縁忽ち成らん。",
+        "zh": "喜事将临，良缘速成，美满无疑。",
+        "en": "Joyful news comes. A fine union forms swiftly."
+      },
+      "仕事": {
+        "ja": "大いに榮ゆ。名聲遠く及ばん。",
+        "zh": "事业鼎盛，声名远播，前程似锦。",
+        "en": "Great prosperity. Your renown shall spread afar."
+      },
+      "健康": {
+        "ja": "無病息災。長壽を得ん。",
+        "zh": "无病无灾，身心安泰，可享遐龄。",
+        "en": "Free from illness. Long life shall be yours."
+      },
+      "旅行": {
+        "ja": "大吉。道中喜事に遇はん。",
+        "zh": "出行大吉，途中自遇喜事奇缘。",
+        "en": "Most auspicious. Joyful encounters along the way."
+      },
+      "失物": {
+        "ja": "速やかに出づ。人の報せあり。",
+        "zh": "失物速得，有人传信相告。",
+        "en": "Found swiftly, through another's word."
+      },
+      "待人": {
+        "ja": "吉報を携へて來る。速やかなり。",
+        "zh": "所待之人速至，且携佳音而来。",
+        "en": "They arrive quickly, bearing glad tidings."
+      }
+    }
+  },
+  {
+    "number": 41,
+    "fortune": "吉",
+    "poem_ja": "春風吹柳岸\n花發滿園香\n蝶舞雙雙至\n東君賜福長",
+    "poem_reading": "しゅんぷうりうがんをふき　はなひらいてえんにかんばし　てふまうてさうさういたり　とうくんふくをたまふことながし",
+    "meaning_ja": "春風柳岸を吹き渡り、花園に滿ちて香り馥郁たり。蝶は雙々と舞ひ來りて、東君の賜ふ福長しかるべし。此の籤に遇ふ者、時運漸く開け、和氣四方より集まらん。誠を守り和を以てすれば、慶事重ねて至るべし。",
+    "meaning_zh": "春风拂柳，满园花香馥郁。双蝶翩翩而至，东君赐福绵长。此签者，时运渐开，和气盈门。守诚持和，喜事相继而来。",
+    "meaning_en": "Spring winds caress the willow shore; flowers bloom and fill the garden with fragrance. Butterflies dance in pairs, and the Lord of Spring bestows lasting blessings. Fortune gently unfolds for those who keep faith and harmony.",
+    "details": {
+      "願事": {
+        "ja": "叶ふべし。時を待てば自ら成らん。",
+        "zh": "所愿可成，待时自然而就。",
+        "en": "Wishes will be granted in their due season."
+      },
+      "恋愛": {
+        "ja": "良縁兆す。雙蝶の如く睦まじかるべし。",
+        "zh": "良缘已兆，如双蝶比翼相亲。",
+        "en": "Love blossoms like paired butterflies in spring."
+      },
+      "仕事": {
+        "ja": "順風なり。和を以て進めば成功す。",
+        "zh": "事业顺遂，以和为贵则有成。",
+        "en": "Smooth progress. Harmony brings success."
+      },
+      "健康": {
+        "ja": "大事なし。春氣に身を養ふべし。",
+        "zh": "身体无恙，宜顺春气调养。",
+        "en": "Health is fine. Nurture yourself with spring's vitality."
+      },
+      "旅行": {
+        "ja": "吉なり。花の候に出でば喜び多し。",
+        "zh": "出行吉利，花时出游多有喜事。",
+        "en": "Favorable. Travel in blossom season brings joy."
+      },
+      "失物": {
+        "ja": "出づべし。園中草木の間を尋ねよ。",
+        "zh": "失物可得，宜寻园中草木间。",
+        "en": "Will be found among garden plants and trees."
+      },
+      "待人": {
+        "ja": "来るべし。遲くとも音信あり。",
+        "zh": "所待必至，虽迟必有音信。",
+        "en": "They will come; word arrives though slightly late."
+      }
+    }
+  },
+  {
+    "number": 42,
+    "fortune": "吉",
+    "poem_ja": "春風吹柳岸\n孤舟向遠汀\n前程無障礙\n萬里自揚舲",
+    "poem_reading": "しゅんぷうやなぎのきしにふき　こしゅうとほきみぎはにむかふ　ぜんていしゃうげいなし　ばんりおのづからふねをあぐ",
+    "meaning_ja": "春風柳岸に吹き、孤舟遠き汀に向かふ。前途に障り無く、萬里自ら帆を揚ぐべし。此の籤を得る者、心を定めて進むべし。何となれば時運既に至れり。怠る勿れ、誠を以て事に當れば吉慶至らん。",
+    "meaning_zh": "春风拂柳，孤舟向远汀而行。前程坦荡无碍，万里扬帆可期。得此签者，当定志前行，时运既至，不可怠慢。以诚任事，则吉庆随之。",
+    "meaning_en": "Spring breezes stir the willowed shore as a lone boat sails toward distant sands. The way ahead is clear, and ten thousand miles open to your sail. Set your heart firmly and advance; fortune follows those who act with sincerity.",
+    "details": {
+      "願事": {
+        "ja": "叶ふべし。時機を逃す勿れ。",
+        "zh": "所愿可成，莫失良机。",
+        "en": "Wishes granted. Do not miss the timely chance."
+      },
+      "恋愛": {
+        "ja": "縁熟す。進んで語らふべし。",
+        "zh": "缘分已熟，宜主动倾诉。",
+        "en": "Love ripens. Speak your heart openly."
+      },
+      "仕事": {
+        "ja": "順調なり。新事を始むるに吉。",
+        "zh": "事业顺遂，开创新业为宜。",
+        "en": "Smooth progress. A fine time to begin anew."
+      },
+      "健康": {
+        "ja": "平穏なり。過労を戒むべし。",
+        "zh": "身心平安，戒过劳。",
+        "en": "Stable health. Avoid overexertion."
+      },
+      "旅行": {
+        "ja": "吉。水路殊に良し。",
+        "zh": "出行吉利，水路尤佳。",
+        "en": "Auspicious, especially by water."
+      },
+      "失物": {
+        "ja": "出づべし。水邊を尋ねよ。",
+        "zh": "失物可得，宜寻水畔。",
+        "en": "Will be found. Search near water."
+      },
+      "待人": {
+        "ja": "遲れて来る。必ず音信あり。",
+        "zh": "来人稍迟，必有音讯。",
+        "en": "They come a little late, but news will surely arrive."
+      }
+    }
+  },
+  {
+    "number": 43,
+    "fortune": "吉",
+    "poem_ja": "春風吹柳岸\n扁舟自在行\n前程多綠水\n一棹入蓬瀛",
+    "poem_reading": "しゅんぷうりゅうがんをふく　へんしゅうじざいにゆく　ぜんていりょくすいおほく　いっとうほうえいにいる",
+    "meaning_ja": "春風柳岸を吹きて、扁舟自在に行くべし。前途は綠水豊かに、一棹にて蓬萊の仙境に入らん。此の籤に遇ふ者、事順調に運び、所願遂ぐべし。心を和らげ、流れに從ひて進むべし。強ひて逆らふこと勿れ。",
+    "meaning_zh": "春风拂柳，扁舟顺流自在而行。前程绿水悠悠，一棹可入蓬瀛仙境。此签事事顺遂，所愿皆成。但须顺势而行，不可强逆其流，和柔以待，自得佳境。",
+    "meaning_en": "Spring breezes stir the willowed banks as a small boat drifts with ease. Before you lie green waters leading to paradise with a single oar stroke. Follow the natural flow, and all shall come to pass in due time.",
+    "details": {
+      "願事": {
+        "ja": "順調に叶ふべし。流れに從ふべし。",
+        "zh": "心愿顺遂，宜随缘而行，不强求。",
+        "en": "Wishes flow smoothly. Follow the natural course."
+      },
+      "恋愛": {
+        "ja": "穏やかに進むべし。誠にて結ばれん。",
+        "zh": "恋情平稳进展，诚心可结良缘。",
+        "en": "Love progresses gently. Sincerity binds hearts."
+      },
+      "仕事": {
+        "ja": "順風なり。機を逃さず進むべし。",
+        "zh": "事业顺风，把握时机勇进可成。",
+        "en": "Fair winds in work. Seize the moment and advance."
+      },
+      "健康": {
+        "ja": "恙なし。心身を和らげよ。",
+        "zh": "身心康泰，宜保持舒缓闲和。",
+        "en": "Good health prevails. Keep body and mind relaxed."
+      },
+      "旅行": {
+        "ja": "吉なり。水路殊に良し。",
+        "zh": "旅行吉利，水路尤为顺畅。",
+        "en": "Favorable journey. Travel by water is especially good."
+      },
+      "失物": {
+        "ja": "水邊を尋ねよ。出づべし。",
+        "zh": "失物宜往水边寻觅，可得。",
+        "en": "Search near water. It shall be found."
+      },
+      "待人": {
+        "ja": "遲れども必ず來る。憂ふ勿れ。",
+        "zh": "所待之人虽迟必至，不必忧心。",
+        "en": "They come, though delayed. Do not worry."
+      }
+    }
+  },
+  {
+    "number": 44,
+    "fortune": "吉",
+    "poem_ja": "孤舟泛碧波\n順風送客過\n前程無險阻\n一路笑聲多",
+    "poem_reading": "こしゅうへきはにうかび　じゅんぷうきゃくをおくりすぐ　ぜんていけんそなし　いちろしょうせいおほし",
+    "meaning_ja": "一葉の孤舟、碧波の上に浮かび、順風吹きて客を彼岸に送る。前途に險阻なく、一路笑聲の絶ゆること無し。此の籤を得る者、事なだらかに運び、諸事順調なるべし。然れども慢心すること勿れ、舟人の舵を執るごとく、常に心を引き締むべし。",
+    "meaning_zh": "孤舟轻泛于碧波之上，顺风相送，客过无阻。前程坦荡，一路欢声笑语。得此签者，诸事顺遂，福运亨通。然不可骄矜，须如舟子把舵，常存谨慎之心。",
+    "meaning_en": "A lone boat drifts upon emerald waves, borne gently forward by a favorable wind. The road ahead holds no peril, and laughter fills the journey. Yet steer with care, as a wise boatman does.",
+    "details": {
+      "願事": {
+        "ja": "叶ふべし。順風に乗りて進むべし。",
+        "zh": "心愿得遂，乘风顺势而行。",
+        "en": "Wishes granted. Ride the favorable wind forward."
+      },
+      "恋愛": {
+        "ja": "縁整ふ。心を同じくして舟を漕ぐべし。",
+        "zh": "缘分渐合，同心共渡则美满。",
+        "en": "Love unfolds smoothly when two hearts row together."
+      },
+      "仕事": {
+        "ja": "事なだらかなり。助力を得て成就すべし。",
+        "zh": "事务顺利，得人相助而成。",
+        "en": "Work flows well, aided by others' support."
+      },
+      "健康": {
+        "ja": "快方に向かふ。気を緩むる勿れ。",
+        "zh": "病体渐愈，不可懈怠调养。",
+        "en": "Recovery is steady. Do not grow careless."
+      },
+      "旅行": {
+        "ja": "大いに吉。水路殊によし。",
+        "zh": "旅途大吉，水路尤为顺畅。",
+        "en": "Very auspicious, especially by water."
+      },
+      "失物": {
+        "ja": "出づべし。水辺を尋ねよ。",
+        "zh": "失物可得，宜于水边寻觅。",
+        "en": "Will be found near water."
+      },
+      "待人": {
+        "ja": "程なく來るべし。音信先に至らん。",
+        "zh": "所待之人将至，音信先到。",
+        "en": "They will arrive soon; news comes first."
+      }
+    }
+  },
+  {
+    "number": 45,
+    "fortune": "吉",
+    "poem_ja": "春風拂柳枝\n嫩葉漸舒時\n黃鶯啼曉日\n好音報喜期",
+    "poem_reading": "しゅんぷうりゅうしをはらふ　どんえふやうやくのぶるとき　くわうあうあかつきのひになく　かういんきのときをつぐ",
+    "meaning_ja": "春風柳の枝を拂ひ、嫩葉漸く舒ぶる時なり。黃鶯曉の日に啼きて、好音喜びの期を報ず。此の籤に遇ふ者、時機まさに熟さんとす。焦らず機を待てば、吉事おのづから訪るべし。",
+    "meaning_zh": "春风拂柳，嫩叶初舒，黄莺晓啼，喜音频传。此签者，时运渐开，佳期将至。惟须稍待，勿躁勿急，则吉庆自来，万事顺遂。",
+    "meaning_en": "Spring breezes stir the willow, tender leaves unfurl, and the golden oriole sings at dawn, heralding joyful tidings. The time is ripening; wait calmly, and good fortune will arrive in its own season.",
+    "details": {
+      "願事": {
+        "ja": "叶ふべし。時を待ちて動くべし。",
+        "zh": "所愿可成，待时而动则顺。",
+        "en": "Wishes will be granted. Wait for the right moment."
+      },
+      "恋愛": {
+        "ja": "縁結ばる。真心にて相應ぜよ。",
+        "zh": "姻缘将结，以真心相应则佳。",
+        "en": "Love will blossom. Respond with a true heart."
+      },
+      "仕事": {
+        "ja": "漸く伸びん。勤めて怠る勿れ。",
+        "zh": "事业渐进，勤勉勿怠则成。",
+        "en": "Work prospers gradually. Do not slacken your efforts."
+      },
+      "健康": {
+        "ja": "快方に向かふ。靜養すべし。",
+        "zh": "病体向愈，宜静养调理。",
+        "en": "Health improves. Rest quietly to recover."
+      },
+      "旅行": {
+        "ja": "吉なり。春日を選びて出でよ。",
+        "zh": "出行为吉，宜择春日起程。",
+        "en": "Auspicious. Set out on a fine spring day."
+      },
+      "失物": {
+        "ja": "出づべし。樹下草間を尋ねよ。",
+        "zh": "失物可得，宜寻树下草间。",
+        "en": "Will be found beneath trees or among grass."
+      },
+      "待人": {
+        "ja": "遲れて来る。音信まづ至らん。",
+        "zh": "所待之人稍迟，音信先至。",
+        "en": "They come late; news arrives first."
+      }
+    }
+  },
+  {
+    "number": 46,
+    "fortune": "末吉",
+    "poem_ja": "古木逢春色\n枯枝再發花\n莫嫌時未至\n終見滿園霞",
+    "poem_reading": "こぼくしゅんしょくにあふ　こしまたはなをはっす　ときいまだいたらざるをいとふことなかれ　つひにまんえんのかすみをみん",
+    "meaning_ja": "古き木春の氣に逢ひて、枯れし枝より再び花を發く。時未だ至らざるを嫌ふ勿れ。何となれば終には滿園の霞の如き榮華を見るべければなり。忍びて時を待たば、末に吉慶あらん。",
+    "meaning_zh": "古木逢春，枯枝重开花朵。莫嫌时机未至，终将见满园春霞。耐心守候，末运自有荣华。勿急勿躁，守正待时，福祉自临。",
+    "meaning_en": "An old tree meets spring; withered branches bloom anew. Do not lament that the time has not yet come, for at last you shall behold a garden full of rosy mist. Patience brings late blessings.",
+    "details": {
+      "願事": {
+        "ja": "遲くして叶ふべし。焦る勿れ。",
+        "zh": "愿事虽迟终成，切莫焦躁。",
+        "en": "Wishes come true in time. Do not be impatient."
+      },
+      "恋愛": {
+        "ja": "初めは淡く、後に深し。誠を守るべし。",
+        "zh": "初淡后浓，守诚则成。",
+        "en": "Faint at first, deepening later. Keep sincerity."
+      },
+      "仕事": {
+        "ja": "漸く開くべし。怠らず勤めよ。",
+        "zh": "事业渐开，勤勉毋怠。",
+        "en": "Work opens gradually. Keep working diligently."
+      },
+      "健康": {
+        "ja": "舊き病癒ゆべし。養生を怠る勿れ。",
+        "zh": "旧疾渐愈，调养莫懈。",
+        "en": "Old ailments heal. Do not neglect care."
+      },
+      "旅行": {
+        "ja": "遲れて吉。急ぐべからず。",
+        "zh": "行程稍迟反吉，勿急。",
+        "en": "A delayed journey proves fortunate. Do not rush."
+      },
+      "失物": {
+        "ja": "日を經て出づべし。草木の下を尋ねよ。",
+        "zh": "失物久后方现，宜寻草木之下。",
+        "en": "Found after some days. Look beneath plants."
+      },
+      "待人": {
+        "ja": "遲く來るべし。音信あり。",
+        "zh": "所待之人迟至，先有音讯。",
+        "en": "They come late, but news arrives first."
+      }
+    }
+  },
+  {
+    "number": 47,
+    "fortune": "末小吉",
+    "poem_ja": "寒梅雪中發\n孤影映清池\n莫歎春來晚\n終教暗裏知",
+    "poem_reading": "かんばいゆきのなかにひらく　こえいせいちにえいず　はるのきたることのおそきをなげくなかれ　ついにあんりにしらしむ",
+    "meaning_ja": "寒梅雪中に先づ開き、孤影清き池に映る。春の來るの遲きを歎く勿れ。暗き裏に終に香を知らしむべし。此の籤に遇ふ者、初めは人に知られずとも、末には小さき福を得べし。靜かに時を待つべきなり。",
+    "meaning_zh": "寒梅先于雪中独放，孤影映入清池。莫叹春迟不至，暗香终有人识。此签者，初时寂寞无闻，末后小有所获。宜静守本分，耐以待时，自有佳境。",
+    "meaning_en": "A winter plum blossoms amid the snow, its lone shadow mirrored in a clear pond. Do not lament spring's late arrival; its fragrance shall be known in time. Quiet patience brings modest reward at the end.",
+    "details": {
+      "願事": {
+        "ja": "遲けれども叶ふべし。焦る勿れ。",
+        "zh": "心愿虽迟可成，切勿焦躁。",
+        "en": "Wishes fulfilled late. Do not be impatient."
+      },
+      "恋愛": {
+        "ja": "初めは淡し。誠を守らば末に實らん。",
+        "zh": "初时情淡，守诚则终成眷属。",
+        "en": "Cool at first; sincerity brings love in time."
+      },
+      "仕事": {
+        "ja": "下積み長し。末に小さき榮あり。",
+        "zh": "蛰伏虽久，末后略有功名。",
+        "en": "Long patience brings small success later."
+      },
+      "健康": {
+        "ja": "冷えに氣をつけよ。養へば快復す。",
+        "zh": "慎防寒疾，调养可愈。",
+        "en": "Beware of cold ailments; care brings recovery."
+      },
+      "旅行": {
+        "ja": "遲く出づるが宜し。急げば損あり。",
+        "zh": "宜缓不宜急，急行有损。",
+        "en": "Delay departure; haste invites loss."
+      },
+      "失物": {
+        "ja": "時を經て出づべし。水邊を尋ねよ。",
+        "zh": "日久方见，宜往水边寻之。",
+        "en": "Found after some time, near water."
+      },
+      "待人": {
+        "ja": "遲れて來る。音信先に至らん。",
+        "zh": "人来稍迟，音信先至。",
+        "en": "They come late; word arrives first."
+      }
+    }
+  },
+  {
+    "number": 48,
+    "fortune": "小吉",
+    "poem_ja": "孤舟泛綠波\n輕櫓渡煙河\n岸上梅初發\n風來香滿簑",
+    "poem_reading": "こしゅうりょくはにうかぶ　けいろえんがをわたる　がんじょううめはじめてひらく　かぜきたりてかおりさにみつ",
+    "meaning_ja": "孤舟緑波に浮びて、輕き櫓もて煙霞の河を渡る。岸邊の梅初めて綻び、風吹き來りて香り簑に滿つ。小さき喜び身邊にあり、驕らず慎みて進むべし。分に安んずれば、福自から增すなり。",
+    "meaning_zh": "孤舟泛于碧波，轻橹划过烟河。岸边梅花初绽，清风送香盈蓑。小小喜事近身，不可自矜自满。安分守己，循序渐进，福气渐长。",
+    "meaning_en": "A lone boat drifts on green ripples, its light oar crossing a misty river. Plum blossoms open on the shore, and the breeze fills your cloak with fragrance. Small joys await; advance with humility and modest contentment.",
+    "details": {
+      "願事": {
+        "ja": "小さく叶ふべし。大望は控ふべし。",
+        "zh": "小愿可遂，大愿暂宜收敛。",
+        "en": "Small wishes come true; hold back grand ambitions."
+      },
+      "恋愛": {
+        "ja": "淡き縁あり。焦らず育つるべし。",
+        "zh": "淡淡良缘，宜细心培育。",
+        "en": "A gentle bond; nurture it slowly and patiently."
+      },
+      "仕事": {
+        "ja": "小成あり。堅實を旨とすべし。",
+        "zh": "略有小成，务实为上。",
+        "en": "Modest gains; steadiness is your best path."
+      },
+      "健康": {
+        "ja": "大事なし。風寒を慎むべし。",
+        "zh": "大体无恙，谨防风寒。",
+        "en": "Generally well; beware of chills and colds."
+      },
+      "旅行": {
+        "ja": "近路は吉。遠行は控へよ。",
+        "zh": "近游皆吉，远行暂缓。",
+        "en": "Short trips favorable; postpone long journeys."
+      },
+      "失物": {
+        "ja": "出づべし。水邊を尋ねよ。",
+        "zh": "失物可寻，宜往水边觅之。",
+        "en": "Will be found; search near the water."
+      },
+      "待人": {
+        "ja": "遲く來る。便りは先に至らん。",
+        "zh": "来人稍迟，音信先至。",
+        "en": "They come late; news arrives first."
+      }
+    }
+  },
+  {
+    "number": 49,
+    "fortune": "大吉",
+    "poem_ja": "春園桃李花\n得雨自芳華\n蜂蝶爭來舞\n枝頭結錦霞",
+    "poem_reading": "しゅんえんのとうりのはな　あめをえておのづからほうかなり　ほうちょうあらそひきたりてまひ　しとうににしきのかすみをむすぶ",
+    "meaning_ja": "春の園に桃李の花咲き、時雨を得て自ら芳しく華やぐなり。蜂蝶爭ひ來たりて舞ひ戲れ、枝頭には錦の霞結ぶがごとし。此の籤に遇ふ者、時運正に熟し、衆人の助けを得べし。誠を守りて驕る勿れ、さらば榮華長く保たん。",
+    "meaning_zh": "春园桃李，得雨滋润，自然芬芳。蜂蝶争舞，枝头锦霞如结。此签者，时运已熟，贵人竞来相助。守诚勿骄，则荣华久远。",
+    "meaning_en": "Peach and plum bloom in the spring garden, fragrant with timely rain. Bees and butterflies flock to dance, and branches weave a brocade of mist. Your time has ripened; keep humility, and glory shall long endure.",
+    "details": {
+      "願事": {
+        "ja": "悉く成就すべし。機は今に在り。",
+        "zh": "所愿尽成，机缘正在当下。",
+        "en": "All wishes will bloom. The moment is now."
+      },
+      "恋愛": {
+        "ja": "花開く如し。相思ひて結ばるべし。",
+        "zh": "情缘如花盛开，两心相许可成。",
+        "en": "Love blossoms fully; hearts shall be joined."
+      },
+      "仕事": {
+        "ja": "大いに榮ゆ。助力多く得べし。",
+        "zh": "事业繁荣，多得贵人扶持。",
+        "en": "Great prosperity; many will lend their aid."
+      },
+      "健康": {
+        "ja": "快癒すべし。春氣に順ひて養ふべし。",
+        "zh": "病体速愈，宜顺春气调养。",
+        "en": "Swift recovery; nurture yourself with spring's ease."
+      },
+      "旅行": {
+        "ja": "大吉。道中花の如く明らかなり。",
+        "zh": "旅途大吉，如花路明朗顺遂。",
+        "en": "Most auspicious; the road is bright as blossoms."
+      },
+      "失物": {
+        "ja": "出づべし。園圃の間を尋ねよ。",
+        "zh": "失物可得，宜寻园圃花木之间。",
+        "en": "Will return; seek amid gardens and flowers."
+      },
+      "待人": {
+        "ja": "速やかに來る。佳き報をもたらさん。",
+        "zh": "所待之人速至，且携佳音。",
+        "en": "They come swiftly, bearing welcome news."
+      }
+    }
+  },
+  {
+    "number": 50,
+    "fortune": "吉",
+    "poem_ja": "春風吹柳岸\n輕舟過碧波\n前程無限好\n何處不笙歌",
+    "poem_reading": "しゅんぷうりゅうがんにふき　けいしゅうへきはをすぐ　ぜんていかぎりなくよし　いづれのところかしょうがならざらん",
+    "meaning_ja": "春の風柳の岸に吹きて、輕き舟は碧き波を過ぎゆくなり。前路限りなく好く、何處にか笙歌の聲なからん。此の籤に遇ふ者、時運漸く開け、喜び事重ぬべし。但だ驕るべからず、謙りて進めば福自ら至らん。",
+    "meaning_zh": "春风拂柳，轻舟破浪，前程似锦，处处笙歌。此签者，时运渐通，喜事重重。唯须谦和自持，不可骄矜，则福禄绵长，万事顺遂。",
+    "meaning_en": "Spring winds stir the willow shores, and a light boat glides over emerald waves. The road ahead is boundlessly fair, filled everywhere with music and song. Remain humble, and blessings shall flow without end.",
+    "details": {
+      "願事": {
+        "ja": "順ひて叶ふべし。謙りて進むべし。",
+        "zh": "心愿顺遂，谦和进取则成。",
+        "en": "Wishes will be granted. Advance with humility."
+      },
+      "恋愛": {
+        "ja": "春風のごとく和らぐ縁あり。",
+        "zh": "情缘如春风和煦，宜温柔以对。",
+        "en": "A gentle love blooms like spring breezes."
+      },
+      "仕事": {
+        "ja": "事業伸びゆく。勢ひに乗るべし。",
+        "zh": "事业蒸蒸日上，宜乘势而进。",
+        "en": "Work flourishes. Ride the rising tide."
+      },
+      "健康": {
+        "ja": "恙なし。春の氣を養ふべし。",
+        "zh": "身体安康，宜养春生之气。",
+        "en": "Good health. Nurture your vitality."
+      },
+      "旅行": {
+        "ja": "吉。水路愈よ宜し。",
+        "zh": "出行吉利，水路尤佳。",
+        "en": "Auspicious, especially by water."
+      },
+      "失物": {
+        "ja": "出づべし。水邊を尋ねよ。",
+        "zh": "失物可得，宜往水边寻之。",
+        "en": "Will be found near water."
+      },
+      "待人": {
+        "ja": "遠方より便りあり、近く來らん。",
+        "zh": "远方有信，来人将至。",
+        "en": "News from afar; they shall arrive soon."
+      }
+    }
+  },
+  {
+    "number": 51,
+    "fortune": "凶",
+    "poem_ja": "孤舟泊暮煙\n風雨滿江天\n夜半蛟龍起\n行人轉可憐",
+    "poem_reading": "こしゅうぼえんにはくす　ふううこうてんにみつ　やはんこうりゅうおこる　こうじんうたたあはれむべし",
+    "meaning_ja": "孤舟暮煙に泊まり、風雨江天に滿つ。夜半蛟龍の起こるありて、行人の身危うし。此の籤に遇ふ者、外出を愼み、動かず靜かに守るべし。妄りに進めば禍を招かん。神佛に祈りて身を修むべし。",
+    "meaning_zh": "孤舟独泊暮烟之中，风雨满江，天地昏暗。夜半蛟龙兴波，行人身处险境，堪怜可叹。此签者，宜守静不动，慎防灾祸，妄进则招凶。当祈神佛，修身避咎。",
+    "meaning_en": "A lone boat moors in twilight mist, wind and rain filling the river sky. At midnight a dragon stirs the waves—the traveler's plight is pitiable. Remain still, avoid ventures, and pray to heaven for protection.",
+    "details": {
+      "願事": {
+        "ja": "叶ひ難し。時を待ちて動くべからず。",
+        "zh": "心愿难成，宜守静待时，不可妄动。",
+        "en": "Hard to fulfill. Wait patiently; do not act."
+      },
+      "恋愛": {
+        "ja": "障りあり。別離の憂ひを招くべし。",
+        "zh": "情路多阻，恐有离别之忧。",
+        "en": "Obstacles abound. Beware of parting sorrows."
+      },
+      "仕事": {
+        "ja": "損失あり。新事業を始むる勿れ。",
+        "zh": "事业有损，切莫开创新业。",
+        "en": "Losses loom. Do not begin new ventures."
+      },
+      "健康": {
+        "ja": "病重し。早く醫に就くべし。",
+        "zh": "病势沉重，宜速就医调治。",
+        "en": "Illness is serious. Seek a physician at once."
+      },
+      "旅行": {
+        "ja": "行く勿れ。風波の難あらん。",
+        "zh": "不宜出行，恐遇风波之险。",
+        "en": "Do not travel. Storms and perils await."
+      },
+      "失物": {
+        "ja": "出でず。水邊に沈みしならん。",
+        "zh": "失物难寻，恐沉于水畔之处。",
+        "en": "Lost for good, likely sunk near water."
+      },
+      "待人": {
+        "ja": "來らず。消息も絕えん。",
+        "zh": "所待之人不来，音信亦断。",
+        "en": "They will not come; news will cease."
+      }
+    }
+  },
+  {
+    "number": 52,
+    "fortune": "吉",
+    "poem_ja": "孤舟乘順風\n萬里過滄溟\n忽見蓬萊島\n仙人笑相迎",
+    "poem_reading": "こしゅうじゅんぷうにのる　ばんりそうめいをすぐ　たちまちほうらいのしまをみる　せんにんわらひてあひむかふ",
+    "meaning_ja": "孤舟順風に乘り、萬里の滄海を渡る。忽ちにして蓬萊の仙島を望み、仙人笑みて迎ふるなり。此の籤に遇ふ者、事を謀りて途中に障りあれども、時至れば吉境に入るべし。何となれば誠心天に通ずるが故なり。",
+    "meaning_zh": "孤舟順風，萬里渡海，忽見蓬萊仙境，仙人含笑相迎。此簽之人，初雖艱辛，終得善境。誠心感格，自有仙緣相助，勿生懈怠。",
+    "meaning_en": "A lone boat rides the favorable wind across ten thousand miles of blue sea, and suddenly beholds the isle of immortals, where sages smile in welcome. Though the path is long, sincerity brings you to a blessed shore.",
+    "details": {
+      "願事": {
+        "ja": "遠くして叶ふべし。志を棄つる勿れ。",
+        "zh": "願雖遲成，終可如意，勿棄初志。",
+        "en": "Wishes come true in time. Do not abandon your resolve."
+      },
+      "恋愛": {
+        "ja": "遠地に良縁あり。待てば花開かん。",
+        "zh": "姻緣在遠方，耐心守候則成。",
+        "en": "Love comes from afar. Patience brings it to bloom."
+      },
+      "仕事": {
+        "ja": "順風に乘るが如し。遠業を謀るべし。",
+        "zh": "事業如順風行舟，宜謀遠略。",
+        "en": "Work flows like a favorable wind. Plan for distant goals."
+      },
+      "健康": {
+        "ja": "快復に向かふ。心を靜かに保つべし。",
+        "zh": "病體漸愈，宜靜心調養。",
+        "en": "Health improves. Keep your mind calm and at ease."
+      },
+      "旅行": {
+        "ja": "大吉なり。海路遠路ともに安し。",
+        "zh": "出行大吉，水陸遠近皆安。",
+        "en": "Very auspicious. Journeys by sea or land are safe."
+      },
+      "失物": {
+        "ja": "遠き所にあり。時を經て出づべし。",
+        "zh": "失物在遠處，假以時日可得。",
+        "en": "Lost item is far away. It will return in time."
+      },
+      "待人": {
+        "ja": "遲れて來るべし。音信まづ至らん。",
+        "zh": "所待之人稍遲，音信先至。",
+        "en": "They come late, but news arrives first."
+      }
+    }
+  },
+  {
+    "number": 53,
+    "fortune": "大吉",
+    "poem_ja": "春風吹柳岸\n一夜綠成蔭\n鶯燕來相賀\n花開滿故林",
+    "poem_reading": "しゅんぷうりゅうがんにふき　いちやみどりかげをなす　あうえんきたりてあひがす　はなひらきてこりんにみつ",
+    "meaning_ja": "春風柳岸を吹き、一夜にして緑蔭を成す。鶯燕來りて相賀し、花開きて故林に滿つ。此の籤に遇ふ者、時運到來し、萬事順調なるべし。舊き縁も新たに甦り、喜び重なりて至らん。誠心を以て事に當れば、福慶自ら來らん。",
+    "meaning_zh": "春风拂柳，一夜成荫，莺燕来贺，繁花满林。此签时运已至，万事遂心。旧缘重续，新喜叠来。但以诚心处事，则福庆自临，家门兴旺。",
+    "meaning_en": "Spring breezes caress the willow shore; in a single night, green shade fills the grove. Orioles and swallows come to offer congratulations, and blossoms crown the ancient woods. Your time has come—meet it with sincerity, and joy upon joy shall arrive.",
+    "details": {
+      "願事": {
+        "ja": "必ず叶ふべし。時運既に至れり。",
+        "zh": "心愿必成，时运已然到来。",
+        "en": "Wishes shall surely be fulfilled; the time is ripe."
+      },
+      "恋愛": {
+        "ja": "良縁熟せり。速やかに結ぶべし。",
+        "zh": "良缘已熟，宜速缔结佳偶。",
+        "en": "Love is ripe; swiftly bind the good bond."
+      },
+      "仕事": {
+        "ja": "大いに伸ぶべし。好機を逃す勿れ。",
+        "zh": "事业大展，良机勿失。",
+        "en": "Work flourishes greatly; do not miss the chance."
+      },
+      "健康": {
+        "ja": "恙なし。心身共に爽やかなり。",
+        "zh": "身心俱爽，无恙可忧。",
+        "en": "No ailments; body and spirit are refreshed."
+      },
+      "旅行": {
+        "ja": "大吉。行く先々にて喜びあり。",
+        "zh": "出行大吉，所至皆有喜事。",
+        "en": "Most auspicious; joy awaits wherever you go."
+      },
+      "失物": {
+        "ja": "出づべし。林木の邊を尋ねよ。",
+        "zh": "失物可得，宜寻林木之畔。",
+        "en": "Will be found near trees or groves."
+      },
+      "待人": {
+        "ja": "必ず來る。佳き報せを携ふ。",
+        "zh": "所待之人必至，携佳音而来。",
+        "en": "They will come, bearing welcome tidings."
+      }
+    }
+  },
+  {
+    "number": 54,
+    "fortune": "吉",
+    "poem_ja": "孤舟泛碧波\n順風到岸邊\n前途無阻滯\n萬里任揚帆",
+    "poem_reading": "こしゅうへきはにうかぶ　じゅんぷうがんぺんにいたる　ぜんとそたいなし　ばんりまかせてほをあぐ",
+    "meaning_ja": "一葉の孤舟、碧波に浮び、順風を得て岸邊に至らん。前途に阻むもの無く、萬里の波濤も帆を揚げて自在なり。此の籤に遇ふ者、時運漸く開け、志す所成就すべし。心を定めて進むべし、徒らに疑ふ勿れ。",
+    "meaning_zh": "孤舟泛于碧波，顺风直抵彼岸。前途无有阻滞，万里任尔扬帆。此签者时运渐开，所志可成。但须定志而进，勿生疑惑，则事事顺遂。",
+    "meaning_en": "A lone boat drifts on emerald waves, carried by favoring winds to the shore. No obstacle bars the way; ten thousand miles open to your sail. Hold firm to your purpose and advance without doubt.",
+    "details": {
+      "願事": {
+        "ja": "叶ふべし。時を得て自ら成らん。",
+        "zh": "所愿可成，得时自然而就。",
+        "en": "Wishes will be granted in due time."
+      },
+      "恋愛": {
+        "ja": "順調なり。言葉を惜しまず通はせよ。",
+        "zh": "情缘顺遂，勿吝言辞常通音。",
+        "en": "Love flows smoothly. Share your heart openly."
+      },
+      "仕事": {
+        "ja": "進展あり。勢ひに乗じて励むべし。",
+        "zh": "事业进展，乘势而为则佳。",
+        "en": "Work progresses. Ride the momentum forward."
+      },
+      "健康": {
+        "ja": "快方に向かふ。油斷する勿れ。",
+        "zh": "渐趋康复，仍不可掉以轻心。",
+        "en": "Recovery is near. Remain cautious still."
+      },
+      "旅行": {
+        "ja": "吉なり。水路殊に宜し。",
+        "zh": "出行吉利，水路尤为相宜。",
+        "en": "Favorable journey, especially by water."
+      },
+      "失物": {
+        "ja": "出づべし。水邊を尋ねよ。",
+        "zh": "失物可得，宜往水边寻之。",
+        "en": "Will be found. Seek near water."
+      },
+      "待人": {
+        "ja": "遲れて来る。音信まづ至らん。",
+        "zh": "来人稍迟，音信先至。",
+        "en": "They come late; news arrives first."
+      }
+    }
+  },
+  {
+    "number": 55,
+    "fortune": "大吉",
+    "poem_ja": "春園花爛漫\n蝶舞繞芳叢\n東風吹不盡\n滿目盡成紅",
+    "poem_reading": "しゅんえんはならんまん　ちょうまいてほうそうをめぐる　とうふうふきてつきず　まんもくことごとくくれなゐとなる",
+    "meaning_ja": "春の園に花爛漫と咲き誇り、蝶は芳しき叢を舞ひ繞る。東風絶えず吹きて、見渡す限り紅に染まれり。此の籤に遇ふ者、時運盛んにして萬事開き榮ゆべし。心を和らげ徳を積めば、福慶重なり來らん。",
+    "meaning_zh": "春园百花烂漫盛开，彩蝶翩翩绕芳丛而舞。东风不息，满目尽染嫣红。此签者，时运昌盛，诸事开泰。和心积德，则喜庆重叠而至。",
+    "meaning_en": "In the spring garden flowers bloom in splendor, and butterflies dance about the fragrant blossoms. The east wind blows ceaselessly, painting all in view a brilliant crimson. Fortune is at its peak; cultivate virtue, and blessings will multiply.",
+    "details": {
+      "願事": {
+        "ja": "皆叶ふべし。時の來るを喜べ。",
+        "zh": "诸愿皆成，正逢其时，欣然以待。",
+        "en": "All wishes fulfilled. Rejoice, for the time has come."
+      },
+      "恋愛": {
+        "ja": "花開く如し。喜びの縁結ばれん。",
+        "zh": "情如春花绽放，喜结良缘。",
+        "en": "Love blooms like spring flowers; a joyful bond awaits."
+      },
+      "仕事": {
+        "ja": "大いに榮ゆ。名利共に得べし。",
+        "zh": "事业大兴，名利双收。",
+        "en": "Great prosperity. Fame and fortune both arrive."
+      },
+      "健康": {
+        "ja": "無事なり。春陽の如く健やかなり。",
+        "zh": "身体安康，如沐春阳。",
+        "en": "Healthy and vigorous as spring sunshine."
+      },
+      "旅行": {
+        "ja": "大吉。行く先々に喜びあり。",
+        "zh": "旅途大吉，处处遇喜。",
+        "en": "Most auspicious. Joy meets you at every step."
+      },
+      "失物": {
+        "ja": "出づべし。花園のほとりを尋ねよ。",
+        "zh": "失物可得，宜寻花草之处。",
+        "en": "Will be found. Look near gardens or flowers."
+      },
+      "待人": {
+        "ja": "速やかに來る。吉報を携へん。",
+        "zh": "所待之人速至，携来佳音。",
+        "en": "They come swiftly, bearing happy tidings."
+      }
+    }
+  }
+]

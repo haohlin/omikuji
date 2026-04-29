@@ -1,0 +1,27 @@
+[23:46:39] ============================================================
+[23:46:39] Background scrape started (authentic 100 omikuji)
+[23:46:39] Step 1: trying 10 direct candidates
+[23:46:43] skip: https://21dzk.l.u-tokyo.ac.jp/SAT/ (no markers)
+[23:46:44] fail: https://www.daikokusan.or.jp/omikuji/ — <urlopen error Tunnel connection failed: 502 Bad Gateway>
+[23:46:53] fail: https://rindou.com/omikuji/ — HTTP Error 404: Not Found
+[23:46:58] fail: https://www.asakusajinja.jp/omikuji/ — HTTP Error 404: Not Found
+[23:46:59] fail: https://reikigaku.com/ganzandaishi/ — <urlopen error Tunnel connection failed: 502 Bad Gateway>
+[23:47:03] fail: https://temple.nichiren.or.jp/omikuji/ — HTTP Error 404: Not Found
+[23:47:05] fail: https://ja.wikisource.org/wiki/%E8%A7%80%E9%9F%B3%E7%B1%A4 — HTTP Error 404: Not Found
+[23:47:08] fail: https://zh.wikisource.org/wiki/%E8%A7%80%E9%9F%B3%E9%9D%88%E7%B1%A4 — HTTP Error 404: Not Found
+[23:47:10] fail: https://zh.wikisource.org/wiki/%E8%A7%80%E9%9F%B3%E7%B1%A4 — HTTP Error 404: Not Found
+[23:47:14] skip: https://www.senso-ji.jp/annual_event/ (no markers)
+[23:47:15] Step 2: running 4 searches
+[23:47:15]   search: 元三大師百籤 第一番 大吉 全文
+[23:47:17]     got 10 results
+[23:47:41]   search: 浅草寺 おみくじ 100番 凶 全文
+[23:47:43]     got 10 results
+[23:47:56]   search: 観音籤 百番 漢詩 一覧
+[23:47:58]     got 10 results
+[23:48:10]   search: 元三大師御籤本 全文
+[23:48:12]     got 10 results
+[23:48:20] Total candidate pages found: 0
+[23:48:20] Extracted signs: 0/100
+[23:48:20] Numbers covered: [] ... []
+[23:48:20] Saved to /Users/haohanl/dev/omikuji/data/omikuji_ja_authentic.json
+[23:48:20] Background scrape done

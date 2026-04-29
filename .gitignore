@@ -1,0 +1,5 @@
+.DS_Store
+scripts/gen_batch.log
+scripts/__pycache__/
+*.pyc
+.env
