@@ -8,7 +8,7 @@
 <meta property="og:title" content="御神籤 · Omikuji">
 <meta property="og:description" content="振一振签筒，抽一支心签。观音百签 · 中日英三语。">
 <meta property="og:type" content="website">
-<link rel="stylesheet" href="style.css?v=20260429-omikuji-ui">
+<link rel="stylesheet" href="style.css?v=20260429-omikuji-paper-share">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Ma+Shan+Zheng&family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
@@ -65,17 +65,37 @@
 <section id="stage-paper" class="stage">
   <div id="paper">
     <div class="paper-inner">
-      <div class="paper-topbar">
-        <span class="paper-num" id="p-num">第一番</span>
-        <span class="paper-fortune" id="p-fortune">大吉</span>
+      <div class="omikuji-frame">
+        <div class="omikuji-header">
+          <div class="header-cell number-cell">
+            <span class="paper-num" id="p-num">第一番</span>
+            <small id="p-num-en">No. 1</small>
+          </div>
+          <div class="header-cell fortune-cell">
+            <span class="paper-fortune" id="p-fortune">大吉</span>
+            <small id="p-fortune-en">Great Blessing</small>
+          </div>
+        </div>
+        <div class="omikuji-body">
+          <div class="vertical-main">
+            <div class="paper-title-vertical">御神籤</div>
+            <div class="poem-zh" id="p-poem-zh"></div>
+          </div>
+          <div class="poem-alt-wrap">
+            <div class="poem-alt-label" data-i18n="altLabel">和歌</div>
+            <div class="poem-alt-text" id="p-poem-alt"></div>
+          </div>
+          <div class="summary-wrap">
+            <div class="summary-label" data-i18n="summaryTitle">解签</div>
+            <div class="summary" id="p-summary"></div>
+          </div>
+          <div class="aspects" id="p-aspects"></div>
+        </div>
+        <div class="omikuji-footer-mark">
+          <span>元三大師</span>
+          <span>観音百籤</span>
+        </div>
       </div>
-      <div class="poem-zh" id="p-poem-zh"></div>
-      <div class="poem-alt-wrap">
-        <div class="poem-alt-label" data-i18n="altLabel">和歌</div>
-        <div class="poem-alt-text" id="p-poem-alt"></div>
-      </div>
-      <div class="summary" id="p-summary"></div>
-      <div class="aspects" id="p-aspects"></div>
       <div class="paper-footer">
         <button id="btn-share" class="mini-btn" data-i18n="share">分享</button>
         <button id="btn-again"  class="mini-btn" data-i18n="again">再び引く</button>
@@ -85,6 +105,6 @@
 </section>
 
 <script src="data/omikuji.js"></script>
-<script src="app.js?v=20260429-omikuji-ui"></script>
+<script src="app.js?v=20260429-omikuji-paper-share"></script>
 </body>
 </html>

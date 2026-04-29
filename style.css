@@ -125,38 +125,45 @@ html[data-lang="en"] .shrine-title{font-family:Georgia,"Times New Roman",serif;f
 .stick-floating::after{content:"御 神 籤";position:absolute;inset:28px 0 auto;writing-mode:vertical-rl;font-family:var(--serif);font-weight:900;color:#5b2814;letter-spacing:.2em;font-size:16px}
 .stick-number{margin:22px 0 4px;font-family:var(--brush);font-size:clamp(34px,8vw,62px);color:var(--ink)}
 @keyframes stickRise{from{opacity:0;transform:translateY(90px) rotate(-18deg)}to{opacity:1;transform:translateY(0) rotate(-7deg)}}
-#stage-paper{padding:32px 16px}
-#paper{width:min(100%,560px);perspective:1200px}
-.paper-inner{position:relative;min-height:620px;padding:34px 34px 28px;border-radius:13px;background:
-  radial-gradient(circle at 15% 20%,rgba(125,82,28,.07) 0 1px,transparent 1.8px),
-  radial-gradient(circle at 82% 78%,rgba(125,82,28,.055) 0 1px,transparent 1.8px),
-  linear-gradient(90deg,rgba(255,255,255,.28),transparent 20% 78%,rgba(155,101,35,.08)),
-  var(--paper);
-  background-size:24px 24px,31px 31px,100% 100%,100% 100%;
-  border:1px solid rgba(108,72,26,.25);box-shadow:0 22px 80px rgba(70,37,13,.23),inset 0 0 0 10px rgba(255,255,255,.18);text-align:left;transform-origin:top center;animation:paperOpen .75s cubic-bezier(.2,.9,.2,1) both;
-}
-.paper-inner::before{content:"";position:absolute;inset:16px;border:1px solid rgba(126,76,25,.18);border-radius:8px;pointer-events:none}
-.paper-inner::after{content:"御籤";position:absolute;right:26px;top:120px;width:82px;height:82px;border:4px solid rgba(184,36,29,.72);border-radius:50%;display:grid;place-items:center;color:rgba(184,36,29,.74);font-family:var(--brush);font-size:32px;transform:rotate(-12deg)}
-@keyframes paperOpen{0%{opacity:0;transform:rotateX(-68deg) translateY(-20px);filter:blur(2px)}100%{opacity:1;transform:none;filter:none}}
-.paper-topbar{display:flex;align-items:center;justify-content:space-between;gap:14px;padding-bottom:18px;margin-bottom:22px;border-bottom:2px solid rgba(91,53,17,.18)}
-.paper-num{font-weight:900;letter-spacing:.12em;color:var(--muted)}
-.paper-fortune{font-size:clamp(42px,10vw,78px);font-family:var(--brush);line-height:1;color:var(--torii);text-shadow:0 3px 0 rgba(255,255,255,.4)}
-.poem-zh{font-family:var(--brush);font-size:clamp(32px,8vw,58px);line-height:1.35;letter-spacing:.08em;text-align:center;white-space:pre-line;color:#17120f;margin:10px auto 28px;max-width:420px}
-html[data-lang="ja"] .poem-zh{font-family:var(--serif);font-weight:900;font-size:clamp(26px,6.5vw,44px)}
-html[data-lang="en"] .poem-zh{font-family:Georgia,"Times New Roman",serif;font-size:clamp(24px,5.8vw,38px);letter-spacing:.02em;line-height:1.24}
-.poem-alt-wrap{border-left:4px solid rgba(184,36,29,.62);padding:9px 0 9px 16px;margin:0 0 18px;background:rgba(255,250,232,.38)}
-.poem-alt-label{font-size:12px;color:var(--torii-dark);font-weight:900;letter-spacing:.2em;margin-bottom:6px}.poem-alt-text{white-space:pre-line;color:var(--muted);line-height:1.7;font-size:14px}
-.summary{font-size:16px;line-height:1.9;color:#2d241d;background:rgba(255,250,232,.42);padding:15px 18px;border-radius:12px;margin-bottom:18px}
-.aspects{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:12px}.aspect{padding:12px;border-radius:12px;background:rgba(255,252,239,.54);border:1px solid rgba(114,72,26,.14)}
-.aspect b{display:block;color:var(--torii-dark);font-size:13px;margin-bottom:5px;letter-spacing:.08em}.aspect span{display:block;color:#40342b;font-size:13px;line-height:1.55}
-.paper-footer{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:24px;padding-top:20px;border-top:1px dashed rgba(91,53,17,.22)}
+#stage-paper{padding:28px 12px;background:rgba(250,241,215,.42)}
+#paper{width:min(100%,500px);perspective:1200px}
+.paper-inner{position:relative;padding:0;border-radius:4px;background:#f8f5ec;text-align:left;transform-origin:top center;animation:paperOpen .75s cubic-bezier(.2,.9,.2,1) both;box-shadow:0 28px 84px rgba(42,24,10,.28),0 2px 0 rgba(255,255,255,.55) inset;overflow:visible}
+.paper-inner::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;background:
+  radial-gradient(circle at 14% 18%,rgba(0,0,0,.055) 0 1px,transparent 1.4px),
+  radial-gradient(circle at 72% 44%,rgba(0,0,0,.04) 0 1px,transparent 1.5px),
+  repeating-linear-gradient(92deg,rgba(80,62,38,.032) 0 1px,transparent 1px 9px),
+  linear-gradient(90deg,rgba(255,255,255,.32),transparent 26%,rgba(80,50,22,.055));background-size:19px 19px,27px 27px,100% 100%,100% 100%;mix-blend-mode:multiply}
+.paper-inner::after{content:"";position:absolute;inset:7px;border:1px solid rgba(18,17,15,.86);pointer-events:none;z-index:1}
+.omikuji-frame{position:relative;z-index:2;margin:10px;padding:0;border:1.5px solid rgba(18,17,15,.95);background:rgba(248,245,236,.86);color:#111;filter:sepia(.08)}
+.omikuji-header{height:92px;display:grid;grid-template-columns:1fr 1fr;border-bottom:1.5px solid #151515;background:rgba(255,255,255,.2)}
+.header-cell{display:grid;place-items:center;padding:8px 6px;text-align:center}.header-cell+ .header-cell{border-left:1.5px solid #151515}
+.paper-num,.paper-fortune{display:block;font-family:var(--serif);font-weight:900;color:#050505;letter-spacing:.05em;line-height:1;text-shadow:none}.paper-num{font-size:29px}.paper-fortune{font-size:52px}
+.header-cell small{margin-top:5px;font-family:Georgia,"Times New Roman",serif;font-size:10px;letter-spacing:.06em;color:#222;line-height:1.1;text-transform:uppercase}
+.omikuji-body{min-height:690px;display:grid;grid-template-columns:1.36fr .76fr 1.02fr .86fr;gap:0;border-bottom:1.5px solid #151515;overflow:hidden}
+.omikuji-body>div{min-width:0;border-left:1px solid rgba(20,20,20,.9)}.omikuji-body>div:first-child{border-left:0}
+.vertical-main{display:flex;flex-direction:row-reverse;align-items:stretch;justify-content:center;gap:12px;padding:18px 10px 16px;writing-mode:vertical-rl;text-orientation:upright}
+.paper-title-vertical{font-family:var(--serif);font-size:18px;font-weight:900;letter-spacing:.18em;border-left:1px solid #222;padding-left:8px;color:#111}
+.poem-zh{font-family:var(--serif);font-weight:900;font-size:31px;line-height:1.34;letter-spacing:.08em;text-align:start;white-space:pre-line;color:#080808;margin:0;max-height:635px;writing-mode:vertical-rl;text-orientation:upright}
+html[data-lang="zh"] .poem-zh{font-family:"Ma Shan Zheng",var(--serif);font-weight:400;font-size:33px;line-height:1.18}
+html[data-lang="en"] .poem-zh{font-family:Georgia,"Times New Roman",serif;font-size:18px;line-height:1.45;letter-spacing:.01em;writing-mode:horizontal-tb;text-orientation:mixed;text-align:left;padding:18px 12px;overflow:hidden;max-height:none}
+.poem-alt-wrap,.summary-wrap,.aspects{writing-mode:vertical-rl;text-orientation:mixed;padding:16px 9px;overflow:hidden}
+.poem-alt-label,.summary-label{font-family:var(--serif);font-weight:900;font-size:13px;letter-spacing:.18em;color:#111;border-left:1px solid #222;padding-left:5px;margin-left:8px}.poem-alt-text{white-space:pre-line;color:#111;line-height:1.65;font-size:13px;font-family:var(--serif)}
+.summary{font-size:13px;line-height:1.7;color:#111;background:transparent;padding:0;border-radius:0;margin:0;font-family:var(--serif)}
+.aspects{display:flex;flex-direction:column;gap:9px;margin:0}.aspect{padding:0;background:transparent;border:0;break-inside:avoid}.aspect b{display:inline;color:#111;font-size:12px;margin:0 0 0 3px;letter-spacing:.04em;font-family:var(--serif)}.aspect b::before{content:"○";font-weight:400;margin-bottom:3px}.aspect span{display:inline;color:#111;font-size:12px;line-height:1.58;font-family:var(--serif)}
+.omikuji-footer-mark{height:58px;display:grid;grid-template-columns:1fr 1fr;text-align:center;align-items:center;font-family:var(--serif);font-weight:900;font-size:25px;letter-spacing:.08em}.omikuji-footer-mark span+span{border-left:1.5px solid #151515}.omikuji-footer-mark span{height:100%;display:grid;place-items:center}
+.paper-footer{position:relative;z-index:3;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:16px 0 0;padding:0;border:0}.paper-footer .mini-btn{background:rgba(255,250,232,.94)}
 .toast{position:fixed;left:50%;bottom:26px;z-index:40;transform:translateX(-50%) translateY(20px);opacity:0;padding:12px 18px;border-radius:999px;background:rgba(26,23,20,.88);color:#fff;box-shadow:0 12px 36px rgba(0,0,0,.22);transition:.25s ease;font-size:14px}.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 @media (max-width:640px){
   body{padding:12px 10px}.stage{width:100%;min-height:calc(100dvh - 24px);border-radius:28px;padding:58px 16px 34px}.stage::before{inset:10px;border-radius:22px}
   .lang-switch{top:10px;right:10px}.lang-switch button{padding:7px 9px;min-width:36px;font-size:12px}
   .torii{height:230px;width:310px;max-width:84vw}.torii-pillar{height:126px}.torii-pillar.left{left:22%}.torii-pillar.right{right:22%}
   #box-wrap{width:260px;height:302px}#box{transform:scale(.92)}
-  .paper-inner{min-height:auto;padding:26px 20px 22px}.paper-inner::after{right:18px;top:104px;width:62px;height:62px;font-size:25px;border-width:3px;opacity:.8}
-  .paper-topbar{align-items:flex-start}.aspects{grid-template-columns:1fr}.summary{font-size:15px;line-height:1.8}.poem-alt-text{font-size:13px}
+  #stage-paper{padding:10px 6px}
+  #paper{width:min(100%,390px)}
+  .paper-inner{padding:0;border-radius:3px}
+  .paper-inner::after{inset:6px;border-width:1px;opacity:1}
+  .omikuji-frame{margin:8px}
+  .omikuji-header{height:78px}.paper-num{font-size:24px}.paper-fortune{font-size:44px}.header-cell small{font-size:8px}
+  .omikuji-body{min-height:610px;grid-template-columns:1.3fr .7fr .98fr .82fr}.vertical-main{gap:7px;padding:14px 6px}.paper-title-vertical{font-size:14px}.poem-zh{font-size:25px;max-height:565px}html[data-lang="zh"] .poem-zh{font-size:27px;line-height:1.12}.poem-alt-wrap,.summary-wrap,.aspects{padding:12px 5px}.summary,.poem-alt-text{font-size:10.5px}.aspect b,.aspect span{font-size:10px}.omikuji-footer-mark{height:48px;font-size:21px}
 }
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
