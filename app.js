@@ -591,28 +591,30 @@
     drawCrest(ctx, w / 2, y + 50, 42, ink);
     y += 112;
 
-    const headerH = 210;
+    const topH = 250;
+    const topGap = 14;
+    const headerW = Math.floor((right - left - topGap) * 0.52);
+    const poemW = right - left - topGap - headerW;
     ctx.strokeStyle = line;
     ctx.lineWidth = 1.5;
-    ctx.strokeRect(left, y, right - left, headerH);
-    const colW = (right - left) / 3;
+    ctx.strokeRect(left, y, headerW, topH);
+    const colW = headerW / 3;
     ctx.beginPath();
-    ctx.moveTo(left + colW, y); ctx.lineTo(left + colW, y + headerH);
-    ctx.moveTo(left + colW * 2, y); ctx.lineTo(left + colW * 2, y + headerH);
+    ctx.moveTo(left + colW, y); ctx.lineTo(left + colW, y + topH);
+    ctx.moveTo(left + colW * 2, y); ctx.lineTo(left + colW * 2, y + topH);
     ctx.stroke();
-    drawVerticalText(ctx, formatNumber(item.number), left + colW * 2.5, y + 22, 22, 27, ink, true, headerH - 44);
-    drawVerticalText(ctx, t("shrineTitle"), left + colW * 1.5, y + 22, 18, 23, ink, true, headerH - 44);
+    drawVerticalText(ctx, formatNumber(item.number), left + colW * 2.5, y + 22, 19, 24, ink, true, topH - 44);
+    drawVerticalText(ctx, t("shrineTitle"), left + colW * 1.5, y + 22, 18, 23, ink, true, topH - 44);
     const fortuneText = (I18N[lang].fortunes && I18N[lang].fortunes[item.fortune]) || item.fortune;
-    drawVerticalText(ctx, fortuneText, left + colW * 0.5, y + 28, lang === "en" ? 24 : 43, lang === "en" ? 28 : 52, ink, true, headerH - 56);
-    y += headerH + 18;
+    drawVerticalText(ctx, fortuneText, left + colW * 0.5, y + 30, lang === "en" ? 23 : 40, lang === "en" ? 27 : 49, ink, true, topH - 60);
 
-    const poemH = 272;
+    const poemX = left + headerW + topGap;
     ctx.strokeStyle = line;
-    ctx.strokeRect(left, y, right - left, poemH);
+    ctx.strokeRect(poemX, y, poemW, topH);
     const poem = lang === "en" ? (item.meaning_en || "") : (item.poem_ja || "");
-    if (lang === "en") drawWrappedText(ctx, poem, left + 26, y + 28, right - left - 52, 32, 24, ink, "Georgia");
-    else drawVerticalText(ctx, poem, right - 112, y + 28, 28, 39, ink, false, poemH - 56);
-    y += poemH + 18;
+    if (lang === "en") drawWrappedText(ctx, poem, poemX + 20, y + 28, poemW - 40, 30, 22, ink, "Georgia");
+    else drawVerticalText(ctx, poem, poemX + poemW - 45, y + 24, 25, 34, ink, false, topH - 48);
+    y += topH + 18;
 
     y = drawPlainPanel(ctx, left, y, right - left, t("altLabel"), item.poem_reading || item.poem_ja || "", ink, lang, 110);
     y += 14;
@@ -620,21 +622,25 @@
     y += 18;
 
     const entries = getAspectEntries(item).slice(0, 9);
-    const gridGap = 8;
-    const boxW = (right - left - gridGap * 2) / 3;
-    const boxH = 96;
+    const gridGapX = 14;
+    const gridGapY = 6;
+    const boxW = (right - left - gridGapX * 2) / 3;
+    const boxH = 90;
     entries.forEach(([key, value], idx) => {
-      const x = left + (idx % 3) * (boxW + gridGap);
-      const cy = y + Math.floor(idx / 3) * (boxH + gridGap);
-      ctx.strokeStyle = "rgba(17,17,15,.52)";
-      ctx.lineWidth = 1;
-      ctx.strokeRect(x, cy, boxW, boxH);
+      const x = left + (idx % 3) * (boxW + gridGapX);
+      const cy = y + Math.floor(idx / 3) * (boxH + gridGapY);
       const label = (I18N[lang].aspects && I18N[lang].aspects[key]) || key;
       const text = (value && (value[detailLang] || value.zh || value.ja || value.en)) || "";
-      drawLeftText(ctx, label, x + 9, cy + 8, 14, "900", ink, "Noto Serif JP");
-      drawMultilineText(ctx, text, x + 9, cy + 31, boxW - 18, 15, 12, ink, lang === "en" ? "Georgia" : "Noto Serif JP", 4);
+      drawLeftText(ctx, label, x + 2, cy + 7, 14, "900", ink, "Noto Serif JP");
+      ctx.strokeStyle = "rgba(17,17,15,.22)";
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(x + 2, cy + 25);
+      ctx.lineTo(x + boxW - 2, cy + 25);
+      ctx.stroke();
+      drawMultilineText(ctx, text, x + 2, cy + 34, boxW - 4, 15, 12, ink, lang === "en" ? "Georgia" : "Noto Serif JP", 4);
     });
-    y += 3 * (boxH + gridGap) + 4;
+    y += 3 * boxH + 2 * gridGapY + 4;
 
     ctx.strokeStyle = line;
     ctx.beginPath();
