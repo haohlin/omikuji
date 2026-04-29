@@ -210,13 +210,13 @@ html[data-lang="en"] .poem-zh{font-family:var(--latin-serif);font-size:18px;line
 #paper[data-layout="reference"] .paper-crest::before,#paper[data-layout="reference"] .paper-crest::after{content:"";position:absolute;width:28px;height:42px;border:2px solid #171411;border-left:0;border-bottom:0;border-radius:50%;top:11px}
 #paper[data-layout="reference"] .paper-crest::before{left:9px;transform:rotate(-34deg)}
 #paper[data-layout="reference"] .paper-crest::after{right:9px;transform:rotate(34deg)}
-#paper[data-layout="reference"] .omikuji-header{grid-column:1 / 2;grid-row:2;height:238px;display:grid;grid-template-columns:1.05fr 1fr 1.1fr;border:1px solid rgba(17,17,15,.8);background:rgba(255,255,255,.16);text-align:center;writing-mode:vertical-rl;text-orientation:upright;margin:0;overflow:hidden}
-#paper[data-layout="reference"] .header-cell{display:flex;align-items:center;justify-content:center;padding:12px 3px;border:0!important;text-align:center;min-width:0;overflow:hidden;white-space:nowrap}
-#paper[data-layout="reference"] .header-cell+ .header-cell{border-left:1px solid rgba(17,17,15,.65)!important}
+#paper[data-layout="reference"] .omikuji-header{grid-column:1 / 2;grid-row:2;height:238px;display:grid;grid-template-columns:1.05fr 1fr 1.1fr;border:1px solid rgba(17,17,15,.8);background:rgba(255,255,255,.16);text-align:center;writing-mode:horizontal-tb;text-orientation:mixed;margin:0;overflow:hidden}
+#paper[data-layout="reference"] .header-cell{display:flex;align-items:center;justify-content:center;height:100%;padding:16px 3px;border:0!important;text-align:center;min-width:0;overflow:hidden;white-space:nowrap}
+#paper[data-layout="reference"] .header-cell+ .header-cell{border-left:0!important}
 #paper[data-layout="reference"] .header-cell small{display:none}
-#paper[data-layout="reference"] .paper-num{display:block;font-family:var(--jp-serif);font-weight:900;font-size:17px;line-height:1;letter-spacing:.01em;color:#111;white-space:nowrap;word-break:keep-all;overflow-wrap:normal;text-wrap:nowrap}
-#paper[data-layout="reference"] .paper-shrine{display:block;font-family:var(--jp-serif);font-weight:900;font-size:15px;line-height:1.05;letter-spacing:.04em;color:#111;white-space:pre-line;word-break:keep-all}
-#paper[data-layout="reference"] .paper-fortune{display:block;font-family:var(--jp-serif);font-weight:900;font-size:38px;line-height:1.05;letter-spacing:.04em;color:#111;white-space:nowrap}
+#paper[data-layout="reference"] .paper-num{display:block;writing-mode:vertical-rl;text-orientation:upright;font-family:var(--jp-serif);font-weight:900;font-size:17px;line-height:1;letter-spacing:.01em;color:#111;white-space:nowrap;word-break:keep-all;overflow-wrap:normal;text-wrap:nowrap}
+#paper[data-layout="reference"] .paper-shrine{display:block;writing-mode:vertical-rl;text-orientation:upright;font-family:var(--jp-serif);font-weight:900;font-size:15px;line-height:1.05;letter-spacing:.04em;color:#111;white-space:pre-line;word-break:keep-all}
+#paper[data-layout="reference"] .paper-fortune{display:block;writing-mode:vertical-rl;text-orientation:upright;font-family:var(--jp-serif);font-weight:900;font-size:38px;line-height:1.05;letter-spacing:.04em;color:#111;white-space:nowrap}
 #paper[data-layout="reference"] .omikuji-body{grid-column:1 / -1;display:contents;min-height:0;border:0;overflow:visible}
 #paper[data-layout="reference"] .omikuji-body>div{border:1px solid rgba(17,17,15,.62)!important;min-width:0;background:rgba(255,255,255,.08)}
 #paper[data-layout="reference"] .vertical-main{grid-column:2 / 3;grid-row:2;min-height:238px;display:flex;flex-direction:row-reverse;justify-content:center;align-items:center;gap:14px;margin:0;padding:14px 8px;writing-mode:vertical-rl;text-orientation:upright;overflow:hidden}
@@ -239,19 +239,19 @@ html[data-lang="en"] .poem-zh{font-family:var(--latin-serif);font-size:18px;line
 #paper[data-layout="card"] .paper-inner{background:#f8f0dd;border-radius:20px;overflow:visible;padding:16px;box-shadow:0 24px 74px rgba(42,24,10,.22)}
 #paper[data-layout="card"] .paper-inner::after{display:none}
 #paper[data-layout="card"] .omikuji-frame{margin:0;padding:24px 24px 18px;border:1px solid rgba(116,35,23,.18);border-radius:16px;background:rgba(255,250,239,.92);box-shadow:0 16px 42px rgba(65,32,12,.12);filter:none;font-family:var(--serif)}
-#paper[data-layout="card"] .paper-shrine{display:block;font-family:var(--serif);font-weight:900;font-size:19px;line-height:1.15;color:#7d1714;white-space:normal}
-#paper[data-layout="card"] .shrine-cell{display:none}
-#paper[data-layout="card"] .omikuji-header{height:auto;display:grid;grid-template-columns:1fr auto;align-items:start;border:0;border-bottom:1px solid rgba(125,23,20,.24);padding:0 0 14px;margin:0 0 18px;background:transparent;writing-mode:horizontal-tb;min-height:0;max-height:none}
+#paper[data-layout="card"] .paper-shrine{display:block;font-family:var(--serif);font-weight:900;font-size:18px;line-height:1.15;color:#7d1714;white-space:normal}
+#paper[data-layout="card"] .shrine-cell{display:block;text-align:right}
+#paper[data-layout="card"] .omikuji-header{height:auto;display:grid;grid-template-columns:1fr 1fr;gap:10px 16px;align-items:start;border:0;border-bottom:1px solid rgba(125,23,20,.24);padding:0 0 14px;margin:0 0 18px;background:transparent;writing-mode:horizontal-tb;min-height:0;max-height:none}
 #paper[data-layout="card"] .header-cell{display:block;padding:0;border:0!important;text-align:left}
-#paper[data-layout="card"] .fortune-cell{text-align:right}
+#paper[data-layout="card"] .fortune-cell{grid-column:1 / -1;text-align:center;margin-top:8px}
 #paper[data-layout="card"] .paper-num{font-family:var(--serif);font-size:18px;font-weight:700;line-height:1.2;color:#2a2118;letter-spacing:.03em}
-#paper[data-layout="card"] .paper-fortune{font-family:var(--serif);font-size:56px;font-weight:900;line-height:.95;color:var(--torii);letter-spacing:.04em}
+#paper[data-layout="card"] .paper-fortune{display:block;margin:0 auto;font-family:var(--serif);font-size:46px;font-weight:900;line-height:1;color:var(--torii);letter-spacing:.02em;max-width:100%;overflow-wrap:normal}
 #paper[data-layout="card"] .header-cell small{display:block;margin-top:4px;font-family:var(--latin-serif);font-size:10px;color:#8b6554;letter-spacing:.04em}
 #paper[data-layout="card"] .omikuji-body{min-height:0;display:block;border:0;overflow:visible}
 #paper[data-layout="card"] .omikuji-body>div{border:0!important;min-width:0}
 #paper[data-layout="card"] .vertical-main{display:block;min-height:0;padding:0 0 16px;border-bottom:1px solid rgba(125,23,20,.16)!important;writing-mode:horizontal-tb;text-orientation:mixed;text-align:center}
 #paper[data-layout="card"] .paper-title-vertical{display:none}
-#paper[data-layout="card"] .poem-zh{display:block;font-family:var(--serif)!important;font-size:28px!important;font-weight:900!important;line-height:1.9!important;letter-spacing:.08em;writing-mode:horizontal-tb;text-orientation:mixed;text-align:center;white-space:pre-line;max-height:none;margin:0;color:#111}
+#paper[data-layout="card"] .poem-zh{display:block;font-family:var(--serif)!important;font-size:26px!important;font-weight:900!important;line-height:1.8!important;letter-spacing:.07em;writing-mode:horizontal-tb;text-orientation:mixed;text-align:center;white-space:pre-line;max-height:none;margin:0;color:#111}
 #paper[data-layout="card"] .poem-alt-wrap,#paper[data-layout="card"] .summary-wrap{display:block;writing-mode:horizontal-tb;text-orientation:mixed;overflow:visible;margin:14px 0 0;padding:13px 14px;border-radius:12px;background:rgba(184,36,29,.045);border-left:4px solid rgba(184,36,29,.8);font-family:var(--serif)}
 #paper[data-layout="card"] .poem-alt-label,#paper[data-layout="card"] .summary-label{display:block;font-family:var(--serif);font-weight:900;font-size:13px;line-height:1.2;letter-spacing:.08em;color:var(--torii-dark);border:0;padding:0;margin:0 0 7px;text-align:left}
 #paper[data-layout="card"] .poem-alt-text,#paper[data-layout="card"] .summary{display:block;font-family:var(--serif);font-weight:500;font-size:14px;line-height:1.75;color:#211914;text-align:left;white-space:normal}
@@ -262,6 +262,21 @@ html[data-lang="en"] .poem-zh{font-family:var(--latin-serif);font-size:18px;line
 #paper[data-layout="card"] .aspect span{display:block;font-family:var(--serif);font-size:12.5px;font-weight:500;line-height:1.58;color:#201814;text-align:left}
 #paper[data-layout="card"] .omikuji-footer-mark{height:auto;display:block;text-align:center;border-top:1px dashed rgba(125,23,20,.24);margin-top:18px;padding-top:12px;font-family:var(--jp-serif);font-weight:700;font-size:12px;letter-spacing:.08em;color:#7c6254}
 #paper[data-layout="card"] .omikuji-footer-mark span{display:inline;height:auto}#paper[data-layout="card"] .omikuji-footer-mark span+span{border-left:0}#paper[data-layout="card"] .omikuji-footer-mark span+span::before{content:" · "}
+
+html[data-lang="en"] #paper[data-layout="reference"] .omikuji-frame{grid-template-columns:.74fr 1.26fr}
+html[data-lang="en"] #paper[data-layout="reference"] .omikuji-header{grid-template-columns:1fr;grid-template-rows:auto auto 1fr;gap:0;padding:10px 12px;text-align:left}
+html[data-lang="en"] #paper[data-layout="reference"] .header-cell{display:block;height:auto;padding:0 0 8px;text-align:left;white-space:normal;overflow:visible}
+html[data-lang="en"] #paper[data-layout="reference"] .fortune-cell{padding-top:6px}
+html[data-lang="en"] #paper[data-layout="reference"] .paper-num,html[data-lang="en"] #paper[data-layout="reference"] .paper-shrine,html[data-lang="en"] #paper[data-layout="reference"] .paper-fortune{writing-mode:horizontal-tb;text-orientation:mixed;white-space:normal;word-break:normal;overflow-wrap:break-word;letter-spacing:.01em;line-height:1.15}
+html[data-lang="en"] #paper[data-layout="reference"] .paper-num{font-size:15px;color:#111}
+html[data-lang="en"] #paper[data-layout="reference"] .paper-shrine{font-size:14px;color:#111}
+html[data-lang="en"] #paper[data-layout="reference"] .paper-fortune{font-size:17px;line-height:1.08;color:#111;white-space:nowrap;overflow-wrap:normal;word-break:keep-all}
+html[data-lang="en"] #paper[data-layout="reference"] .vertical-main{writing-mode:horizontal-tb;text-orientation:mixed;align-items:flex-start;justify-content:flex-start;text-align:left;padding:14px 12px;overflow:hidden}
+html[data-lang="en"] #paper[data-layout="reference"] .poem-zh{font-family:var(--latin-serif)!important;font-size:12.8px!important;font-weight:600!important;line-height:1.42!important;letter-spacing:.01em;white-space:normal;text-align:left;max-height:none;overflow:hidden}
+html[data-lang="en"] #paper[data-layout="card"] .omikuji-header{grid-template-columns:1fr 1fr;gap:9px 14px;align-items:start}
+html[data-lang="en"] #paper[data-layout="card"] .paper-shrine{font-size:15.5px;line-height:1.18}
+html[data-lang="en"] #paper[data-layout="card"] .paper-fortune{font-size:32px;line-height:1.04;max-width:100%;letter-spacing:.01em}
+html[data-lang="en"] #paper[data-layout="card"] .poem-zh{font-family:var(--latin-serif)!important;font-size:16.5px!important;font-weight:700!important;line-height:1.5!important;letter-spacing:.01em;text-align:left}
 
 @media (max-width:640px){
   #paper[data-layout="reference"]{width:min(100%,360px)}
@@ -277,5 +292,9 @@ html[data-lang="en"] .poem-zh{font-family:var(--latin-serif);font-size:18px;line
   #paper[data-layout="reference"] .poem-alt-text{font-size:10.6px;line-height:1.5}
   #paper[data-layout="reference"] .summary{font-size:11px;line-height:1.5}
   #paper[data-layout="reference"] .aspects{grid-template-columns:1fr 1fr;gap:2px 7px}
-  #paper[data-layout="reference"] .aspect{min-height:80px;padding:7px 4px}#paper[data-layout="reference"] .aspect b{font-size:10px}#paper[data-layout="reference"] .aspect span{font-size:9.4px;line-height:1.3}
+  html[data-lang="en"] #paper[data-layout="reference"] .omikuji-frame{grid-template-columns:.72fr 1.28fr}
+  html[data-lang="en"] #paper[data-layout="reference"] .poem-zh{font-size:12px!important;line-height:1.35!important}
+  html[data-lang="en"] #paper[data-layout="reference"] .paper-fortune{font-size:17px}
+  html[data-lang="en"] #paper[data-layout="card"] .paper-fortune{font-size:29px}
+  html[data-lang="en"] #paper[data-layout="card"] .poem-zh{font-size:15.5px!important;line-height:1.45!important}
 }

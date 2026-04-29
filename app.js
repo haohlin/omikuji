@@ -593,26 +593,28 @@
 
     const topH = 250;
     const topGap = 14;
-    const headerW = Math.floor((right - left - topGap) * 0.52);
+    const headerW = Math.floor((right - left - topGap) * (lang === "en" ? 0.42 : 0.52));
     const poemW = right - left - topGap - headerW;
     ctx.strokeStyle = line;
     ctx.lineWidth = 1.5;
     ctx.strokeRect(left, y, headerW, topH);
     const colW = headerW / 3;
-    ctx.beginPath();
-    ctx.moveTo(left + colW, y); ctx.lineTo(left + colW, y + topH);
-    ctx.moveTo(left + colW * 2, y); ctx.lineTo(left + colW * 2, y + topH);
-    ctx.stroke();
-    drawVerticalText(ctx, formatNumber(item.number), left + colW * 2.5, y + 22, 19, 24, ink, true, topH - 44);
-    drawVerticalText(ctx, t("shrineTitle"), left + colW * 1.5, y + 22, 18, 23, ink, true, topH - 44);
     const fortuneText = (I18N[lang].fortunes && I18N[lang].fortunes[item.fortune]) || item.fortune;
-    drawVerticalText(ctx, fortuneText, left + colW * 0.5, y + 30, lang === "en" ? 23 : 40, lang === "en" ? 27 : 49, ink, true, topH - 60);
+    if (lang === "en") {
+      drawLeftText(ctx, formatNumber(item.number), left + 16, y + 20, 17, "900", ink, "Georgia");
+      drawMultilineText(ctx, t("shrineTitle"), left + 16, y + 54, headerW - 32, 19, 15, ink, "Georgia", 2);
+      drawMultilineText(ctx, fortuneText, left + 16, y + 118, headerW - 32, 32, 28, ink, "Georgia", 2);
+    } else {
+      drawVerticalText(ctx, formatNumber(item.number), left + colW * 2.5, y + 22, 19, 24, ink, true, topH - 44);
+      drawVerticalText(ctx, t("shrineTitle"), left + colW * 1.5, y + 22, 18, 23, ink, true, topH - 44);
+      drawVerticalText(ctx, fortuneText, left + colW * 0.5, y + 30, 40, 49, ink, true, topH - 60);
+    }
 
     const poemX = left + headerW + topGap;
     ctx.strokeStyle = line;
     ctx.strokeRect(poemX, y, poemW, topH);
     const poem = lang === "en" ? (item.meaning_en || "") : (item.poem_ja || "");
-    if (lang === "en") drawWrappedText(ctx, poem, poemX + 20, y + 28, poemW - 40, 30, 22, ink, "Georgia");
+    if (lang === "en") drawWrappedText(ctx, poem, poemX + 16, y + 18, poemW - 32, 19, 13.5, ink, "Georgia");
     else drawVerticalText(ctx, poem, poemX + poemW - 45, y + 24, 25, 34, ink, false, topH - 48);
     y += topH + 18;
 
@@ -722,23 +724,28 @@
     ctx.strokeStyle = softLine;
     ctx.lineWidth = 2;
     ctx.beginPath();
-    ctx.moveTo(left, y + 104);
-    ctx.lineTo(right, y + 104);
+    ctx.moveTo(left, y + 142);
+    ctx.lineTo(right, y + 142);
     ctx.stroke();
-    drawLeftText(ctx, formatNumber(item.number), left, y + 20, 26, "700", "#2a2118");
-    drawLeftText(ctx, `No. ${item.number}`, left, y + 58, 16, "400", "#8b6554", "Georgia");
-    drawRightText(ctx, fortuneText, right, y + 8, lang === "en" ? 46 : 76, "900", red);
-    drawRightText(ctx, I18N.en.fortunes[item.fortune] || item.fortune, right, y + 82, 16, "400", "#8b6554", "Georgia");
-    y += 134;
+    drawLeftText(ctx, formatNumber(item.number), left, y + 18, 26, "700", "#2a2118");
+    drawLeftText(ctx, `No. ${item.number}`, left, y + 54, 16, "400", "#8b6554", "Georgia");
+    drawRightText(ctx, t("shrineTitle").replace(/\n/g, " "), right, y + 18, lang === "en" ? 22 : 24, "900", darkRed, lang === "en" ? "Georgia" : "Noto Serif SC");
+    drawRightText(ctx, t("shrineSub").toUpperCase(), right, y + 54, 14, "400", "#8b6554", "Georgia");
+    if (lang === "en") drawCenteredText(ctx, fortuneText, w / 2, y + 88, 34, "900", red, "Georgia");
+    else drawCenteredText(ctx, fortuneText, w / 2, y + 78, 76, "900", red, "Noto Serif SC");
+    drawCenteredText(ctx, I18N.en.fortunes[item.fortune] || item.fortune, w / 2, y + (lang === "en" ? 126 : 150), 16, "400", "#8b6554", "Georgia");
+    y += lang === "en" ? 174 : 188;
 
     const poem = lang === "en" ? (item.meaning_en || "") : (item.poem_ja || "");
     ctx.fillStyle = ink;
     ctx.textAlign = "center";
     ctx.textBaseline = "top";
-    ctx.font = `900 ${lang === "en" ? 25 : 38}px Noto Serif SC, Noto Serif JP, Yu Mincho, serif`;
-    const poemLines = lang === "en" ? wrapTextLines(ctx, poem, right - left, 4) : String(poem).split(/\n+/).filter(Boolean);
-    poemLines.slice(0, 4).forEach((line, i) => ctx.fillText(line, w / 2, y + i * (lang === "en" ? 38 : 62)));
-    y += lang === "en" ? 180 : 270;
+    ctx.font = `900 ${lang === "en" ? 19 : 38}px ${lang === "en" ? "Georgia" : "Noto Serif SC"}, Noto Serif JP, Yu Mincho, serif`;
+    const poemLines = lang === "en" ? wrapTextLines(ctx, poem, right - left, 5) : String(poem).split(/\n+/).filter(Boolean);
+    if (lang === "en") ctx.textAlign = "left";
+    poemLines.slice(0, lang === "en" ? 5 : 4).forEach((line, i) => ctx.fillText(line, lang === "en" ? left : w / 2, y + i * (lang === "en" ? 29 : 62)));
+    ctx.textAlign = "center";
+    y += lang === "en" ? 172 : 270;
     drawDivider(ctx, left, right, y, softLine);
     y += 26;
 
@@ -885,6 +892,14 @@
     ctx.textAlign = "right";
     ctx.textBaseline = "top";
     ctx.fillText(String(text), x, y);
+  }
+
+  function drawMultilineRightText(ctx, text, right, y, maxWidth, lineHeight, size, weight = "400", color = "#111", family = "Noto Serif SC", maxLines = 2) {
+    ctx.fillStyle = color;
+    ctx.font = `${weight} ${size}px ${family}, Noto Serif JP, Yu Mincho, serif`;
+    ctx.textAlign = "right";
+    ctx.textBaseline = "top";
+    wrapTextLines(ctx, text, maxWidth, maxLines).forEach((line, idx) => ctx.fillText(line, right, y + idx * lineHeight));
   }
 
   function drawMultilineText(ctx, text, x, y, maxWidth, lineHeight, size, color, family = "Noto Serif SC", maxLines = 4) {
