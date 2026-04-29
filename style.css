@@ -180,7 +180,7 @@ html[data-lang="en"] .poem-zh{font-family:var(--latin-serif);font-size:18px;line
 
   body{padding:12px 10px}.stage{width:100%;min-height:calc(100dvh - 24px);border-radius:28px;padding:58px 16px 34px}.stage::before{inset:10px;border-radius:22px}
   .lang-switch{top:10px;right:10px}.lang-switch button{padding:7px 9px;min-width:36px;font-size:12px}
-  .debug-lot{top:56px;left:10px;right:10px;width:max-content;max-width:calc(100vw - 20px)}.debug-toggle{padding:7px 10px;font-size:12px}.debug-form{gap:5px}.debug-form input{width:68px;padding:6px 8px}.debug-form label,.debug-form button{font-size:11px}
+  .debug-lot{top:auto;left:10px;right:auto;bottom:calc(14px + env(safe-area-inset-bottom));width:max-content;max-width:calc(100vw - 20px);z-index:30}.debug-toggle{padding:7px 10px;font-size:12px}.debug-form{gap:5px}.debug-form input{width:68px;padding:6px 8px}.debug-form label,.debug-form button{font-size:11px}
   .torii{height:230px;width:310px;max-width:84vw}.torii-pillar{height:126px}.torii-pillar.left{left:22%}.torii-pillar.right{right:22%}
   #box-wrap{width:260px;height:302px}#box{transform:scale(.92)}
   #stage-paper{padding:10px 6px}
