@@ -19,7 +19,6 @@
     lastMagnitude: 0,
     selected: null,
     sessionSalt: String(Date.now()),
-    drawSeed: "",
     paperLayout: localStorage.getItem("omikuji.layout") || "card",
     audio: null,
     petals: [],
@@ -73,18 +72,6 @@
         方角: "方位",
         勝負: "胜负",
       },
-      fortunes: {
-        大吉: "大吉",
-        吉: "吉",
-        中吉: "中吉",
-        小吉: "小吉",
-        末吉: "末吉",
-        半吉: "半吉",
-        凶: "凶",
-        小凶: "小凶",
-        末凶: "末凶",
-        大凶: "大凶",
-      },
     },
     ja: {
       title: "御神籤",
@@ -118,29 +105,6 @@
       debugShow: "表示",
       debugInvalid: "1〜100 の番号を入力してください",
       debugMissing: "この番号の籤が見つかりません",
-      aspects: {
-        願事: "願事",
-        恋愛: "恋愛",
-        仕事: "仕事",
-        健康: "健康",
-        旅行: "旅行",
-        失物: "失物",
-        待人: "待人",
-        方角: "方角",
-        勝負: "勝負",
-      },
-      fortunes: {
-        大吉: "大吉",
-        吉: "吉",
-        中吉: "中吉",
-        小吉: "小吉",
-        末吉: "末吉",
-        半吉: "半吉",
-        凶: "凶",
-        小凶: "小凶",
-        末凶: "末凶",
-        大凶: "大凶",
-      },
     },
     en: {
       title: "Omikuji",
@@ -202,6 +166,8 @@
 
   const els = {};
 
+  // ---- Boot & events ----
+
   function boot() {
     Object.assign(els, {
       stages: $$(".stage"),
@@ -237,7 +203,7 @@
     });
 
     bindEvents();
-    setLang(I18N[state.lang] ? state.lang : "zh");
+    setLang(state.lang);
     showStage("intro");
     initSakura();
     window.addEventListener("resize", resizeSakura, { passive: true });
@@ -271,8 +237,10 @@
     });
   }
 
+  // ---- Language, layout & stage ----
+
   function setLang(lang) {
-    state.lang = I18N[lang] ? lang : "zh";
+    state.lang = Object.prototype.hasOwnProperty.call(I18N, lang) ? lang : "zh";
     localStorage.setItem("omikuji.lang", state.lang);
     document.documentElement.lang = state.lang;
     document.documentElement.dataset.lang = state.lang;
@@ -283,9 +251,7 @@
     });
     if (els.pShrineTitle) els.pShrineTitle.textContent = t("shrineTitle");
     if (els.pShrineSub) els.pShrineSub.textContent = t("shrineSub");
-    updateDebugLabels();
     if (state.lang !== "ja") lockDebugPanel();
-    updateShakeCount();
     setPaperLayout(state.paperLayout, false);
     if (state.selected) renderFortune(state.selected);
   }
@@ -301,13 +267,28 @@
 
   function showStage(name) {
     state.stage = name;
-    els.stages.forEach((stage) => {
-      const active = stage.id === `stage-${name}`;
-      stage.classList.toggle("active", active);
-      stage.classList.remove("leaving");
-    });
+    els.stages.forEach((stage) => stage.classList.toggle("active", stage.id === `stage-${name}`));
     if (name !== "shake") hideDebugPanel();
   }
+
+  function t(key) {
+    return (I18N[state.lang] && I18N[state.lang][key]) || I18N.zh[key] || key;
+  }
+
+  function toast(message) {
+    let node = $(".toast");
+    if (!node) {
+      node = document.createElement("div");
+      node.className = "toast";
+      document.body.appendChild(node);
+    }
+    node.textContent = message;
+    node.classList.add("show");
+    clearTimeout(node._timer);
+    node._timer = setTimeout(() => node.classList.remove("show"), 2100);
+  }
+
+  // ---- Shake & draw ----
 
   async function enableMotion() {
     if (state.motionReady) return true;
@@ -353,7 +334,6 @@
     updateShakeCount();
     animateBox();
     soundShake();
-    els.goDraw.classList.remove("hidden");
     maybeUnlockDebug();
     if (state.shakeCount === 1 || state.shakeCount % 8 === 0) soundBell(0.32);
   }
@@ -362,16 +342,12 @@
     state.shakeCount = 0;
     state.lastMagnitude = 0;
     state.sessionSalt = `${Date.now()}-${Math.random().toString(36).slice(2)}`;
-    state.drawSeed = "";
     lockDebugPanel();
     updateShakeCount();
-    els.goDraw.classList.remove("hidden");
   }
 
   function updateShakeCount() {
     els.shakeCount.textContent = String(state.shakeCount);
-    const unit = els.shakeCount.nextElementSibling;
-    if (unit) unit.textContent = t("shakeUnit");
   }
 
   function animateBox() {
@@ -387,9 +363,7 @@
     }
     unlockAudio();
     soundStick();
-    const seed = buildDrawSeed();
-    state.drawSeed = seed;
-    state.selected = DATA[pickIndexBySeed(seed, DATA.length)];
+    state.selected = DATA[pickIndexBySeed(buildDrawSeed(), DATA.length)];
     els.stickNumber.textContent = formatNumber(state.selected.number);
     els.stickFloating.style.animation = "none";
     void els.stickFloating.offsetWidth;
@@ -404,6 +378,31 @@
     renderFortune(state.selected);
     showStage("paper");
   }
+
+  function buildDrawSeed() {
+    const count = Math.max(0, state.shakeCount);
+    return `${state.sessionSalt}|shakes:${count}|items:${DATA.length}`;
+  }
+
+  function pickIndexBySeed(seed, length) {
+    if (!length) return 0;
+    return Math.floor(seededRandom(seed) * length) % length;
+  }
+
+  function seededRandom(seed) {
+    let h = 2166136261;
+    const text = String(seed);
+    for (let i = 0; i < text.length; i += 1) {
+      h ^= text.charCodeAt(i);
+      h = Math.imul(h, 16777619);
+    }
+    h += h << 13; h ^= h >>> 7;
+    h += h << 3; h ^= h >>> 17;
+    h += h << 5;
+    return (h >>> 0) / 4294967296;
+  }
+
+  // ---- Debug lot picker ----
 
   function toggleDebugPanel() {
     if (!state.debugUnlocked || !els.debugLot) return;
@@ -436,14 +435,6 @@
     els.debugLot.setAttribute("aria-hidden", "true");
   }
 
-  function updateDebugLabels() {
-    if (els.debugToggle) els.debugToggle.textContent = t("debugToggle");
-    const label = els.debugForm && els.debugForm.querySelector("label");
-    const button = els.debugForm && els.debugForm.querySelector("button");
-    if (label) label.textContent = t("debugLabel");
-    if (button) button.textContent = t("debugShow");
-  }
-
   function showDebugFortune(event) {
     event.preventDefault();
     const num = Number.parseInt(els.debugNumber.value, 10);
@@ -458,60 +449,140 @@
     }
     state.selected = item;
     state.shakeCount = 0;
-    state.drawSeed = `debug:${num}`;
+    updateShakeCount();
     if (els.stickNumber) els.stickNumber.textContent = formatNumber(item.number);
     renderFortune(item);
     showStage("paper");
     requestAnimationFrame(() => window.scrollTo({ top: 0, behavior: "smooth" }));
   }
 
+  // ---- Fortune text ----
+
+  function formatNumber(num) {
+    if (state.lang === "en") return `${t("numberPrefix")}${num}${t("numberSuffix")}`;
+    return `${t("numberPrefix")}${toCjkNumber(num)}${t("numberSuffix")}`;
+  }
+
+  function toCjkNumber(num) {
+    const chars = ["零", "一", "二", "三", "四", "五", "六", "七", "八", "九"];
+    if (num === 100) return "百";
+    if (num < 10) return chars[num];
+    const tens = Math.floor(num / 10);
+    const ones = num % 10;
+    const head = tens === 1 ? "十" : `${chars[tens]}十`;
+    return ones ? `${head}${chars[ones]}` : head;
+  }
+
+  function fortuneLabel(fortune, lang = state.lang) {
+    const labels = I18N[lang].fortunes;
+    return (labels && labels[fortune]) || fortune;
+  }
+
+  function summaryText(item) {
+    if (state.lang === "en") return item.meaning_en || "";
+    if (state.lang === "ja") return item.meaning_ja || "";
+    return item.meaning_zh || "";
+  }
+
+  function aspectLabel(key) {
+    const labels = I18N[state.lang].aspects;
+    return (labels && labels[key]) || key;
+  }
+
+  function aspectText(value) {
+    return (value && (value[state.lang] || value.zh || value.ja || value.en)) || "";
+  }
+
+  function getAspectEntries(item) {
+    const entries = Object.entries(item.details || {});
+    const keys = new Set(entries.map(([key]) => key));
+    if (!keys.has("方角")) entries.push(["方角", buildDirectionAspect(item)]);
+    if (!keys.has("勝負")) entries.push(["勝負", buildContestAspect(item)]);
+    return entries.slice(0, 9);
+  }
+
+  function buildDirectionAspect(item) {
+    const dirs = [
+      { zh: "东方", ja: "東", en: "east" },
+      { zh: "东南", ja: "東南", en: "southeast" },
+      { zh: "南方", ja: "南", en: "south" },
+      { zh: "西南", ja: "西南", en: "southwest" },
+      { zh: "西方", ja: "西", en: "west" },
+      { zh: "西北", ja: "西北", en: "northwest" },
+      { zh: "北方", ja: "北", en: "north" },
+      { zh: "东北", ja: "北東", en: "northeast" },
+    ];
+    const dir = dirs[item.number % dirs.length];
+    return {
+      zh: `${dir.zh}较顺，出门、会面、择位宜取明亮安静处。`,
+      ja: `${dir.ja}がよし。外出・面会・席取りは明るく静かな所を選ぶ。`,
+      en: `${dir.en} is favorable. Choose a bright, quiet place for travel, meetings, or seating.`,
+    };
+  }
+
+  function buildContestAspect(item) {
+    const score = fortuneScore(item.fortune);
+    if (score >= 7) return {
+      zh: "胜机在先，宜主动出手，但不可轻敌。",
+      ja: "勝機あり。先んじて動けばよし、油断は禁物。",
+      en: "The advantage is yours. Act first, but do not underestimate others.",
+    };
+    if (score >= 4) return {
+      zh: "胜负相半，守正比冒进更有利。",
+      ja: "勝負は半ば。無理に攻めず正道を守ればよし。",
+      en: "The contest is balanced. Steady play beats rushing ahead.",
+    };
+    return {
+      zh: "不宜强争，先退一步，等待时机再定胜负。",
+      ja: "強く争わず、一歩退いて時を待つべし。",
+      en: "Avoid forcing the contest. Step back and wait for the better moment.",
+    };
+  }
+
+  function isAuspiciousFortune(fortune) {
+    return !String(fortune || "").includes("凶");
+  }
+
+  function fortuneScore(fortune) {
+    return ({ 大吉: 9, 吉: 8, 中吉: 7, 小吉: 6, 末吉: 5, 半吉: 4, 凶: 3, 小凶: 2, 末凶: 1, 大凶: 0 })[fortune] ?? 5;
+  }
+
+  // ---- Paper ----
+
   function renderFortune(item) {
-    const lang = state.lang;
-    const detailLang = lang === "zh" ? "zh" : lang === "ja" ? "ja" : "en";
+    const en = state.lang === "en";
     els.pNum.textContent = formatNumber(item.number);
     els.pNumEn.textContent = `No. ${item.number}`;
-    els.pFortune.textContent = (I18N[lang].fortunes && I18N[lang].fortunes[item.fortune]) || item.fortune;
-    els.pFortuneEn.textContent = I18N.en.fortunes[item.fortune] || item.fortune;
+    els.pFortune.textContent = fortuneLabel(item.fortune);
+    els.pFortuneEn.textContent = fortuneLabel(item.fortune, "en");
     if (els.paper) {
       els.paper.dataset.fortune = item.fortune;
       els.paper.dataset.fortuneTone = isAuspiciousFortune(item.fortune) ? "good" : "bad";
     }
-    if (els.pShrineTitle) els.pShrineTitle.textContent = t("shrineTitle");
-    if (els.pShrineSub) els.pShrineSub.textContent = t("shrineSub");
 
-    if (lang === "en") {
-      els.pPoemZh.textContent = item.meaning_en || item.poem_ja || "";
-      els.pPoemAlt.textContent = item.poem_ja || "";
-      els.pSummary.textContent = item.meaning_en || "";
-    } else if (lang === "ja") {
-      els.pPoemZh.textContent = item.poem_ja || "";
-      els.pPoemAlt.textContent = item.poem_reading || "";
-      els.pSummary.textContent = item.meaning_ja || "";
-    } else {
-      els.pPoemZh.textContent = item.poem_ja || "";
-      els.pPoemAlt.textContent = item.poem_reading || "";
-      els.pSummary.textContent = item.meaning_zh || "";
-    }
+    els.pPoemZh.textContent = (en && item.meaning_en) || item.poem_ja || "";
+    els.pPoemAlt.textContent = (en ? item.poem_ja : item.poem_reading) || "";
+    els.pSummary.textContent = summaryText(item);
 
     els.pAspects.innerHTML = "";
     getAspectEntries(item).forEach(([key, value]) => {
       const card = document.createElement("div");
       card.className = "aspect";
       const label = document.createElement("b");
-      label.textContent = (I18N[lang].aspects && I18N[lang].aspects[key]) || key;
+      label.textContent = aspectLabel(key);
       const body = document.createElement("span");
-      body.textContent = (value && (value[detailLang] || value.zh || value.ja || value.en)) || "";
+      body.textContent = aspectText(value);
       card.append(label, body);
       els.pAspects.appendChild(card);
     });
   }
 
+  // ---- Share & image export ----
+
   async function shareFortune() {
     const item = state.selected;
-    const lang = state.lang;
-    const fortune = item ? ((I18N[lang].fortunes && I18N[lang].fortunes[item.fortune]) || item.fortune) : "Omikuji";
     const text = item
-      ? `${t("shared")}\n${formatNumber(item.number)} · ${fortune}\n${summaryForShare(item)}`
+      ? `${t("shared")}\n${formatNumber(item.number)} · ${fortuneLabel(item.fortune)}\n${summaryText(item)}`
       : t("shared");
     let file = null;
     try {
@@ -600,18 +671,13 @@
     canvas.style.height = `${h}px`;
     const ctx = canvas.getContext("2d");
     ctx.scale(scale, scale);
-    drawFortuneImage(ctx, item, w, h);
+    if (reference) drawReferenceFortuneImage(ctx, item, w, h);
+    else drawCardFortuneImage(ctx, item, w, h);
     return canvas;
-  }
-
-  function drawFortuneImage(ctx, item, w, h) {
-    if (state.paperLayout === "card") drawCardFortuneImage(ctx, item, w, h);
-    else drawReferenceFortuneImage(ctx, item, w, h);
   }
 
   function drawReferenceFortuneImage(ctx, item, w, h) {
     const lang = state.lang;
-    const detailLang = lang === "zh" ? "zh" : lang === "ja" ? "ja" : "en";
     const paper = "#fbf7ea";
     const ink = "#11110f";
     const line = "rgba(17,17,15,.62)";
@@ -638,7 +704,7 @@
     const topGap = 10;
     const headerW = Math.floor((right - left - topGap) * (lang === "en" ? 0.43 : 0.48));
     const poemW = right - left - topGap - headerW;
-    const fortuneText = (I18N[lang].fortunes && I18N[lang].fortunes[item.fortune]) || item.fortune;
+    const fortuneText = fortuneLabel(item.fortune);
     const fortuneInk = isAuspiciousFortune(item.fortune) ? "#b8241d" : ink;
 
     ctx.strokeStyle = line;
@@ -665,34 +731,29 @@
 
     y = drawPlainPanel(ctx, left, y, right - left, t("altLabel"), item.poem_reading || item.poem_ja || "", ink, lang, lang === "en" ? 70 : 64);
     y += 8;
-    y = drawPlainPanel(ctx, left, y, right - left, t("summaryTitle"), summaryForShare(item), ink, lang, lang === "en" ? 82 : 76);
+    y = drawPlainPanel(ctx, left, y, right - left, t("summaryTitle"), summaryText(item), ink, lang, lang === "en" ? 82 : 76);
     y += 10;
 
-    const entries = getAspectEntries(item).slice(0, 9);
+    const entries = getAspectEntries(item);
     const gridGapX = 12;
     const gridGapY = 6;
     const cols = 2;
     const rows = Math.ceil(entries.length / cols);
     const boxW = (right - left - gridGapX * (cols - 1)) / cols;
-    const availableBottom = outer.y + outer.h - 42;
-    const sourceH = 38;
-    const yBeforeGrid = y;
     const boxH = lang === "en" ? 92 : 82;
     entries.forEach(([key, value], idx) => {
       const isLastOdd = entries.length % cols === 1 && idx === entries.length - 1;
       const x = isLastOdd ? left : left + (idx % cols) * (boxW + gridGapX);
       const cellW = isLastOdd ? right - left : boxW;
       const cy = y + Math.floor(idx / cols) * (boxH + gridGapY);
-      const label = (I18N[lang].aspects && I18N[lang].aspects[key]) || key;
-      const text = (value && (value[detailLang] || value.zh || value.ja || value.en)) || "";
-      drawLeftText(ctx, label, x + 2, cy + 6, lang === "en" ? 13 : 13, "900", ink, font);
+      drawLeftText(ctx, aspectLabel(key), x + 2, cy + 6, 13, "900", ink, font);
       ctx.strokeStyle = "rgba(17,17,15,.22)";
       ctx.lineWidth = 1;
       ctx.beginPath();
       ctx.moveTo(x + 2, cy + 24);
       ctx.lineTo(x + cellW - 2, cy + 24);
       ctx.stroke();
-      drawMultilineText(ctx, text, x + 2, cy + 32, cellW - 4, lang === "en" ? 14 : 15, lang === "en" ? 11.2 : 11.5, ink, font, lang === "en" ? 4 : 4, lang === "en" ? "500" : "600");
+      drawMultilineText(ctx, aspectText(value), x + 2, cy + 32, cellW - 4, lang === "en" ? 14 : 15, lang === "en" ? 11.2 : 11.5, ink, font, 4, lang === "en" ? "500" : "600");
     });
     y += rows * boxH + (rows - 1) * gridGapY + 4;
 
@@ -710,54 +771,30 @@
 
   function drawPlainPanel(ctx, x, y, w, label, text, ink, lang, minH) {
     const font = lang === "en" ? "Georgia" : CJK_CANVAS_FONT;
+    const weight = lang === "en" ? "500" : "600";
     const lineHeight = lang === "en" ? 17 : 18;
     const fontSize = lang === "en" ? 12.2 : 13;
-    ctx.font = `${lang === "en" ? "500" : "600"} ${fontSize}px ${font}`;
-    const lines = wrapTextLines(ctx, text, w - 24, lang === "en" ? 5 : 4);
+    const maxLines = lang === "en" ? 5 : 4;
+    ctx.font = `${weight} ${fontSize}px ${font}`;
+    const lines = wrapTextLines(ctx, text, w - 24, maxLines);
     const h = Math.max(minH, 36 + lines.length * lineHeight);
     ctx.strokeStyle = "rgba(17,17,15,.58)";
     ctx.lineWidth = 1;
     ctx.strokeRect(x, y, w, h);
-    drawLeftText(ctx, label, x + 12, y + 9, 13, "900", ink, lang === "en" ? "Georgia" : CJK_CANVAS_FONT);
+    drawLeftText(ctx, label, x + 12, y + 9, 13, "900", ink, font);
     ctx.strokeStyle = "rgba(17,17,15,.28)";
     ctx.beginPath();
     ctx.moveTo(x + 10, y + 30);
     ctx.lineTo(x + w - 10, y + 30);
     ctx.stroke();
-    drawMultilineText(ctx, text, x + 12, y + 38, w - 24, lineHeight, fontSize, ink, lang === "en" ? "Georgia" : CJK_CANVAS_FONT, lang === "en" ? 5 : 4, lang === "en" ? "500" : "600");
+    drawMultilineText(ctx, text, x + 12, y + 38, w - 24, lineHeight, fontSize, ink, font, maxLines, weight);
     return y + h;
-  }
-
-  function drawPaperGrain(ctx, item, w, h, alpha = 0.18) {
-    ctx.save();
-    ctx.globalAlpha = alpha;
-    ctx.fillStyle = "#6c5638";
-    for (let i = 0; i < 1200; i += 1) {
-      const x = pseudoRandom(i * 17 + item.number) * w;
-      const y = pseudoRandom(i * 29 + item.number * 3) * h;
-      ctx.fillRect(x, y, 1, 1);
-    }
-    ctx.restore();
-  }
-
-  function drawCrest(ctx, x, y, r, color) {
-    ctx.save();
-    ctx.strokeStyle = color;
-    ctx.fillStyle = color;
-    ctx.lineWidth = 3;
-    ctx.beginPath();
-    ctx.arc(x, y, r, 0, Math.PI * 2);
-    ctx.stroke();
-    ctx.font = `900 ${Math.floor(r * 0.86)}px Noto Serif JP, Yu Mincho, serif`;
-    ctx.textAlign = "center";
-    ctx.textBaseline = "middle";
-    ctx.fillText("稲", x, y + 2);
-    ctx.restore();
   }
 
   function drawCardFortuneImage(ctx, item, w, h) {
     const lang = state.lang;
-    const detailLang = lang === "zh" ? "zh" : lang === "ja" ? "ja" : "en";
+    const font = lang === "en" ? "Georgia" : CJK_CANVAS_FONT;
+    const bodyWeight = lang === "zh" ? "400" : "500";
     const bg = "#f8f0dd";
     const panel = "#fffaf0";
     const red = "#b8241d";
@@ -776,7 +813,7 @@
     const left = outer.x + pad;
     const right = outer.x + outer.w - pad;
     let y = outer.y + 44;
-    const fortuneText = (I18N[lang].fortunes && I18N[lang].fortunes[item.fortune]) || item.fortune;
+    const fortuneText = fortuneLabel(item.fortune);
     const fortuneInk = isAuspiciousFortune(item.fortune) ? red : ink;
 
     ctx.strokeStyle = softLine;
@@ -787,18 +824,18 @@
     ctx.stroke();
     drawLeftText(ctx, formatNumber(item.number), left, y + 18, 26, "700", "#2a2118");
     drawLeftText(ctx, `No. ${item.number}`, left, y + 54, 16, "400", "#8b6554", "Georgia");
-    drawRightText(ctx, t("shrineTitle").replace(/\n/g, " "), right, y + 18, lang === "en" ? 22 : 24, "900", darkRed, lang === "en" ? "Georgia" : CJK_CANVAS_FONT);
+    drawRightText(ctx, t("shrineTitle").replace(/\n/g, " "), right, y + 18, lang === "en" ? 22 : 24, "900", darkRed, font);
     drawRightText(ctx, t("shrineSub").toUpperCase(), right, y + 54, 14, "400", "#8b6554", "Georgia");
     if (lang === "en") drawCenteredText(ctx, fortuneText, w / 2, y + 88, 34, "900", fortuneInk, "Georgia");
     else drawCenteredText(ctx, fortuneText, w / 2, y + 78, 76, "900", fortuneInk, CJK_CANVAS_FONT);
-    drawCenteredText(ctx, I18N.en.fortunes[item.fortune] || item.fortune, w / 2, y + (lang === "en" ? 126 : 150), 16, "400", "#8b6554", "Georgia");
+    drawCenteredText(ctx, fortuneLabel(item.fortune, "en"), w / 2, y + (lang === "en" ? 126 : 150), 16, "400", "#8b6554", "Georgia");
     y += lang === "en" ? 174 : 188;
 
     const poem = lang === "en" ? (item.meaning_en || "") : (item.poem_ja || "");
     ctx.fillStyle = ink;
     ctx.textAlign = "center";
     ctx.textBaseline = "top";
-    ctx.font = `900 ${lang === "en" ? 19 : 38}px ${lang === "en" ? "Georgia" : CJK_CANVAS_FONT}`;
+    ctx.font = `900 ${lang === "en" ? 19 : 38}px ${font}`;
     const poemLines = lang === "en" ? wrapTextLines(ctx, poem, right - left, 5) : String(poem).split(/\n+/).filter(Boolean);
     if (lang === "en") ctx.textAlign = "left";
     poemLines.slice(0, lang === "en" ? 5 : 4).forEach((line, i) => ctx.fillText(line, lang === "en" ? left : w / 2, y + i * (lang === "en" ? 29 : 62)));
@@ -809,10 +846,10 @@
 
     y = drawInfoBox(ctx, left, y, right - left, t("altLabel"), item.poem_reading || item.poem_ja || "", darkRed, ink, lang, 112);
     y += 18;
-    y = drawInfoBox(ctx, left, y, right - left, t("summaryTitle"), summaryForShare(item), darkRed, ink, lang, 132);
+    y = drawInfoBox(ctx, left, y, right - left, t("summaryTitle"), summaryText(item), darkRed, ink, lang, 132);
     y += 24;
 
-    const entries = getAspectEntries(item).slice(0, 9);
+    const entries = getAspectEntries(item);
     const gap = 14;
     const colW = (right - left - gap) / 2;
     const cardH = 102;
@@ -821,10 +858,8 @@
       const cy = y + Math.floor(idx / 2) * (cardH + gap);
       fillRoundRect(ctx, x, cy, colW, cardH, 14, "rgba(255,251,240,.82)");
       strokeRoundRect(ctx, x, cy, colW, cardH, 14, "rgba(184,36,29,.18)", 1.5);
-      const label = (I18N[lang].aspects && I18N[lang].aspects[key]) || key;
-      const text = (value && (value[detailLang] || value.zh || value.ja || value.en)) || "";
-      drawLeftText(ctx, label, x + 16, cy + 14, 18, lang === "zh" ? "700" : "900", darkRed, lang === "en" ? "Georgia" : CJK_CANVAS_FONT);
-      drawMultilineText(ctx, text, x + 16, cy + 42, colW - 32, 18, 15, ink, lang === "en" ? "Georgia" : CJK_CANVAS_FONT, 3, lang === "en" ? "500" : lang === "zh" ? "400" : "500");
+      drawLeftText(ctx, aspectLabel(key), x + 16, cy + 14, 18, lang === "zh" ? "700" : "900", darkRed, font);
+      drawMultilineText(ctx, aspectText(value), x + 16, cy + 42, colW - 32, 18, 15, ink, font, 3, bodyWeight);
     });
     y += Math.ceil(entries.length / 2) * (cardH + gap) + 10;
 
@@ -834,58 +869,54 @@
     drawCenteredText(ctx, `${GITHUB_URL} · ${SITE_URL}`, w / 2, h - 28, 16, "400", "#333", "Georgia");
   }
 
-  function getAspectEntries(item) {
-    const entries = Object.entries(item.details || {});
-    const keys = new Set(entries.map(([key]) => key));
-    if (!keys.has("方角")) entries.push(["方角", buildDirectionAspect(item)]);
-    if (!keys.has("勝負")) entries.push(["勝負", buildContestAspect(item)]);
-    return entries.slice(0, 9);
+  function drawInfoBox(ctx, x, y, w, label, text, labelColor, ink, lang, minH) {
+    const lineHeight = 23;
+    const font = lang === "en" ? "Georgia" : CJK_CANVAS_FONT;
+    const weight = lang === "zh" ? "400" : "500";
+    const maxLines = lang === "en" ? 4 : 5;
+    ctx.font = `${weight} 17px ${font}`;
+    const lines = wrapTextLines(ctx, text, w - 32, maxLines);
+    const h = Math.max(minH, 50 + lines.length * lineHeight);
+    fillRoundRect(ctx, x, y, w, h, 16, "rgba(184,36,29,.045)");
+    ctx.fillStyle = labelColor;
+    ctx.fillRect(x, y, 6, h);
+    drawLeftText(ctx, label, x + 18, y + 15, 17, "700", labelColor);
+    drawMultilineText(ctx, text, x + 18, y + 45, w - 36, lineHeight, 17, ink, font, maxLines, weight);
+    return y + h;
   }
 
-  function buildDirectionAspect(item) {
-    const dirs = [
-      { zh: "东方", ja: "東", en: "east" },
-      { zh: "东南", ja: "東南", en: "southeast" },
-      { zh: "南方", ja: "南", en: "south" },
-      { zh: "西南", ja: "西南", en: "southwest" },
-      { zh: "西方", ja: "西", en: "west" },
-      { zh: "西北", ja: "西北", en: "northwest" },
-      { zh: "北方", ja: "北", en: "north" },
-      { zh: "东北", ja: "北東", en: "northeast" },
-    ];
-    const dir = dirs[item.number % dirs.length];
-    return {
-      zh: `${dir.zh}较顺，出门、会面、择位宜取明亮安静处。`,
-      ja: `${dir.ja}がよし。外出・面会・席取りは明るく静かな所を選ぶ。`,
-      en: `${dir.en} is favorable. Choose a bright, quiet place for travel, meetings, or seating.`,
-    };
+  // ---- Canvas primitives ----
+
+  function drawPaperGrain(ctx, item, w, h, alpha = 0.18) {
+    ctx.save();
+    ctx.globalAlpha = alpha;
+    ctx.fillStyle = "#6c5638";
+    for (let i = 0; i < 1200; i += 1) {
+      const x = pseudoRandom(i * 17 + item.number) * w;
+      const y = pseudoRandom(i * 29 + item.number * 3) * h;
+      ctx.fillRect(x, y, 1, 1);
+    }
+    ctx.restore();
   }
 
-  function buildContestAspect(item) {
-    const score = fortuneScore(item.fortune);
-    if (score >= 7) return {
-      zh: "胜机在先，宜主动出手，但不可轻敌。",
-      ja: "勝機あり。先んじて動けばよし、油断は禁物。",
-      en: "The advantage is yours. Act first, but do not underestimate others.",
-    };
-    if (score >= 4) return {
-      zh: "胜负相半，守正比冒进更有利。",
-      ja: "勝負は半ば。無理に攻めず正道を守ればよし。",
-      en: "The contest is balanced. Steady play beats rushing ahead.",
-    };
-    return {
-      zh: "不宜强争，先退一步，等待时机再定胜负。",
-      ja: "強く争わず、一歩退いて時を待つべし。",
-      en: "Avoid forcing the contest. Step back and wait for the better moment.",
-    };
+  function pseudoRandom(seed) {
+    const x = Math.sin(seed) * 10000;
+    return x - Math.floor(x);
   }
 
-  function isAuspiciousFortune(fortune) {
-    return !String(fortune || "").includes("凶");
-  }
-
-  function fortuneScore(fortune) {
-    return ({ 大吉: 9, 吉: 8, 中吉: 7, 小吉: 6, 末吉: 5, 半吉: 4, 凶: 3, 小凶: 2, 末凶: 1, 大凶: 0 })[fortune] ?? 5;
+  function drawCrest(ctx, x, y, r, color) {
+    ctx.save();
+    ctx.strokeStyle = color;
+    ctx.fillStyle = color;
+    ctx.lineWidth = 3;
+    ctx.beginPath();
+    ctx.arc(x, y, r, 0, Math.PI * 2);
+    ctx.stroke();
+    ctx.font = `900 ${Math.floor(r * 0.86)}px Noto Serif JP, Yu Mincho, serif`;
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.fillText("稲", x, y + 2);
+    ctx.restore();
   }
 
   function fillRoundRect(ctx, x, y, w, h, r, color) {
@@ -927,19 +958,6 @@
     ctx.restore();
   }
 
-  function drawInfoBox(ctx, x, y, w, label, text, labelColor, ink, lang, minH) {
-    const lineHeight = 23;
-    ctx.font = `${lang === "en" ? "500" : lang === "zh" ? "400" : "500"} 17px ${lang === "en" ? "Georgia" : CJK_CANVAS_FONT}`;
-    const lines = wrapTextLines(ctx, text, w - 32, lang === "en" ? 4 : 5);
-    const h = Math.max(minH, 50 + lines.length * lineHeight);
-    fillRoundRect(ctx, x, y, w, h, 16, "rgba(184,36,29,.045)");
-    ctx.fillStyle = labelColor;
-    ctx.fillRect(x, y, 6, h);
-    drawLeftText(ctx, label, x + 18, y + 15, 17, "700", labelColor);
-    drawMultilineText(ctx, text, x + 18, y + 45, w - 36, lineHeight, 17, ink, lang === "en" ? "Georgia" : CJK_CANVAS_FONT, lang === "en" ? 4 : 5, lang === "en" ? "500" : lang === "zh" ? "400" : "500");
-    return y + h;
-  }
-
   function drawLeftText(ctx, text, x, y, size, weight = "400", color = "#111", family = "Noto Serif SC") {
     ctx.fillStyle = color;
     ctx.font = `${weight} ${size}px ${family}, Noto Serif JP, Yu Mincho, serif`;
@@ -956,12 +974,12 @@
     ctx.fillText(String(text), x, y);
   }
 
-  function drawMultilineRightText(ctx, text, right, y, maxWidth, lineHeight, size, weight = "400", color = "#111", family = "Noto Serif SC", maxLines = 2) {
+  function drawCenteredText(ctx, text, x, y, size, weight = "400", color = "#111", family = "Noto Serif SC, Noto Serif JP") {
     ctx.fillStyle = color;
-    ctx.font = `${weight} ${size}px ${family}, Noto Serif JP, Yu Mincho, serif`;
-    ctx.textAlign = "right";
-    ctx.textBaseline = "top";
-    wrapTextLines(ctx, text, maxWidth, maxLines).forEach((line, idx) => ctx.fillText(line, right, y + idx * lineHeight));
+    ctx.font = `${weight} ${size}px ${family}, Yu Mincho, serif`;
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.fillText(String(text), x, y);
   }
 
   function drawMultilineText(ctx, text, x, y, maxWidth, lineHeight, size, color, family = "Noto Serif SC", maxLines = 4, weight = "500") {
@@ -997,45 +1015,6 @@
     return lines;
   }
 
-  function drawOwnershipWatermark(ctx, w, h) {
-    void ctx;
-    void w;
-    void h;
-  }
-
-  function drawCenteredText(ctx, text, x, y, size, weight = "400", color = "#111", family = "Noto Serif SC, Noto Serif JP") {
-    ctx.fillStyle = color;
-    ctx.font = `${weight} ${size}px ${family}, Yu Mincho, serif`;
-    ctx.textAlign = "center";
-    ctx.textBaseline = "middle";
-    ctx.fillText(String(text), x, y);
-  }
-
-  function drawWrappedText(ctx, text, x, y, maxWidth, lineHeight, size, color, family = "Noto Serif JP") {
-    ctx.fillStyle = color;
-    ctx.font = `500 ${size}px ${family}, Noto Serif SC, Noto Serif JP, Yu Mincho, serif`;
-    ctx.textAlign = "left";
-    ctx.textBaseline = "top";
-    const words = String(text).split(/\s+/);
-    let line = "";
-    words.forEach((word) => {
-      const test = line ? `${line} ${word}` : word;
-      if (ctx.measureText(test).width > maxWidth && line) {
-        ctx.fillText(line, x, y);
-        y += lineHeight;
-        line = word;
-      } else {
-        line = test;
-      }
-    });
-    if (line) ctx.fillText(line, x, y);
-  }
-
-  function drawVerticalBlock(ctx, label, text, x, y, size, step, color, maxHeight) {
-    drawVerticalText(ctx, label, x, y, size + 2, step, color, true, maxHeight);
-    drawVerticalText(ctx, text, x - 42, y, size, step, color, false, maxHeight);
-  }
-
   function drawVerticalText(ctx, text, x, y, size, step, color, bold = false, maxHeight = 1000, family = CJK_CANVAS_FONT) {
     ctx.fillStyle = color;
     ctx.font = `${bold ? "900" : "600"} ${size}px ${family}`;
@@ -1054,71 +1033,7 @@
     }
   }
 
-  function pseudoRandom(seed) {
-    const x = Math.sin(seed) * 10000;
-    return x - Math.floor(x);
-  }
-
-  function buildDrawSeed() {
-    const count = Math.max(0, state.shakeCount);
-    return `${state.sessionSalt}|shakes:${count}|items:${DATA.length}`;
-  }
-
-  function pickIndexBySeed(seed, length) {
-    if (!length) return 0;
-    return Math.floor(seededRandom(seed) * length) % length;
-  }
-
-  function seededRandom(seed) {
-    let h = 2166136261;
-    const text = String(seed);
-    for (let i = 0; i < text.length; i += 1) {
-      h ^= text.charCodeAt(i);
-      h = Math.imul(h, 16777619);
-    }
-    h += h << 13; h ^= h >>> 7;
-    h += h << 3; h ^= h >>> 17;
-    h += h << 5;
-    return (h >>> 0) / 4294967296;
-  }
-
-  function summaryForShare(item) {
-    if (state.lang === "en") return item.meaning_en || "";
-    if (state.lang === "ja") return item.meaning_ja || "";
-    return item.meaning_zh || "";
-  }
-
-  function formatNumber(num) {
-    if (state.lang === "en") return `${t("numberPrefix")}${num}${t("numberSuffix")}`;
-    return `${t("numberPrefix")}${toCjkNumber(num)}${t("numberSuffix")}`;
-  }
-
-  function toCjkNumber(num) {
-    const chars = ["零", "一", "二", "三", "四", "五", "六", "七", "八", "九"];
-    if (num === 100) return "百";
-    if (num < 10) return chars[num];
-    const tens = Math.floor(num / 10);
-    const ones = num % 10;
-    const head = tens === 1 ? "十" : `${chars[tens]}十`;
-    return ones ? `${head}${chars[ones]}` : head;
-  }
-
-  function t(key) {
-    return (I18N[state.lang] && I18N[state.lang][key]) || I18N.zh[key] || key;
-  }
-
-  function toast(message) {
-    let node = $(".toast");
-    if (!node) {
-      node = document.createElement("div");
-      node.className = "toast";
-      document.body.appendChild(node);
-    }
-    node.textContent = message;
-    node.classList.add("show");
-    clearTimeout(node._timer);
-    node._timer = setTimeout(() => node.classList.remove("show"), 2100);
-  }
+  // ---- Audio ----
 
   async function unlockAudio() {
     if (!state.audio) {
@@ -1202,6 +1117,8 @@
       [784, 1176, 1568].forEach((freq, i) => playTone(freq, 1.15 - i * 0.18, "sine", volume / (i + 1.8), i * 0.018));
     });
   }
+
+  // ---- Sakura ----
 
   function initSakura() {
     if (!els.sakura) return;
