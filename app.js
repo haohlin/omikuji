@@ -155,6 +155,7 @@
         中吉: "Middle Blessing",
         小吉: "Small Blessing",
         末吉: "Future Blessing",
+        末小吉: "Slight Blessing",
         半吉: "Half Blessing",
         凶: "Misfortune",
         小凶: "Small Misfortune",
